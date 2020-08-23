@@ -20,31 +20,22 @@ p {
 -----------------------------------------*/
 
 .section_title {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    background-color: #135693;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .section_title h2 {
     text-transform: uppercase;
     text-align: center;
     position: relative;
-    color: #333;
+    color: #FFFFFF;
     font-size: 30px;
     font-weight: 400;
 }
-.section_title h2:after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    width: 60px;
-    height: 1px;
-    background-color: #1d890a;
-    left: 50%;
-    margin-left: -30px;
-}
 .section_title p {
     text-align: center;
-    margin-top: 45px;
-    color: #333;
+    margin-top: 10px;
+    color: #FFFFFF;
     font-size: 18px;
     line-height: 28px;
     font-weight: 300;
@@ -371,13 +362,18 @@ tuor:visited {
    SECTION ABOUT              
 -----------------------------------------*/
 .about {
-    background: #F1F1F1;
+    font-family: "Corsica LX";
+    background: #135693;
 }
 .inner_about_area {
+    font-family: "Corsica LX";
+    color: #094071;
     padding-top: 50px;
 }
 .inner_about_title {
-    padding-bottom: 50px;
+    background-color: #FFFFFF;
+    text-align: center;
+    padding-bottom: 20px;
 }
 .inner_about_title h2 {
     text-transform: uppercase;
@@ -386,23 +382,14 @@ tuor:visited {
     line-height: 37px;
     position: relative;
 }
-.inner_about_title h2:after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    width: 70px;
-    background: #1d890a;
-    height: 1px;
-}
 .inner_about_title p {
     font-size: 19px;
     line-height: 24px;
     margin-top: 40px;
 }
 .inner_about_desc {} .single_about_area {
-    position: relative;
-    padding-bottom: 4px;
+    position: static;
+    padding-bottom: 10px;
     padding-left: 80px;
 }
 .single_about_area div {
