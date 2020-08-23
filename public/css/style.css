@@ -7,7 +7,7 @@ a {
     color: #1d890a;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Light', sans-serif;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -90,6 +90,19 @@ table {
 .botomm-blok .center-blok, .botomm-blok .left-blok {
     position: relative;
 }
+.center-text {
+    text-align: center;
+    vertical-align: center;
+}
+.right-text {
+    text-align: right;
+    vertical-align: center;
+}
+.left-text {
+    text-align: left;
+    vertical-align: center;
+}
+
 .botomm-blok .center-blok {
     width: 30.5%;
     text-align: center;
@@ -926,13 +939,13 @@ tuor:visited {
 }
 .subscribe_form .form-group {} .subscribe_form .form-control {
     background: transparent;
-    border: 1px solid #575b63;
+    border: 1px solid #FFFFFF;
     border-radius: 0px;
     height: 45px;
     border-left: 0px;
     border-right: 0px;
     border-top: 0px;
-    color: #aeaeae;
+    color: #FFFFFF;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -o-transition: all 1s;
@@ -940,7 +953,7 @@ tuor:visited {
 }
 .subscribe_form .form-control:focus {
     background: transparent;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #FFFFFF;
     box-shadow: none;
 }
 .subs-btn,
@@ -949,12 +962,12 @@ tuor:visited {
 .subs-btn:visited {
     width: 200px;
     background: transparent;
-    border: 1px solid #1d890a;
+    border: 1px solid #FFFFFF;
     border-radius: 4px;
     height: 45px;
     margin-left: 0px;
     margin-bottom: 1px;
-    color: #1d890a;
+    color: #FFFFFF;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 17px;
@@ -965,9 +978,9 @@ tuor:visited {
     outline: 0px !important;
 }
 .subs-btn:hover {
-    background-color: #1d890a;
-    color: #fff;
-    border-color: #1d890a;
+    background-color: #FFFFFF;
+    color: #084172;
+    border-color: #FFFFFF;
 }
 @media (min-width: 300px) {
     .subscribe_form .form-control {
@@ -989,11 +1002,12 @@ tuor:visited {
 -----------------------------------------*/
 
 .copyright {
+    color: #FFFFFF;
     background-color: #084172;
     background-image: url(../images/footer-bg.png);;
     padding-bottom: 20px;
     padding-top: 20px;
-    border-bottom: 3px solid #1d890a;
+    border-bottom: 3px solid #084172;
 }
 .copyright h2 {
     height: 0px;
@@ -1003,14 +1017,14 @@ tuor:visited {
     width: 60%;
 }
 .copy_right_text p {
-    color: #8C8B8A;
+    color: #FFFFFF;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 15px;
 }
 .copy_right_text p a {
     text-decoration: none;
-    color: #1d890a;
+    color: #FFFFFF;
 }
 .copy_right_text p span {
     font-weight: 300;
@@ -1019,11 +1033,11 @@ tuor:visited {
     text-align: right;
 }
 .scroll_top a {
-    background: #1d890a;
+    background: #FFFFFF;
     padding: 25px;
 }
 .scroll_top a i {
-    color: #fff;
+    color: #084172;
     font-size: 25px;
 }
 input:-webkit-autofill,

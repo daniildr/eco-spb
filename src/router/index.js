@@ -9,6 +9,19 @@ export default new Router({
             path: "/",
             title: "123 123 1234",
             component: () => import("@/views/Home"),
+            meta: {
+                title: 'Home Page - Example App',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'The home page of our example app.'
+                    },
+                    {
+                        property: 'og:description',
+                        content: 'The home page of our example app.'
+                    }
+                ]
+            }
         },
         {
             path: "/test",
@@ -20,7 +33,5 @@ export default new Router({
             title: "УПППС",
             component: () => import("@/views/404"),
         }
-
-
     ]
 });
