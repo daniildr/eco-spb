@@ -368,7 +368,6 @@ tuor:visited {
 .inner_about_area {
     font-family: "Corsica LX";
     color: #094071;
-    padding-top: 50px;
 }
 .inner_about_title {
     background-color: #FFFFFF;
@@ -385,7 +384,7 @@ tuor:visited {
 .inner_about_title p {
     font-size: 19px;
     line-height: 24px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .inner_about_desc {} .single_about_area {
     position: static;
@@ -425,6 +424,25 @@ tuor:visited {
         margin-right: 20%
     }
 }
+.green-btn,
+.green-btn:active,
+.green-btn:focus,
+.green-btn:visited{
+    font-family: "Roboto Medium";
+    border-radius: 7px;
+    background-image: -moz-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
+    box-shadow: 0px 3px 0px 0px rgba(255, 255, 255, 0.2),inset 0px 2px 0px 0px rgba(255, 255, 255, 0.54);
+}
+.green-btn:hover{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(6, 35, 62);
+    border-radius: 6px;
+    background-color: rgb(18, 85, 146);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.08);
+}
 /*---------------------------------------
    SECTION CARPARK
 -----------------------------------------*/
@@ -435,6 +453,13 @@ tuor:visited {
     padding-top: 20px;
     align-items: center !important;
 }
+.carpark-blue-section{
+    color: #FFFFFF;
+    background-color: #135693;
+    background-size: cover;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .carpark_area {
     background: #e4e4e4;
 }
@@ -442,6 +467,7 @@ tuor:visited {
     padding-bottom: 30px;
 }
 .carpark_title h2 {
+    font-family: "Corsica LX";
     text-transform: uppercase;
     font-weight: 800;
     font-size: 30px;
@@ -449,26 +475,29 @@ tuor:visited {
     position: relative;
     margin-top: 0px;
 }
-.carpark_title h2:after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    width: 280px;
-    background: #1d890a;
-    height: 1px;
-}
 .carpark_title-l h2:after {
     left: 0;
 }
 .carpark_title-r h2:after {
     right: 0;
 }
+.container_z_index{
+    z-index: -1;
+}
 .carpark_title p {
-    font-size: 18px;
+    background: url("../images/carParkBg.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-width: 2560px;
+
+    color: #FFFFFF;
+    font-size: 16px;
     line-height: 28px;
-    margin-top: 40px;
-    color: #333;
-    font-weight: 300;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .btn-carpark,
 .btn-carpark:active,
@@ -491,8 +520,9 @@ tuor:visited {
     border: 1px solid #1d890a;
 }
 .carpark img {
-    border: 2px solid #1d890a;
-    background: rgba(255, 255, 255, .15);
+    background-image: url("../images/carparkBack.png");
+    padding: 0px 30px 15px 0px;
+    background-position: right bottom;
 }
 
 /*---------------------------------------
@@ -500,6 +530,10 @@ tuor:visited {
 -----------------------------------------*/
 .bg-white {
     background-color: #fff !important;
+}
+.bg-blue {
+    color: #FFFFFF;
+    background-color: #135592 !important;
 }
 .bottom-pad {
     margin-bottom: 60px;
@@ -510,11 +544,7 @@ tuor:visited {
 }
 
 .box-right {
-    height:380px;
-    background:
-            linear-gradient(110deg, #e4e4e4 49.8%, #FFFFFF 50%) bottom/60% 100%,
-            linear-gradient(#FFFFFF,#FFFFFF) right/20% 100%;
-    background-repeat:no-repeat;
+
 }
 
 .box-left {
@@ -763,6 +793,7 @@ tuor:visited {
     padding-top: 30px;
 }
 .contact_form .form-control {
+    border-radius: 7px;
     display: block;
     display: block;
     width: 100%;
@@ -810,24 +841,32 @@ tuor:visited {
 .submit-btn:active,
 .submit-btn:focus,
 .submit-btn:visited {
-    background-color: transparent;
-    border: 1px solid #1d890a;
-    border-radius: 4px;
+    font-family: "Roboto Medium";
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(6, 35, 62);
+    border-radius: 6px;
+    background-color: rgb(18, 85, 146);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.08);
     width: 100%;
     height: 50px;
-    text-transform: uppercase;
     font-size: 18px;
-    color: #1d890a;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
-    outline: 0px !important;
+    color: #FFFFFF;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 .submit-btn:hover {
-    background-color: #1d890a;
-    color: #fff;
-    border-color: #1d890a;
+    color: #125592;
+    border-radius: 7px;
+    background-image: -moz-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
+    box-shadow: 0px 3px 0px 0px rgba(255, 255, 255, 0.2),inset 0px 2px 0px 0px rgba(255, 255, 255, 0.54);
+
+/*background-color: #FFFFFF;
+    color: #125592;*/
 }
 .social_icons {
     padding-top: 50px;

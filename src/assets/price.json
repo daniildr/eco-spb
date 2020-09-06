@@ -1,0 +1,35 @@
+{
+  "RuNumber": "8 (800) 555-55-49",
+  "SpbFirstNumber": "8 (812) 007-07-05",
+  "SpbSecondNumber": "8 (812) 007-08-05",
+  "Car": {
+    "price1": "3000",
+    "price2": "4000",
+    "price3": "5000",
+    "price4": "6000"
+  },
+  "Box1": {
+    "price1": "6000",
+    "price2": "10000",
+    "price3": "15000",
+    "price4": "20000"
+  },
+  "Box2": {
+    "price1": "12000",
+    "price2": "18000",
+    "price3": "25000",
+    "price4": "40000"
+  },
+  "Box3": {
+    "price1": "15000",
+    "price2": "20000",
+    "price3": "25000",
+    "price4": "26000"
+  },
+  "LoaderPrice": {
+    "price1": "2500",
+    "price2": "2600",
+    "price3": "2700",
+    "price4": "2800"
+  }
+}
