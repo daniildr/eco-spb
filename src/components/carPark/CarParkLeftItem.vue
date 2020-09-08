@@ -6,6 +6,10 @@
                     <img width="560" height="315" src="../../images/Gazel.png">
                 </div>
             </div>
+            <div class="col-md-6 carpark_row box-left">
+                <div class="carpark">
+                </div>
+            </div>
         </div>
     </div>
 </template>

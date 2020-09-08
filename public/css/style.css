@@ -1030,7 +1030,8 @@ tuor:visited {
 .copyright {
     color: #FFFFFF;
     background-color: #084172;
-    background-image: url(../images/footer-bg.png);;
+    background-image: url(../images/footer-bg.png);
+    background-repeat: round;
     padding-bottom: 20px;
     padding-top: 20px;
     border-bottom: 3px solid #084172;
