@@ -25,7 +25,7 @@ $(document).ready(function() {
                 'padding-top': '15px'
             });
             $(".navbar-brand img").css({
-                'height': '35px'
+                'height': '38px'
             });
             $(".navbar-brand img").css({
                 'padding-top': '0px'

@@ -1,7 +1,6 @@
 <template>
     <div>
         <About/>
-        <Advantages/>
         <CarPark/>
         <Price/>
         <CallBackForm/>
@@ -11,7 +10,6 @@
 
 <script>
     import About from "@/components/About";
-    import Advantages from "@/components/Advantages";
     import CarPark from "@/components/CarPark";
     import ContactUs from "@/components/ContactUs";
     import CallBackForm from "@/components/CallBackForm";
@@ -24,7 +22,6 @@
             CallBackForm,
             ContactUs,
             CarPark,
-            Advantages,
             About
         }
     }

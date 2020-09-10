@@ -195,7 +195,7 @@
         width: 100%;
     }
 
-    @media (max-width: 1024px){
+    @media (max-width: 1199px){
         tr:nth-child(2n){
             background-image: url("../images/bg_color_price.png");
         }

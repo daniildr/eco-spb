@@ -17,5 +17,10 @@
         bottom: 148px;
         position: inherit;
     }
+    @media (max-width: 1024px){
+        .position{
+            display: none;
+        }
+    }
 
 </style>

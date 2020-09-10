@@ -19,25 +19,27 @@
 </script>
 
 <style scoped>
-    .position1{
-        bottom: 323px;
-        height: 55px;
-        width: 2560px;
-        position: inherit;
+    @media (min-width: 1199px){
+        .position1{
+            bottom: 323px;
+            height: 55px;
+            width: 2560px;
+            position: inherit;
+        }
+        .position2{
+            bottom: 188px;
+            height: 66px;
+            width: 2560px;
+            position: inherit;
+        }
+        .position3{
+            bottom: 54px;
+            height: 66px;
+            width: 2560px;
+            position: inherit;
+        }
     }
-    .position2{
-        bottom: 188px;
-        height: 66px;
-        width: 2560px;
-        position: inherit;
-    }
-    .position3{
-        bottom: 54px;
-        height: 66px;
-        width: 2560px;
-        position: inherit;
-    }
-    @media (max-width: 1024px){
+    @media (max-width: 1200px){
         .position1{
             display: none;
         }

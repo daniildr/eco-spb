@@ -30,5 +30,10 @@
 </script>
 
 <style scoped>
-
+    @media (max-width: 1024px){
+        .carpark_title > p{
+            color: #0F1217;
+            background-image: url("../../images/bg_color_blue.png");
+        }
+    }
 </style>

@@ -130,6 +130,7 @@ table {
     padding: 20px;
 }
 .top-menu {
+    color: #FFFFFF;
     padding: 0px;
     list-style: none;
     width: 85%;
@@ -157,13 +158,14 @@ table {
     padding: 0 10px;
 }
 .top-menu > li > a:hover {
-    color: #1d890a;
+    color: #84c225;
 }
 .top-menu > li > a {
-    color: #333333;
+    color: #FFFFFF;
     display: block;
     font-family: "Roboto Medium";
-    font-size: 150%;
+    text-decoration: underline;
+    font-size: 100%;
     padding: 4px 6px;
     white-space: nowrap;
     transition: 0.5s;
@@ -208,7 +210,7 @@ table {
 @media(min-width:768px) {
     .navbar-default {
         background-color: transparent;
-        border: 3px solid #1d890a;
+        border: 3px solid #135693;
         border-width: 0 0 3px;
     }
     .navbar-default .navbar-nav>li>a {
@@ -216,7 +218,9 @@ table {
         font-family: 'Roboto Medium', sans-serif;
     }
     .navbar-default .navbar-nav>li>a:hover {
-        color: #1d890a;
+        color: #FFFFFF;
+        font-size: 18px;
+        text-decoration: underline;
     }
     .navbar-default .navbar-nav>li>a:focus {
         color: #B5B5B5;
@@ -255,7 +259,9 @@ table {
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     background: transparent;
-    color: #1d890a;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-decoration: underline;
 }
 .header {
     /*background: url(../images/home2.png);*/
