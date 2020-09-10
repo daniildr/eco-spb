@@ -189,9 +189,18 @@
     }
     tr:nth-child(2n) {
         color: #FFFFFF;
-        background-image: url("../images/bg_color_price.png");
+        /* background-image: url("../images/bg_color_price.png"); */
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
+    }
+
+    @media (max-width: 1024px){
+        tr:nth-child(2n){
+            background-image: url("../images/bg_color_price.png");
+        }
+        thead{
+            background-image: url("../images/bg_color_price.png");
+        }
     }
 </style>
