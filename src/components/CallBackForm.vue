@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row col-md-12">
                 <div class="col-md-9 left-text left-blok">
-                    <p class="linka">Сделать заказ можно по телефону <a v-bind:href="'callto:' + config.SpbFirstNumber">{{ config.SpbFirstNumber }}</a></p>
+                    <p class="linka">Сделать заказ можно по телефону: <a v-bind:href="'callto:' + config.SpbFirstNumber">{{ config.SpbFirstNumber }}</a></p>
                     <p class="linka" style="font-size: 18px; font-weight: normal; margin-top: 0px;">Наши менеджеры рассчитают график и стоимость, ответят на все возникшие вопросы.</p>
                 </div>
                 <div class="col-md-3">

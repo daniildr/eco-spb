@@ -13,7 +13,7 @@
         </section>
         <section class="inner_about_area">
             <div class="table-responsive container">
-                <table class="table ">
+                <table class="table">
                     <thead>
                     <tr>
                         <td></td>
@@ -124,14 +124,17 @@
                 <label for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
             </div>
         </section>
+        <PriceBg/>
     </section>
 </template>
 
 <script>
     import json from '@/assets/price.json'
+    import PriceBg from "@/components/priceBg";
 
     export default {
         name: "Price",
+        components: {PriceBg},
         data() {
             return {
                 needLoader: false,
@@ -174,7 +177,7 @@
     }
     thead {
         color: #FFFFFF;
-        background-image: url("../images/bg_color_price.png");
+        /*background-image: url("../images/bg_color_price.png");*/
     }
     tbody {
 

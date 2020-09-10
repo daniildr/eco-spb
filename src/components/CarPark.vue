@@ -1,19 +1,26 @@
 <template>
     <section class="inner_about_area page" id="CARPARK">
         <CarParkTitle/>
-        <CarParkLeftItem/>
+        <Gazel/>
+        <CarParkBg/>
+        <Docker8/>
+        <CarParkBg/>
         <hr/>
     </section>
 </template>
 
 <script>
     import CarParkTitle from "@/components/carPark/CarParkTitle";
-    import CarParkLeftItem from "@/components/carPark/CarParkLeftItem";
+    import CarParkBg from "@/components/carPark/CarParkBg";
+    import Gazel from "@/components/carPark/Gazel";
+    import Docker8 from "@/components/carPark/Docker8";
 
     export default {
         name: "CarPark",
         components: {
-            CarParkLeftItem,
+            Docker8,
+            Gazel,
+            CarParkBg,
             CarParkTitle
         }
     }
