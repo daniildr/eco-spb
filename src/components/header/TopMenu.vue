@@ -1,18 +1,11 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="flex-start">
-                    <div class="top-menu-blok">
-                        <ul id="menu" class="top-menu">
-                            <li><a href="#ABOUT">О нас</a></li>
-                            <li><a href="#PRICE">Прайс-лист</a></li>
-                            <li><a href="#CONTACT">Контакты</a></li>
-                        </ul>
-                    </div>
-            </div>
-        </div>
-    </div>
+    <ul id="menu" class="top-menu">
+        <li><a href="#HOME">ГЛАВНАЯ</a></li>
+        <li><a href="#ABOUT">О НАС </a></li>
+        <li><a href="#CARPARK">АВТОПАРК</a></li>
+        <li><a href="#PRICE">ПРАЙС-ЛИСТ</a></li>
+        <li><a href="#CONTACT">КОНТАКТЫ </a></li>
+    </ul>
 </template>
 
 <script>

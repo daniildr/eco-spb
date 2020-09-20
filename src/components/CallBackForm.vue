@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-md-3">
                     <br/>
-                    <button type="button" style="width: 260px; height: 50px;" class="btn btn-default green-btn">Заказать звонок</button>
+                    <GreenButton/>
                 </div>
             </div>
         </div>
@@ -18,10 +18,12 @@
 
 <script>
     import json from "@/assets/price.json";
+    import GreenButton from "@/components/Buttons/GreenButton";
 
     export default {
         name: "CallBack",
         components: {
+            GreenButton
         },
         data() {
             return {

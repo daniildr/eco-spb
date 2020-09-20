@@ -145,6 +145,7 @@
 </script>
 
 <style scoped>
+
     .table{
         color: #135693;
         vertical-align: middle;

@@ -1,5 +1,6 @@
 <template>
     <section class="inner_about_area page" id="CONTACT">
+        <CallBackForm/>
         <div class="section_overlay">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1 bounceIn">
@@ -38,7 +39,7 @@
                             </div>
                             <div class="col-md-8">
                                 <textarea class="form-control" id="message" rows="25" cols="10" placeholder="Текст сообщения"></textarea>
-                                <button type="button" class="btn btn-default submit-btn form_submit">Отправить сообщение</button>
+                                <BlueButton/>
                             </div>
                         </div>
                     </form>
@@ -50,8 +51,15 @@
 </template>
 
 <script>
+    import BlueButton from "@/components/Buttons/BlueButton";
+    import CallBackForm from "@/components/CallBackForm";
+
     export default {
-        name: "ContactUs"
+        name: "ContactUs",
+        components: {
+            BlueButton,
+            CallBackForm
+        }
     }
 </script>
 

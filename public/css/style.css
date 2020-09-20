@@ -229,7 +229,7 @@ table {
         -moz-transition: all 1s;
         -o-transition: all 1s;
         transition: all 1s;
-        z-index: 110;
+        z-index: 9999;
     }
     .navbar-brand img {
         padding-top: 25px;
@@ -378,7 +378,6 @@ tuor:visited {
     padding-bottom: 20px;
 }
 .inner_about_title h2 {
-    text-transform: uppercase;
     font-weight: 800;
     font-size: 30px;
     line-height: 37px;
@@ -437,6 +436,7 @@ tuor:visited {
     background-image: -webkit-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
     background-image: -ms-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
     box-shadow: 0px 3px 0px 0px rgba(255, 255, 255, 0.2),inset 0px 2px 0px 0px rgba(255, 255, 255, 0.54);
+    transition: 0.5s;
 }
 .green-btn:hover{
     border-style: solid;
@@ -858,16 +858,11 @@ tuor:visited {
     transition: all 0.5s;
 }
 .submit-btn:hover {
-    color: #125592;
+    color: rgb(18, 85, 146);
     border-radius: 7px;
-    background-image: -moz-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
-    background-image: -webkit-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
-    background-image: -ms-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
-    box-shadow: 0px 3px 0px 0px rgba(255, 255, 255, 0.2),inset 0px 2px 0px 0px rgba(255, 255, 255, 0.54);
-
-/*background-color: #FFFFFF;
-    color: #125592;*/
+    border-color: rgb(18, 85, 146);
 }
+
 .social_icons {
     padding-top: 50px;
     padding-bottom: 70px;
@@ -931,7 +926,7 @@ tuor:visited {
     color: #3d3d3d;
 }
 #message {
-    height: 117px;
+    height: 115px;
     resize: none;
 }
 /*---------------------------------------

@@ -3,8 +3,13 @@
         <div class="row bottom-pad">
             <div class="col-md-6 carpark_row">
                 <div class="carpark">
+                    <img src="../../images/kontainer-20-m3.png">
+                </div>
+            </div>
+            <div class="col-md-6 carpark_row">
+                <div class="carpark">
                     <div class="carpark_title">
-                        <h2>Контейнер (8 Кубометров)</h2>
+                        <h2>Контейнер (20 Кубометров)</h2>
                         <p>Газель для самых низких арок в городе.<br/>
                             Высота газели 2,50 м;<br/>
                             Длина 3 м;<br/>
@@ -14,30 +19,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 carpark_row">
-                <div class="carpark">
-                    <img width="560" height="315" src="../../images/kontainer-8-m3.png">
-                </div>
-            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Docker8"
+        name: "Docker20"
     }
 </script>
 
 <style scoped>
-    .bottom-pad-last {
-        margin-bottom: 30px;
-    }
 
-    @media (max-width: 1024px){
-        .carpark_title > p{
-            color: #0F1217;
-            background-image: url("../../images/bg_color_blue.png");
-        }
-    }
 </style>
