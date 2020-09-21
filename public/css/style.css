@@ -378,7 +378,7 @@ tuor:visited {
     padding-bottom: 20px;
 }
 .inner_about_title h2 {
-    font-weight: 800;
+    /* font-weight: 800; */
     font-size: 30px;
     line-height: 37px;
     position: relative;
