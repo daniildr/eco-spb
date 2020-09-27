@@ -4,7 +4,7 @@
         <li><a href="#ABOUT">О НАС </a></li>
         <li><a href="#CARPARK">АВТОПАРК</a></li>
         <li><a href="#PRICE">ПРАЙС-ЛИСТ</a></li>
-        <li><a href="#CONTACT">КОНТАКТЫ </a></li>
+        <li><a href="#CONTACT">КОНТАКТЫ</a></li>
     </ul>
 </template>
 

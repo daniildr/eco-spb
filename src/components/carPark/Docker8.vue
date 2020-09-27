@@ -4,7 +4,7 @@
             <div class="col-md-6 carpark_row">
                 <div class="carpark">
                     <div class="carpark_title">
-                        <h2>Контейнер (8 Кубометров)</h2>
+                        <h2>BAW Fenix (8-12 Кубометров)</h2>
                         <p>Газель для самых низких арок в городе.<br/>
                             Высота газели 2,50 м;<br/>
                             Длина 3 м;<br/>
@@ -30,7 +30,7 @@
             <div class="col-md-6 carpark_row">
                 <div class="carpark">
                     <div class="carpark_title">
-                        <h2>Контейнер (8 Кубометров)</h2>
+                        <h2>BAW Fenix (8-12 Кубометров)</h2>
                         <p>Газель для самых низких арок в городе.<br/>
                             Высота газели 2,50 м;<br/>
                             Длина 3 м;<br/>
