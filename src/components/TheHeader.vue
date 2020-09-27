@@ -1,8 +1,8 @@
 <template>
-    <section>
+    <section id="HOME">
         <section class="copyright">
             <MainMenu/>
-            <div class="container" id="HOME">
+            <div class="container" >
                 <div class="col-md-12"  style="margin-bottom: 20px;">
                     <div class="col-md-pull-6 pull-left">
                         <a href="#"><img src="../images/header-logo.png" alt="Logo"></a>
@@ -33,6 +33,7 @@
                         </div>
                         <img src="../images/spbLabele.png">
                         <br/>
+                        <MapBackground/>
                         <svg class="z-first"
                              style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                              viewBox="10 50 200 287">
@@ -147,8 +148,9 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="col-md-3 center-text">
-                            <img src="../images/Layer39.png">
+                        <div id="gazel" v-on:click="selectCarType('gazel')" class="col-md-3 center-text carIcon-z-index">
+                            <img class="carIconDisable" id="gazel-on" src="../images/carIcons/gazel-on.png">
+                            <img class="carIcon" id="gazel-off" src="../images/carIcons/gazel-off.png">
                             <br/>
                             <div class="gazel_1_5_t">
                                 <label><h4>Газель (до 1.5 тонн)</h4></label>
@@ -185,15 +187,21 @@
                     <div class="col-md-12">
                         <div class="col-md-6 inner_about_title">
                             <input id="need-loader" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
-                            <label for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
+                            <label class="label-custom" for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
                         </div>
                         <div class="col-md-6 inner_about_title">
-                            <h2>Тип мусора:</h2>
-                            <input >
+                            <h2>Количество мусора:</h2>
+                            <h3 style="margin-bottom: 25px;">Контейнеров: {{ itemCount }}</h3>
+                            <br/>
+                            <vue-range-slider
+                                    process-style="background-color: #135693;"
+                                    slider-style="background-color: #135693;"
+                                    tooltip-style="background-color: #135693; border-color: #135693;"
+                                    ref="slider" v-model="itemCount"></vue-range-slider>
                         </div>
                     </div>
-                    <div class="col-md-12">
-
+                    <div class="col-md-12 center-text">
+                        <h3 style="margin-bottom: 25px;">Общая стоимость вывоза мусора: Контейнеров {{ itemCount }} | Стоимость каждого  1200 | Всего 6000 рублей</h3>
                     </div>
                 </div>
             </div>
@@ -208,17 +216,38 @@
     import WorkInfo from "@/components/header/WorkInfo";
     import MainMenu from "@/components/header/MainMenu";
     import TopMenu from "@/components/header/TopMenu";
+    import MapBackground from "@/components/map/MapBackground";
+    import VueRangeSlider from 'vue-range-component'
+    import 'vue-range-component/dist/vue-range-slider.css'
 
     export default {
         name: "TheHeader",
         components: {
+            MapBackground,
             TopMenu,
             MainMenu,
             WorkInfo,
+            VueRangeSlider,
         },
     methods: {
         randomColor () {
             return `#${(Math.random()*0xFFFFFF<<0).toString(16)}`
+        },
+        selectCarType (elementId) {
+            let onIcon = document.getElementById(elementId + "-on");
+            let offIcon = document.getElementById(elementId + "-off");
+
+            if (this.selectedCarType !== ''){
+                let onOldIcon = document.getElementById(elementId + "-on");
+                let offOldIcon = document.getElementById(elementId + "-off");
+
+                onOldIcon.classList.replace(this.carIconCssClass, this.carIconDisableCssClass);
+                offOldIcon.classList.replace(this.carIconCssClass, this.carIconDisableCssClass);
+            }
+
+            this.selectedCarType = elementId;
+            offIcon.classList.replace(this.carIconDisableCssClass, this.carIconCssClass);
+            onIcon.classList.replace(this.carIconCssClass, this.carIconDisableCssClass);
         },
         activeMapElement (element) {
                 element.classList.remove(this.fillClassName);
@@ -250,10 +279,14 @@
     },
         data() {
             return {
+                itemCount: 1,
                 garbageType: '',
                 selectedRegion: '',
                 fillClassName: "fil0",
                 activeFillClassName: "fil-click",
+                selectedCarType: '',
+                carIconCssClass: "carIcon",
+                carIconDisableCssClass: "carIconDisable",
                 svgPalette: {
                     fill: '#FFFFFF',
                     width: '585px',
@@ -265,6 +298,27 @@
 </script>
 
 <style scoped>
+
+    .label-custom{
+        margin-top: 60px;
+        margin-bottom: 60px;
+        font-size: 20px;
+    }
+
+    .carIcon-z-index{
+        z-index: 9998;
+        position: inherit;
+    }
+
+    .carIcon{
+        height: 58px;
+    }
+
+    .carIconDisable{
+        display: none;
+        z-index: 9998;
+    }
+
 
     .fil0 {
         fill:#F8F8F8;
@@ -301,7 +355,7 @@
     }
 
     .z-first {
-        z-index: 9998;
+        z-index: 9990;
         position: absolute;
     }
 
