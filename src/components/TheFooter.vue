@@ -30,5 +30,9 @@
 </script>
 
 <style scoped>
-
+    @media (max-width: 1199px){
+        .mobile-st{
+            text-align: center;
+        }
+    }
 </style>

@@ -190,7 +190,6 @@
     }
     tr:nth-child(2n) {
         color: #FFFFFF;
-        /* background-image: url("../images/bg_color_price.png"); */
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;

@@ -30,5 +30,13 @@
 </script>
 
 <style scoped>
-
+    @media (max-width: 1199px){
+        .carpark_title > p {
+            padding: 10px;
+            background-color: #135693;
+        }
+        .bottom-pad {
+            margin-bottom: 0px;
+        }
+    }
 </style>

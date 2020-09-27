@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="@/images/for-popup-menu-logo.png" alt="Logo"></a>
+                <a class="navbar-brand " href="#"><img class="mobile-hidden" src="@/images/for-popup-menu-logo.png" alt="Logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -39,4 +39,10 @@
 
 <style scoped>
 
+@media (max-width: 1199px){
+    .mobile-hidden{
+        height: 50px;
+        /* display: none; */
+    }
+}
 </style>

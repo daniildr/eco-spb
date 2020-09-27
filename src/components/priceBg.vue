@@ -39,7 +39,7 @@
             position: inherit;
         }
     }
-    @media (max-width: 1200px){
+    @media (max-width: 1199px){
         .position1{
             display: none;
         }

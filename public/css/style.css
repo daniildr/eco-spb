@@ -365,6 +365,12 @@ tuor:visited {
 /*---------------------------------------
    SECTION ABOUT              
 -----------------------------------------*/
+@media (max-width: 1199px){
+    .mobile-hidden{
+        display: none;
+    }
+}
+
 .about {
     font-family: "Corsica LX";
     background: #135693;
@@ -522,6 +528,17 @@ tuor:visited {
     background-position: right bottom;
     background-size: 95%;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 1199px){
+    .carpark img {
+        padding: 0px 0px 0px 0px;
+        width: 100%;
+        height: 100%;
+        background-image: none;
+        background-color: #FFFFFF;
+        background-size: 100%;
+    }
 }
 
 
@@ -1027,9 +1044,15 @@ tuor:visited {
     background-color: #084172;
     background-image: url(../images/footer-bg.png);
     background-repeat: round;
+
     padding-bottom: 20px;
     padding-top: 20px;
     border-bottom: 3px solid #084172;
+}
+@media (max-width: 1199px){
+    .copyright{
+        background-image: none;
+    }
 }
 .copyright h2 {
     height: 0px;
