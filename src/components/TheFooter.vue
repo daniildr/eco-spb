@@ -3,11 +3,6 @@
         <div class="container">
             <social/>
             <br/>
-            <div class="row">
-                <div class="col-md-10">
-                    <call-back/>
-                </div>
-            </div>
             <br/>
             <copyright/>
         </div>
@@ -17,12 +12,10 @@
 <script>
     import Copyright from "@/components/footer/Copyright";
     import Social from "@/components/footer/Social";
-    import CallBack from "@/components/CallBack";
 
     export default {
         name: "TheFooter",
         components: {
-            CallBack,
             Social,
             Copyright
         }

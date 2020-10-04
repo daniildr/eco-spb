@@ -16,20 +16,21 @@
                     </div>
                 </div>
             </div>
-
-            <div class="contact_form bounceIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <CallBack/>
+                </div>
+            </div>
+            <!-- <div class="contact_form bounceIn">
                 <div class="container">
-                    <!-- START ERROR AND SUCCESS MESSAGE -->
                     <div class="form_error text-center">
                         <div class="name_error hide error">Please Enter your name</div>
                         <div class="email_error hide error">Please Enter your Email</div>
                         <div class="email_val_error hide error">Please Enter a Valid Email Address</div>
                         <div class="message_error hide error">Please Enter Your Message</div>
                     </div>
-                    <div class="Sucess"></div>
-                    <!-- END ERROR AND SUCCESS MESSAGE -->
+                    <div class="Success"></div>
 
-                    <!-- CONTACT FORM starts here, Go to contact.php and add your email ID, thats it.-->
                     <form role="form" action="contact.php">
                         <div class="row">
                             <div class="col-md-4">
@@ -43,21 +44,20 @@
                             </div>
                         </div>
                     </form>
-                    <!-- END FORM -->
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
 
 <script>
-    import BlueButton from "@/components/Buttons/BlueButton";
     import CallBackForm from "@/components/CallBackForm";
+    import CallBack from "@/components/CallBack";
 
     export default {
         name: "ContactUs",
         components: {
-            BlueButton,
+            CallBack,
             CallBackForm
         }
     }

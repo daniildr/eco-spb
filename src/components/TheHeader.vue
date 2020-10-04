@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <hr/>
-                        <div class="hidden-lg hidden-md">
+                        <div class="hidden-lg hidden-md showDropbox">
                             <div class="col-md-pull-12" style="margin-bottom: 15px; margin-top: 15px;">
                                 <div class="col-md-6" style="padding-left: 0px; padding-right: 0px; padding-top: 10px;">
                                     <h4 style="font-size: 150%; margin-top: 0px; margin-bottom: 0px;">Санкт-Петербург:</h4>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hidden-sm hidden-xs">
+                        <div class="hidden-sm hidden-xs hiddenMap">
                             <div class="col-md-12" style="margin-bottom: 0px; margin-top: 15px;">
                                 <div class="col-md-6" style="padding-left: 0px; padding-right: 0px; padding-top: 10px;">
                                     <h4 style="font-size: 150%; margin-top: 0px; margin-bottom: 0px;">Санкт-Петербург:</h4>
@@ -144,8 +144,8 @@
                         </div>
 
                     </div>
-                    <div class="col-md-6 right-text">
-                        <img class="rantruck_recycling_copy hidden-xs hidden-sm" src="../images/rantruck-2.png">
+                    <div class="col-md-6 right-text fixdiv">
+                        <img class="rantruck_recycling_copy hidden-xs hidden-sm resize" src="../images/rantruck-2.png">
                     </div>
                 </div>
 
@@ -157,14 +157,12 @@
                     <div class="col-md-12">
                         <div class="col-md-6"></div>
                         <div class="col-md-6 inner_about_title" >
-                            <h2 style="margin-top: 5px;">Тип мусора:</h2>
+                            <h2 style="margin-top: 5px;">Тип мусора</h2>
                             <select class="Shape_3">
                                 <option value="Select">Выберите тип:</option>
-                                <option value="Тосно">Тосно</option>
-                                <option value="Любань">Любань</option>
-                                <option value="Лодейное Поле">Лодейное Поле</option>
-                                <option value="Гатчина">Гатчина</option>
-                                <option value="Луга">Луга</option>
+                                <option value="Тосно">Строительный</option>
+                                <option value="Любань">Бытовой</option>
+                                <option value="Лодейное Поле">Крупногабаритный</option>
                             </select>
                         </div>
                     </div>
@@ -178,7 +176,7 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-6">
                             <div class="section_title" style="padding-top: 0px;">
-                                <h2>Способ вывоза:</h2>
+                                <h2>Способ вывоза</h2>
                             </div>
                         </div>
                     </div>
@@ -225,7 +223,7 @@
                             <label class="label-custom" for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
                         </div>
                         <div class="col-md-6 inner_about_title">
-                            <h2>Количество мусора:</h2>
+                            <h2>Количество мусора</h2>
                             <h3 style="margin-bottom: 25px;">Контейнеров: {{ itemCount }}</h3>
                             <br/>
                             <vue-range-slider
@@ -333,6 +331,65 @@
 </script>
 
 <style scoped>
+    .resize {
+        width: 153%;
+    }
+    .fixdiv{
+        height: 485px;
+    }
+    @media (max-width: 1599px){
+        .resize{
+            padding-top: 20px;
+            width: 140%;
+        }
+    }
+    @media (max-width: 1499px){
+        .resize{
+            padding-top: 40px;
+            width: 130%;
+        }
+    }
+    @media (max-width: 1399px){
+        .resize{
+            padding-top: 50px;
+            width: 125%;
+        }
+    }
+    @media (max-width: 1299px){
+        .resize{
+            padding-top: 60px;
+            width: 120%;
+        }
+    }
+    @media (max-width: 1229px){
+        .resize{
+            padding-top: 80px;
+            width: 110%;
+        }
+    }
+    @media (max-width: 1199px){
+        .resize{
+            padding-top: 90px;
+            width: 120%;
+        }
+        .fixdiv{
+            height: 425px;
+        }
+    }
+    @media (max-width: 1099px){
+        .resize{
+            padding-top: 100px;
+            width: 110%;
+        }
+        .fixdiv{
+            height: 415px;
+        }
+    }
+    @media (max-width: 991px){
+        .fixdiv{
+            display: none;
+        }
+    }
 
     green-p {
         color: #1d890a;
@@ -378,7 +435,7 @@
         position: absolute;
     }
     img{
-        vertical-align: middle;;
+        vertical-align: middle;
     }
     .copyright{
         background-image: url("../images/head-bg.png");
@@ -386,7 +443,7 @@
     .gazel_1_5_t {
         margin-top: 20px;
         font-size: 18px;
-        font-family: "Roboto";
+        font-family: "Roboto",serif;
         color: rgb(255, 255, 255);
         line-height: 0.917;
         text-align: center;
@@ -396,12 +453,6 @@
     .z-first {
         z-index: 9990;
         position: absolute;
-    }
-
-    .rantruck_recycling_copy {
-        width: 803px;
-        height: 485px;
-        z-index: 109;
     }
     .section_title{
         background: none;

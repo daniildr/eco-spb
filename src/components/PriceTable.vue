@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-12 col-md-offset-1">
                         <div class="col-md-10 inner_about_title">
-                            <h2>Цены на вывоз мусора:</h2>
+                            <h2>Цены на вывоз мусора</h2>
                         </div>
                     </div>
                 </div>
@@ -201,6 +201,7 @@
         }
         thead{
             background-image: url("../images/bg_color_price.png");
+            background-repeat: round;
         }
     }
 </style>

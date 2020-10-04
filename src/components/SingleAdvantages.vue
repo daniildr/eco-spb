@@ -1,17 +1,13 @@
 <template>
     <section>
-        <div class="col-md-12 inner_about_desc single_adv">
-            <!-- SINGLE DESC -->
-            <!-- ICON -->
-            <div class="col-md-3 center-text">
+        <div class=" inner_about_desc single_adv">
+            <div class="col-md-12 center-text">
                 <img :src="imgSrc" alt="Logo">
             </div>
-            <!-- HEADING DESCRIPTION -->
-            <div class="col-md-9">
+            <div class="col-md-12 center-text">
                 <h3>{{ titleTxt }}</h3>
-                <p>{{ descrip }}</p>
+                <p v-if="descrip != null">{{ descrip }}</p>
             </div>
-            <!-- END SINGLE DESC -->
         </div>
     </section>
 </template>

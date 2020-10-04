@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-1">
                 <div class="col-md-10 inner_about_title">
-                    <h2>Наш Автопарк:</h2>
+                    <h2>Виды оказываемых услуг</h2>
                 </div>
             </div>
         </div>

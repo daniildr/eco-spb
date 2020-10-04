@@ -21,7 +21,7 @@
     import GreenButton from "@/components/Buttons/GreenButton";
 
     export default {
-        name: "CallBack",
+        name: "CallBackForm",
         components: {
             GreenButton
         },
