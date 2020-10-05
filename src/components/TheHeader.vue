@@ -319,7 +319,15 @@
                 this.selectedCarPrice = "0";
             }
             else {
-                this.selectedCarPrice = this.config.cars[this.selectedCarType].price1;
+                if (this.needLoaders){
+                    let carPrise = parseInt(this.config.cars[this.selectedCarType].price1, 10);
+                    let loaderPrise = parseInt(this.config.cars[this.selectedCarType].loaderPrice, 10);
+                    let fullPrice = carPrise + loaderPrise;
+
+                    this.selectedCarPrice =  fullPrice;
+                }
+                else
+                    this.selectedCarPrice = this.config.cars[this.selectedCarType].price1
             }
             return this.selectedCarPrice;
         },
