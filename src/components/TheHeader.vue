@@ -26,7 +26,7 @@
                                 <h4 style="font-size: 150%; margin-top: 0px; margin-bottom: 0px;">Ленинградская область:</h4>
                             </div>
                             <div class="col-md-6">
-                                <select class="Shape_2">
+                                <select v-model="selectedRegion" class="Shape_2">
                                     <option value="Select">Выберите место:</option>
                                     <option value="Тосно">Тосно</option>
                                     <option value="Любань">Любань</option>
@@ -142,7 +142,6 @@
                                 </svg>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-md-6 right-text fixdiv">
                         <img class="rantruck_recycling_copy hidden-xs hidden-sm resize" src="../images/rantruck-2.png">
@@ -158,11 +157,11 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-6 inner_about_title" >
                             <h2 style="margin-top: 5px;">Тип мусора</h2>
-                            <select class="Shape_3">
+                            <select v-model="selectedTrashType" class="Shape_3">
                                 <option value="Select">Выберите тип:</option>
-                                <option value="Тосно">Строительный</option>
-                                <option value="Любань">Бытовой</option>
-                                <option value="Лодейное Поле">Крупногабаритный</option>
+                                <option value="construction">Строительный</option>
+                                <option value="household ">Бытовой</option>
+                                <option value="bulky">Крупногабаритный</option>
                             </select>
                         </div>
                     </div>
@@ -181,33 +180,28 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div id="gazel" v-on:click="selectCarType('gazel')" class="col-md-3 center-text carIcon-z-index">
-                            <img class="carIconDisable" id="gazel-on" src="../images/carIcons/gazel-on.png">
-                            <img class="carIcon" id="gazel-off" src="../images/carIcons/gazel-off.png">
-                            <br/>
-                            <div class="gazel_1_5_t">
-                                <label><h4>Газель (до 1.5 тонн)</h4></label>
+                        <div v-on:click="selectCarType('gazel')" class="col-md-3 center-text carIcon-z-index">
+                            <div id="gazel-div" class="gazel-off carTypeLabel">
+                                <input class="carInput" type="radio" id="gazel-radio" value="gazel" v-model="selectedCarType">
+                                <label for="gazel-radio"><h4>Газель (до 1.5 тонн)</h4></label>
                             </div>
                         </div>
-                        <div class="col-md-3 center-text">
-                            <img src="../images/Layer38.png" style="height: 58px">
-                            <br/>
-                            <div class="gazel_1_5_t">
-                                <label><h4>Контейнер 8 м<sup>3</sup></h4></label>
+                        <div v-on:click="selectCarType('baw')" class="col-md-3 center-text carIcon-z-index">
+                            <div id="baw-div" class="baw-off carTypeLabel">
+                                <input class="carInput" type="radio" id="baw-radio" value="baw" v-model="selectedCarType">
+                                <label for="baw-radio"><h4>BAW Fenix 8-12 м<sup>3</sup></h4></label>
                             </div>
                         </div>
-                        <div class="col-md-3 center-text">
-                            <img src="../images/Layer37.png" style="height: 58px">
-                            <br/>
-                            <div class="gazel_1_5_t">
-                                <label><h4>Контейнер 20 м<sup>3</sup></h4></label>
+                        <div v-on:click="selectCarType('docker20')" class="col-md-3 center-text carIcon-z-index">
+                            <div id="docker20-div" class="docker20-off carTypeLabel">
+                                <input class="carInput" type="radio" id="docker20-radio" value="docker20" v-model="selectedCarType">
+                                <label for="docker20-radio"><h4>Контейнер 20 м<sup>3</sup></h4></label>
                             </div>
                         </div>
-                        <div class="col-md-3 center-text">
-                            <img src="../images/Layer36.png">
-                            <br/>
-                            <div class="gazel_1_5_t">
-                                <label><h4>Контейнер 27 м<sup>3</sup></h4></label>
+                        <div v-on:click="selectCarType('docker27')" class="col-md-3 center-text carIcon-z-index">
+                            <div id="docker27-div" class="docker27-off carTypeLabel">
+                                <input class="carInput" type="radio" id="docker27-radio" value="docker27" v-model="selectedCarType">
+                                <label for="docker27-radio"><h4>Контейнер 27 м<sup>3</sup></h4></label>
                             </div>
                         </div>
                     </div>
@@ -219,7 +213,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-6 inner_about_title">
-                            <input id="need-loader" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
+                            <input class="custom-checkbox" type="checkbox" id="need-loader" v-model="needLoaders">
                             <label class="label-custom" for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
                         </div>
                         <div class="col-md-6 inner_about_title">
@@ -234,12 +228,14 @@
                         </div>
                     </div>
                     <div class="col-md-12 center-text">
-                        <h3 style="margin-bottom: 25px; font-size: 22px;">Общая стоимость вывоза мусора: Контейнеров - <green-p>{{ itemCount }}</green-p> | Стоимость каждого - <green-p>1200</green-p> | Всего - <green-p>6000</green-p> рублей</h3>
+                        <h3 style="margin-bottom: 25px; font-size: 22px;">
+                            Общая стоимость вывоза мусора: Контейнеров - <green-p>{{ itemCount }}</green-p> |
+                            Стоимость каждого - <green-p>{{getSelectedCarPrice()}}</green-p> |
+                            Всего - <green-p>{{getFullPrice()}}</green-p> рублей</h3>
                     </div>
                 </div>
             </div>
         </section>
-
     </section>
 </template>
 
@@ -252,6 +248,7 @@
     import MapBackground from "@/components/map/MapBackground";
     import VueRangeSlider from 'vue-range-component'
     import 'vue-range-component/dist/vue-range-slider.css'
+    import json from "@/assets/price.json";
 
     export default {
         name: "TheHeader",
@@ -263,25 +260,33 @@
             VueRangeSlider,
         },
     methods: {
-        randomColor () {
-            return `#${(Math.random()*0xFFFFFF<<0).toString(16)}`
-        },
+
         selectCarType (elementId) {
-            let onIcon = document.getElementById(elementId + "-on");
-            let offIcon = document.getElementById(elementId + "-off");
+            let element = document.getElementById(elementId + "-div");
+            let elementRadio = document.getElementById(elementId + "-radio");
 
-            if (this.selectedCarType !== ''){
-                let onOldIcon = document.getElementById(elementId + "-on");
-                let offOldIcon = document.getElementById(elementId + "-off");
+            if (elementRadio.checked) {
+                element.classList.replace(elementId + "-on", elementId + "-off");
+                elementRadio.checked = false;
+                this.selectedCarType = "";
+            } else if (document.getElementById(this.selectedCarType + "-radio") != null) {
+                let element2 = document.getElementById(this.selectedCarType + "-div");
+                let elementRadio2 = document.getElementById(this.selectedCarType + "-radio");
 
-                onOldIcon.classList.replace(this.carIconCssClass, this.carIconDisableCssClass);
-                offOldIcon.classList.replace(this.carIconCssClass, this.carIconDisableCssClass);
+                element2.classList.replace(this.selectedCarType + "-on", this.selectedCarType + "-off");
+                elementRadio2.checked = false;
+                this.selectedCarType = "";
+
+                element.classList.replace(elementId + "-off", elementId + "-on");
+                this.selectedCarType = elementRadio.value;
+                elementRadio.checked = true;
+            } else {
+                element.classList.replace(elementId + "-off", elementId + "-on");
+                this.selectedCarType = elementRadio.value;
+                elementRadio.checked = true;
             }
-
-            this.selectedCarType = elementId;
-            offIcon.classList.replace(this.carIconDisableCssClass, this.carIconCssClass);
-            onIcon.classList.replace(this.carIconCssClass, this.carIconDisableCssClass);
         },
+
         activeMapElement (element) {
                 element.classList.remove(this.fillClassName);
                 element.classList.add(this.activeFillClassName);
@@ -308,29 +313,164 @@
                 this.activeMapElement(element);
             else if (element.classList.contains(this.activeFillClassName))
                 this.disableMapElement(element);
+        },
+        getSelectedCarPrice(){
+            if (this.selectedCarType == ""){
+                this.selectedCarPrice = "0";
+            }
+            else {
+                this.selectedCarPrice = this.config.cars[this.selectedCarType].price1;
+            }
+            return this.selectedCarPrice;
+        },
+        getFullPrice(){
+            return this.selectedCarPrice * this.itemCount;
         }
     },
         data() {
             return {
-                itemCount: 1,
-                garbageType: '',
+                config : json,
+
+                // calc props
+                selectedCarType: "",
+                selectedCarPrice: "0",
+                selectedTrashType: 'Select',
                 selectedRegion: '',
-                fillClassName: "fil0",
-                activeFillClassName: "fil-click",
-                selectedCarType: '',
-                carIconCssClass: "carIcon",
-                carIconDisableCssClass: "carIconDisable",
-                svgPalette: {
-                    fill: '#FFFFFF',
-                    width: '585px',
-                    height: '544px'
-                }
+                needLoaders: false,
+                itemCount: 1,
+
+                // system props
+                    // map classes
+                    fillClassName: "fil0",
+                    activeFillClassName: "fil-click",
+
+                    // other
+                    carIconCssClass: "carIcon",
+                    carIconDisableCssClass: "carIconDisable",
+                    svgPalette: {
+                        fill: '#FFFFFF',
+                        width: '585px',
+                        height: '544px'
+                    }
             }
         }
     }
 </script>
 
 <style scoped>
+    .gazel-off{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/gazel-off.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+    .gazel-on{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/gazel-on.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    .baw-off{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/baw-off.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+    .baw-on{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/baw-on.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    .docker20-off{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/docker20-off.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+    .docker20-on{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/docker20-on.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    .docker27-off{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/docker27-off.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+    .docker27-on{
+        padding: 100px 10px 25px;
+        background-image: url("../images/carIcons/docker27-on.png");
+        background-size: 80%;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .custom-checkbox+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+    .custom-checkbox+label::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #adb5bd;
+        border-radius: 0.25em;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+    .custom-checkbox:checked+label::before {
+        border-color: #135693;
+        background-color: #135693;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
+    /* стили при наведении курсора на checkbox */
+    .custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+        border-color: #b3d7ff;
+    }
+    /* стили для активного состояния чекбокса (при нажатии на него) */
+    .custom-checkbox:not(:disabled):active+label::before {
+        background-color: #b3d7ff;
+        border-color: #b3d7ff;
+    }
+    /* стили для чекбокса, находящегося в фокусе */
+    .custom-checkbox:focus+label::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+    .custom-checkbox:focus:not(:checked)+label::before {
+        border-color: #80bdff;
+    }
+    /* стили для чекбокса, находящегося в состоянии disabled */
+    .custom-checkbox:disabled+label::before {
+        background-color: #e9ecef;
+    }
+    .carInput {
+        display: none;
+    }
     .resize {
         width: 153%;
     }
@@ -390,32 +530,25 @@
             display: none;
         }
     }
-
     green-p {
         color: #1d890a;
     }
-
     .label-custom{
         margin-top: 60px;
         margin-bottom: 60px;
         font-size: 20px;
     }
-
     .carIcon-z-index{
         z-index: 9998;
         position: inherit;
     }
-
     .carIcon{
         height: 58px;
     }
-
     .carIconDisable{
         display: none;
         z-index: 9998;
     }
-
-
     .fil0 {
         fill:#F8F8F8;
         stroke: #000000;
@@ -429,7 +562,6 @@
         stroke-width: 1px;
         transition: 0.5s;
     }
-
     .right-img{
         right: 20px;
         position: absolute;
@@ -440,16 +572,15 @@
     .copyright{
         background-image: url("../images/head-bg.png");
     }
-    .gazel_1_5_t {
+    .carTypeLabel {
         margin-top: 20px;
         font-size: 18px;
         font-family: "Roboto",serif;
         color: rgb(255, 255, 255);
         line-height: 0.917;
         text-align: center;
-        z-index: 128;
+        z-index: 9991;
     }
-
     .z-first {
         z-index: 9990;
         position: absolute;
@@ -473,7 +604,6 @@
         -webkit-transform: matrix( 0.6169261354827,0,0,0.6169261354827,0,0);
         -ms-transform: matrix( 0.6169261354827,0,0,0.6169261354827,0,0);
     }
-
     .Shape_2 {
         margin: 5px 5px 5px 5px;
         border-style: solid;
@@ -492,7 +622,6 @@
             text-align: left;
 
     }
-
     .Shape_3 {
         border-style: solid;
         border-width: 1px;
@@ -504,8 +633,4 @@
         height: 44px;
         z-index: 120;
     }
-
-
-
-
 </style>
