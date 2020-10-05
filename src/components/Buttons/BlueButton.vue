@@ -1,16 +1,27 @@
 <template>
     <universal-button
-            button-text="Отправить сообщение"
             button-classes="btn btn-default submit-btn form_submit"
-            button-type="button"
+            v-bind:button-style="customStyle"
+            v-bind:button-text="customText"
             />
 </template>
 
 <script>
     import UniversalButton from "@/components/Buttons/UniversalButton";
+
     export default {
         name: "BlueButton",
-        components: {UniversalButton}
+        components: {UniversalButton},
+        props:{
+            customText: {
+                type: String,
+                default: "Оставить заявку"
+            },
+            customStyle: {
+                type: String,
+                default: "width: 260px; height: 50px;"
+            }
+        }
     }
 </script>
 

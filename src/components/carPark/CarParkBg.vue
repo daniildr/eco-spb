@@ -12,7 +12,7 @@
         props: {
             bottomPosition: {
                 type: String,
-                default: "bottom: 148px;"
+                default: "bottom: 155px;"
             }
         }
     }

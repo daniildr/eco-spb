@@ -42,7 +42,6 @@
 @media (max-width: 1199px){
     .mobile-hidden{
         height: 50px;
-        /* display: none; */
     }
 }
 </style>

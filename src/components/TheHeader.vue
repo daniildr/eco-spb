@@ -372,6 +372,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .gazel-on{
         padding: 100px 10px 25px;

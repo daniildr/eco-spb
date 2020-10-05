@@ -158,6 +158,7 @@ table {
 }
 .top-menu > li > a:hover {
     color: #84c225;
+    text-decoration: none;
 }
 .top-menu > li > a {
     color: #FFFFFF;
@@ -434,7 +435,8 @@ tuor:visited {
 .green-btn:active,
 .green-btn:focus,
 .green-btn:visited{
-    font-family: "Roboto Medium";
+    font-family: "Roboto Medium", monospace;
+    font-size: 18px;
     border-radius: 7px;
     background-image: -moz-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);

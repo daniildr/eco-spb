@@ -16,6 +16,7 @@
                             Вместимость 9 куб;<br/>
                             Грузоподъемность до 1,5 т;<br/>
                         </p>
+                        <BlueButton custom-style="height: 40px; width: 300px;"/>
                     </div>
                 </div>
             </div>
@@ -24,8 +25,10 @@
 </template>
 
 <script>
+    import BlueButton from "@/components/Buttons/BlueButton";
     export default {
-        name: "Docker20"
+        name: "Docker20",
+        components: {BlueButton}
     }
 </script>
 

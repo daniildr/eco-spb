@@ -8,58 +8,32 @@
       "price2": "2500",
       "price3": "3000",
       "price4": "3500",
-      "loaderPrice": 2500
+      "loaderPrice": 2500,
+      "name": "Газель (до 1.5 тонн)"
     },
     "baw": {
       "price1": "2500",
       "price2": "3000",
       "price3": "3500",
       "price4": "4000",
-      "loaderPrice": 3000
+      "loaderPrice": 3000,
+      "name": "BAW Fenix (до 12 кубометров)"
     },
     "docker20": {
       "price1": "3000",
       "price2": "3500",
       "price3": "4000",
       "price4": "4500",
-      "loaderPrice": 3500
+      "loaderPrice": 3500,
+      "name": "Контейнер (до 20 кубометров)"
     },
     "docker27": {
       "price1": "3500",
       "price2": "4000",
       "price3": "4500",
       "price4": "5000",
-      "loaderPrice": 4000
+      "loaderPrice": 4000,
+      "name": "Контейнер (до 20 кубометров)"
     }
-  },
-  "Car": {
-    "price1": "3000",
-    "price2": "4000",
-    "price3": "5000",
-    "price4": "6000"
-  },
-  "Box1": {
-    "price1": "6000",
-    "price2": "10000",
-    "price3": "15000",
-    "price4": "20000"
-  },
-  "Box2": {
-    "price1": "12000",
-    "price2": "18000",
-    "price3": "25000",
-    "price4": "40000"
-  },
-  "Box3": {
-    "price1": "15000",
-    "price2": "20000",
-    "price3": "25000",
-    "price4": "26000"
-  },
-  "LoaderPrice": {
-    "price1": "2500",
-    "price2": "2600",
-    "price3": "2700",
-    "price4": "2800"
   }
 }

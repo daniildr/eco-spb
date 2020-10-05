@@ -2,16 +2,7 @@
     <section>
         <table class="hidden-xs hidden-sm">
             <tr>
-                <td>
-                    <div class="subscribe_form" style="padding-top: 0px;">
-                        <div class="form-group">
-                            <input style="color: #FFFFFF" name="MERGE0"
-                                   class="required email form-control" id="mce-EMAIL"
-                                   placeholder="Поиск по сайту" value="">
-                        </div>
-                    </div>
-                </td>
-                <td><a v-bind:href="'callto:' + config.SpbFirstNumber"><img src="../../images/header-phone.png" alt="Logo">&nbsp;{{ config.SpbFirstNumber }}</a></td>
+                <td style="position: relative; left: 115px;"><a v-bind:href="'callto:' + config.SpbFirstNumber"><img src="../../images/header-phone.png" alt="Logo" >&nbsp;{{ config.SpbFirstNumber }}</a></td>
             </tr>
             <br>
             <tr>
@@ -19,7 +10,7 @@
                 <td>
                     <GreenButton
                             custom-text="Оставить заявку"
-                            custom-style="width: 100%;"
+                            custom-style="width: 100%;padding-left: 35px;padding-right: 35px;"
                     />
                 </td>
             </tr>
@@ -79,14 +70,11 @@
     a {
         color: #FFFFFF;
         font-size: 200%;
-        font-family: "Corsica LX";
+        font-family: "Roboto Medium",serif;
         transition: 0.5s;
     }
     a:hover {
         color: #84c225;
-        text-decoration: underline;
-    }
-    td:first-child {
-        padding-right:40px;
+        text-decoration: none;
     }
 </style>

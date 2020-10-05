@@ -15,7 +15,7 @@
         props:{
             customText: {
                 type: String,
-                default: "Заказать звонок"
+                default: "Оставить заявку"
             },
             customStyle: {
                 type: String,

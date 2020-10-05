@@ -1,6 +1,6 @@
 <template>
     <section class="inner_about_area page" id="CONTACT">
-        <CallBackForm/>
+        <CallBackForm :selected-item="this.SelectedType"/>
         <div class="section_overlay">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1 bounceIn">
@@ -59,6 +59,9 @@
         components: {
             CallBack,
             CallBackForm
+        },
+        props: {
+            SelectedType: String
         }
     }
 </script>
