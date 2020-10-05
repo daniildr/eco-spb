@@ -3,7 +3,7 @@
         <div class="row bottom-pad-last hidden-sm hidden-xs">
             <div class="col-md-6 carpark_row">
                 <div class="carpark">
-                    <div class="carpark_title right-text">
+                    <div class="carpark_title right-text" style="padding-right: 80px;">
                         <h2>Контейнер (27 Кубометров)</h2>
                         <p>Газель для самых низких арок в городе.<br/>
                             Высота газели 2,50 м;<br/>

@@ -551,7 +551,7 @@
         font-size: 20px;
     }
     .carIcon-z-index{
-        z-index: 9998;
+        z-index: 992;
         position: inherit;
     }
     .carIcon{
@@ -591,10 +591,10 @@
         color: rgb(255, 255, 255);
         line-height: 0.917;
         text-align: center;
-        z-index: 9991;
+        z-index: 990;
     }
     .z-first {
-        z-index: 9990;
+        z-index: 989;
         position: absolute;
     }
     .section_title{
