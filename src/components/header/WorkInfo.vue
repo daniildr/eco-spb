@@ -11,6 +11,7 @@
                     <GreenButton
                             custom-text="Оставить заявку"
                             custom-style="width: 100%;padding-left: 35px;padding-right: 35px;"
+                            user-message="12655"
                     />
                 </td>
             </tr>
@@ -24,10 +25,10 @@
                 <img src="../../images/work-time.png" alt="Рабочие часы">
             </div>
             <div class="col-sm-12 bot-mar">
-                <GreenButton
+                <!-- <GreenButton
                         custom-text="Оставить заявку"
                         custom-style="width: 100%;"
-                />
+                /> -->
             </div>
         </div>
     </section>

@@ -14,6 +14,9 @@ p {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
+html {
+    overflow-x: hidden;
+}
 /*---------------------------------------
    COMMON STYLES             
 -----------------------------------------*/

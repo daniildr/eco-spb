@@ -3,6 +3,7 @@
             button-classes="btn btn-default green-btn"
             v-bind:button-style="customStyle"
             v-bind:button-text="customText"
+            v-bind:user-message="userMessage"
             />
 </template>
 
@@ -20,7 +21,9 @@
             customStyle: {
                 type: String,
                 default: "width: 260px; height: 50px;"
-            }
+            },
+
+            userMessage: String
         }
     }
 </script>
