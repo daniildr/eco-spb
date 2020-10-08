@@ -2,7 +2,7 @@
     <section>
         <modal name="feedbackModal"
                :width="800"
-               :height="520"
+               height="auto"
                :adaptive="true"
                :draggable="false"
         >
@@ -18,20 +18,18 @@
                 <div class="col-md-12">
 
                     <form>
+                        <br/>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="phoneNumber">Ваш номер телефона</label>
-                                <input type="tel" class="form-control" id="phoneNumber">
+                                <input type="tel" class="form-control" placeholder="Ваш номер телефона" id="phoneNumber">
                             </div>
                             <div class="form-group">
-                                <label for="userName">Ваше имя</label>
-                                <input type="text" class="form-control" id="userName">
+                                <input type="text" class="form-control" placeholder="Ваше имя" id="userName">
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Сообщение</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                <textarea style="resize: none; height: auto;" class="form-control" id="exampleFormControlTextarea1" placeholder="Ваше сообщение" rows="4"></textarea>
                             </div>
                         </div>
                     </form>
@@ -65,6 +63,9 @@
 </script>
 
 <style scoped>
+    .form-control{
+        height: 38px;
+    }
     .contact_form{
         margin: 20px;
     }

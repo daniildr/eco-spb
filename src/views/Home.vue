@@ -4,6 +4,7 @@
         <CarPark/>
         <Price/>
         <ContactUs/>
+        <Feedback/>
     </div>
 </template>
 
@@ -12,10 +13,12 @@
     import CarPark from "@/components/CarPark";
     import ContactUs from "@/components/ContactUs";
     import Price from "@/components/PriceTable";
+    import Feedback from "@/components/modals/Feedback";
 
     export default {
         name: "Home",
         components: {
+            Feedback,
             Price,
 
             ContactUs,
