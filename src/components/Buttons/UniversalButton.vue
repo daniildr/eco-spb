@@ -4,6 +4,8 @@
         <Feedback
                 v-bind:user-message="userMessage"
         />
+
+
     </section>
 </template>
 
@@ -35,7 +37,8 @@
         },
         methods: {
             show() {
-                this.$modal.show('my-first-modal', {"tst": "123124"}, {"tst": "123124"});
+                this.$route.meta.metaTags[0].name = this.userMessage;
+                this.$modal.show('my-first-modal');
             }
         }
     }

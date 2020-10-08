@@ -1,14 +1,16 @@
 <template>
     <section>
+        <p>{{localvar}}</p>
         <modal name="my-first-modal"
                :width="800"
                :height="600"
                :adaptive="true"
                :clickToClose="false"
                :draggable="false"
+               :property="[ userMessage, userMessage ]"
+               :content="userMessage"
+               :userMessage = "userMessage"
         >
-
-
             <div class="col-md-12 right-text">
                 <p style="margin-top: 10px; margin-right: 15px;"><a v-on:click="hide()"><i class="fa fa-close"></i> Закрыть окно</a></p>
                 <hr style="margin-top: 0px; margin-bottom: 0px;"/>
@@ -20,7 +22,10 @@
                 </div>
                 <div class="col-md-12">
 
-                    <p>|{{this.userMessage}}|</p>
+                    <p>| {{ $route.meta.metaTags[0].content }} |</p>
+                    <p>| {{ $attrs.userMessage }} |</p>
+                    <p>{{localvar}}</p> <!-- походу решение -->
+
 
                 </div>
                 <hr/>
@@ -61,8 +66,16 @@
 </template>
 
 <script>
+    import $ from 'jquery';
+    import {globalStore} from '../../main.js'
+
     export default {
         name: "Feedback",
+        data() {
+            return{
+                localvar: globalStore.globalvar
+            }
+            },
         props: {
             userMessage: String,
         },
@@ -70,6 +83,9 @@
             hide() {
                 this.$modal.hide('my-first-modal');
             }
+        },
+        mounted: function() {
+            $('#qwe').text("<b>Some</b> new text." );
         }
     }
 </script>

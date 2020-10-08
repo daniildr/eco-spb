@@ -11,7 +11,7 @@
                     <GreenButton
                             custom-text="Оставить заявку"
                             custom-style="width: 100%;padding-left: 35px;padding-right: 35px;"
-                            user-message="12655"
+                            user-message="12-3-456"
                     />
                 </td>
             </tr>
