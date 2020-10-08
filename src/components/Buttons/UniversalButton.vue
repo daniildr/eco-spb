@@ -1,20 +1,15 @@
 <template>
     <section>
         <button v-on:click="show()" v-bind:type="buttonType" v-bind:style="buttonStyle" v-bind:class="buttonClasses">{{buttonText}}</button>
-        <Feedback
-                v-bind:user-message="userMessage"
-        />
-
 
     </section>
 </template>
 
 <script>
-    import Feedback from "@/components/modals/Feedback";
 
     export default {
         name: "UniversalButton",
-        components: {Feedback},
+        components: {},
         props: {
             buttonText: {
                 type: String,
@@ -37,8 +32,7 @@
         },
         methods: {
             show() {
-                this.$route.meta.metaTags[0].name = this.userMessage;
-                this.$modal.show('my-first-modal');
+                this.$modal.show('feedbackModal');
             }
         }
     }

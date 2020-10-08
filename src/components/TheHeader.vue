@@ -218,13 +218,9 @@
                         </div>
                         <div class="col-md-6 inner_about_title">
                             <h2>Количество мусора</h2>
-                            <h3 style="margin-bottom: 25px;">Контейнеров: {{ itemCount }}</h3>
+                            <h3 style="margin-bottom: 25px;">{{getLabelForSlider()}}: {{ itemCount }}</h3>
                             <br/>
-                            <vue-range-slider
-                                    process-style="background-color: #135693;"
-                                    slider-style="background-color: #135693;"
-                                    tooltip-style="background-color: #135693; border-color: #135693;"
-                                    ref="slider" v-model="itemCount"></vue-range-slider>
+                            <input type="range" min="1" :max="config.MaxSliderSize" step="1" v-model="itemCount">
                         </div>
                     </div>
                     <div class="col-md-12 center-text">
@@ -246,8 +242,6 @@
     import MainMenu from "@/components/header/MainMenu";
     import TopMenu from "@/components/header/TopMenu";
     import MapBackground from "@/components/map/MapBackground";
-    import VueRangeSlider from 'vue-range-component'
-    import 'vue-range-component/dist/vue-range-slider.css'
     import json from "@/assets/price.json";
 
     export default {
@@ -257,10 +251,24 @@
             TopMenu,
             MainMenu,
             WorkInfo,
-            VueRangeSlider,
         },
     methods: {
-
+            getLabelForSlider() {
+                switch (this.selectedCarType) {
+                    case "":
+                        return "Контейнеров";
+                    case "gazel":
+                        return "Мусоровозов";
+                    case "baw":
+                        return "Мусоровозов";
+                    case "docker20":
+                        return "Контейнеров";
+                    case "docker27":
+                        return "Контейнеров";
+                    default:
+                        return "Контейнеров";
+                }
+            },
         selectCarType (elementId) {
             let element = document.getElementById(elementId + "-div");
             let elementRadio = document.getElementById(elementId + "-radio");
@@ -366,6 +374,92 @@
 </script>
 
 <style scoped>
+    input[type=range] {
+        -webkit-appearance: none;
+        margin: 18px 0;
+        width: 100%;
+    }
+    input[type=range]:focus {
+        outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: #3071a9;
+        border-radius: 1.3px;
+        border: 0.2px solid #010101;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -14px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #367ebd;
+    }
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: #3071a9;
+        border-radius: 1.3px;
+        border: 0.2px solid #010101;
+    }
+    input[type=range]::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+    }
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+        background: #2a6495;
+        border: 0.2px solid #010101;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    }
+    input[type=range]::-ms-fill-upper {
+        background: #3071a9;
+        border: 0.2px solid #010101;
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    }
+    input[type=range]::-ms-thumb {
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+    }
+    input[type=range]:focus::-ms-fill-lower {
+        background: #3071a9;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+        background: #367ebd;
+    }
+
     .gazel-off{
         padding: 100px 10px 25px;
         background-image: url("../images/carIcons/gazel-off.png");
@@ -383,6 +477,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .baw-off{
@@ -391,6 +489,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .baw-on{
         padding: 100px 10px 25px;
@@ -398,6 +500,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .docker20-off{
@@ -406,6 +512,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .docker20-on{
         padding: 100px 10px 25px;
@@ -413,6 +523,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .docker27-off{
@@ -421,6 +535,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .docker27-on{
         padding: 100px 10px 25px;
@@ -428,6 +546,10 @@
         background-size: 80%;
         background-position: top;
         background-repeat: no-repeat;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .custom-checkbox {

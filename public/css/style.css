@@ -7,8 +7,6 @@ a {
 }
 body {
     font-family: 'Roboto Light', sans-serif;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 p {
     font-family: 'Roboto', sans-serif;
@@ -16,6 +14,7 @@ p {
 }
 html {
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 /*---------------------------------------
    COMMON STYLES             

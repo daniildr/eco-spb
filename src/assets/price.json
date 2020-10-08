@@ -2,6 +2,7 @@
   "RuNumber": "8 (800) 555-55-49",
   "SpbFirstNumber": "8 (812) 007-07-05",
   "SpbSecondNumber": "8 (812) 007-08-05",
+  "MaxSliderSize": 50,
   "cars": {
     "gazel": {
       "price1": "2000",
