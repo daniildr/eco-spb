@@ -1,10 +1,11 @@
 <template>
     <section>
         <modal name="feedbackModal"
-               :width="800"
+               :width="modalWidth"
                height="auto"
                :adaptive="true"
                :draggable="false"
+               @before-open = "beforeOpen"
         >
             <div class="col-md-12 right-text">
                 <p style="margin-top: 10px; margin-right: 15px;"><a v-on:click="hide()"><i class="fa fa-close"></i> Закрыть окно</a></p>
@@ -29,7 +30,12 @@
                         </div>
                         <div class="col-md-8">
                             <div class="form-group">
-                                <textarea style="resize: none; height: auto;" class="form-control" id="exampleFormControlTextarea1" placeholder="Ваше сообщение" rows="4"></textarea>
+                                <textarea style="resize: none; height: auto;"
+                                          v-model="userComment"
+                                          class="form-control"
+                                          id="exampleFormControlTextarea1"
+                                          placeholder="Ваш Комментарий"
+                                          rows="4"/>
                             </div>
                         </div>
                     </form>
@@ -38,7 +44,7 @@
                 <hr/>
                 <div class="col-md-12">
                     <p class="smallText center-text">*Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</p>
-                    <button class="btn btn-default submit-btn form_submit" v-on:click="hide()">Отправить</button>
+                    <button class="btn btn-default submit-btn form_submit" v-on:click="createMessage()">Отправить</button>
                     <br/>
                     <button class="btn btn-default submit-btn form_submit" v-on:click="hide()">Закрыть окно</button>
                 </div>
@@ -48,15 +54,108 @@
 </template>
 
 <script>
+    import json from "@/assets/price.json";
 
     export default {
         name: "Feedback",
         props: {
-            userMessage: String,
+            modalWidth: {
+                type: Number,
+                default: 800
+            },
+            userMessage: {
+                type: String,
+                required: false,
+                default: "Перезвоните мне, пожалуйста, в ближайшее время."
+            },
+            userName: {
+                type: String
+            },
+            phoneNumber: {
+                type: String,
+                default: ""
+            },
+            numberOfCars: {
+                type: Number,
+                default: 0
+            },
+            garbageType: {
+                type: String,
+                default: ""
+            },
+            carType: {
+                type: String,
+                default: ""
+            },
+            region: {
+                type: String,
+                default: ""
+            },
+            fullPrice: {
+                type: Number,
+                default: 0
+            }
         },
         methods: {
+            createMessage() {
+                let separator =  "\r\n";
+                let comment = "";
+                let garbageType = "";
+                let region = "";
+                let carType = "";
+                let count = "";
+                let price = "";
+                let result = "";
+
+                if (this.userMessage !== "") {
+                    comment = "Ваш комментарий: " + this.userMessage;
+                    result = result + comment;
+                    result = result + separator;
+                }
+
+                if (this.garbageType !== "") {
+                    garbageType = "Тип мусора: " + this.garbageType;
+                    result = result + garbageType;
+                    result = result + separator;
+                }
+
+                if (this.carType !== "") {
+                    carType = "Тип техники: " + this.carType;
+                    result = result + carType;
+                    result = result + separator;
+                }
+
+                if (this.region !== "") {
+                    region = "Район: " + this.region;
+                    result = result + region;
+                    result = result + separator;
+                }
+
+                if (this.numberOfCars !== 0) {
+                    count = "Кол-во техники: " + this.numberOfCars + " шт."
+                    result = result + count;
+                    result = result + separator;
+                }
+
+                if (this.fullPrice !== 0) {
+                    price = "Стоимость: " + this.fullPrice + " руб."
+                    result = result + price;
+                    result = result + separator;
+                }
+
+                this.userComment = result;
+            },
+            beforeOpen () {
+                this.createMessage();
+            },
             hide() {
-                this.$modal.hide('feedbackModal');
+                this.$modal.hide("feedbackModal");
+            }
+        },
+        data() {
+            return {
+                config: json,
+                userComment: ""
             }
         }
     }
