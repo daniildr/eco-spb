@@ -1,12 +1,18 @@
 <template>
     <section>
-        <button v-on:click="show()" v-bind:type="buttonType" v-bind:style="buttonStyle" v-bind:class="buttonClasses">{{buttonText}}</button>
+        <button
+                v-on:click="show()"
+                :type="buttonType"
+                :style="buttonStyle"
+                :class="buttonClasses"
+        >
+            {{buttonText}}
+        </button>
 
     </section>
 </template>
 
 <script>
-
     export default {
         name: "UniversalButton",
         components: {},
@@ -27,12 +33,10 @@
                 type: String,
                 default: "button"
             },
-
-            userMessage: String
         },
         methods: {
             show() {
-                this.$modal.show('feedbackModal');
+                this.$modal.show("feedbackModal");
             }
         }
     }
