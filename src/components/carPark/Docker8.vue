@@ -11,7 +11,7 @@
                             Вместимость: от 8м<sup>3</sup> до 12м<sup>3</sup>;<br/>
                             Грузоподъемность: 3,5 т;<br/>
                         </p>
-                        <button v-on:click="show()" type="button" style="height: 40px; width: 300px;"
+                        <button v-on:click="show()" type="button" style="height: 40px; width: 60%;"
                                 class="btn btn-default submit-btn form_submit">Оставить заявку</button>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                             Вместимость: от 8м<sup>3</sup> до 12м<sup>3</sup>;<br/>
                             Грузоподъемность: 3,5 т;<br/>
                         </p>
-                        <button v-on:click="show()" type="button" style="height: 40px; width: 300px;"
+                        <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
                                 class="btn btn-default submit-btn form_submit">Оставить заявку</button>
                     </div>
                 </div>

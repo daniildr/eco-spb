@@ -16,8 +16,10 @@
                             Вместимость: 9 м<sup>3</sup>;<br/>
                             Грузоподъемность: до 1,5 т;<br/>
                         </p>
-                        <button v-on:click="show()" type="button" style="height: 40px; width: 300px;"
-                                class="btn btn-default submit-btn form_submit">Оставить заявку</button>
+                        <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
+                                class="btn btn-default submit-btn form_submit hidden-md hidden-lg">Оставить заявку</button>
+                        <button v-on:click="show()" type="button" style="height: 40px; width: 60%;"
+                                class="btn btn-default submit-btn form_submit hidden-xs hidden-sm">Оставить заявку</button>
                     </div>
                 </div>
             </div>
