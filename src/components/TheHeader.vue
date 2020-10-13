@@ -189,7 +189,7 @@
                                                 <title>Выборгский район</title>
                                             </polygon>
                                         </svg>
-                                        <svg x="0" y="0">
+                                        <svg x="0" y="-1">
                                             <polygon class="fil-click fil-hidden" id="kron-on" v-on:click="activeRegion('kron')" points="66.6365,135.731 66.354,131.494 67.823,130.194 66.241,126.409 59.913,121.38 59.687,118.668 50.9295,118.894 44.2625,115.334 44.206,118.442 50.873,123.923 51.212,126.635 50.534,128.838 51.099,130.42 53.924,130.363 54.037,126.07 56.3535,125.052 57.7095,128.951 59.913,129.064 64.0375,132.115 ">
                                                 <title>Кронштадтский район</title>
                                             </polygon>
@@ -315,10 +315,10 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-6 inner_about_title" >
                             <h2 style="margin-top: 5px;">Тип мусора</h2>
-                            <select v-model="selectedTrashType" class="Shape_3">
+                            <select @change="setTypeOfGarbage()" v-model="selectedTrashType" class="Shape_3">
                                 <option value="Select">Выберите тип:</option>
                                 <option value="construction">Строительный</option>
-                                <option value="household ">Бытовой</option>
+                                <option value="household">Бытовой</option>
                                 <option value="bulky">Крупногабаритный</option>
                             </select>
                         </div>
@@ -388,7 +388,7 @@
                     </div>
                     <div class="col-md-12 center-text">
                         <h3 style="margin-bottom: 25px; font-size: 22px;">
-                            Общая стоимость вывоза мусора: Контейнеров - <green-p>{{ itemCount }}</green-p> |
+                            Общая стоимость вывоза мусора: Контейнеров - <green-p>{{ getSelectedNumberOfItems() }}</green-p> |
                             Стоимость каждого - <green-p>{{getSelectedCarPrice()}}</green-p> |
                             Всего - <green-p>{{getFullPrice()}}</green-p> рублей</h3>
                     </div>
@@ -418,47 +418,7 @@
             WorkInfo,
         },
     methods: {
-            getLabelForSlider() {
-                switch (this.selectedCarType) {
-                    case "":
-                        return "Контейнеров";
-                    case "gazel":
-                        return "Мусоровозов";
-                    case "baw":
-                        return "Мусоровозов";
-                    case "docker20":
-                        return "Контейнеров";
-                    case "docker27":
-                        return "Контейнеров";
-                    default:
-                        return "Контейнеров";
-                }
-            },
-        selectCarType (elementId) {
-            let element = document.getElementById(elementId + "-div");
-            let elementRadio = document.getElementById(elementId + "-radio");
 
-            if (elementRadio.checked) {
-                element.classList.replace(elementId + "-on", elementId + "-off");
-                elementRadio.checked = false;
-                this.selectedCarType = "";
-            } else if (document.getElementById(this.selectedCarType + "-radio") != null) {
-                let element2 = document.getElementById(this.selectedCarType + "-div");
-                let elementRadio2 = document.getElementById(this.selectedCarType + "-radio");
-
-                element2.classList.replace(this.selectedCarType + "-on", this.selectedCarType + "-off");
-                elementRadio2.checked = false;
-                this.selectedCarType = "";
-
-                element.classList.replace(elementId + "-off", elementId + "-on");
-                this.selectedCarType = elementRadio.value;
-                elementRadio.checked = true;
-            } else {
-                element.classList.replace(elementId + "-off", elementId + "-on");
-                this.selectedCarType = elementRadio.value;
-                elementRadio.checked = true;
-            }
-        },
 
         activeMapElement (element) {
             element.classList.remove(this.fillClassName);
@@ -511,7 +471,104 @@
                 this.disableMapElement(element);
         },
 
+        setTypeOfGarbage(){
+            let result = "";
 
+            switch (this.selectedTrashType) {
+
+                case "Select": {
+                    result = "";
+                }
+                break;
+
+                case "construction": {
+                    result = "Строительный";
+                }
+                break;
+
+                case "household": {
+                    result = "Бытовой";
+                }
+                break;
+
+                case "bulky": {
+                    result = "Крупногабаритный";
+                }
+                break;
+
+                default: {
+                    result = "";
+                }
+                break;
+            }
+
+            this.$store.commit('setGarbageType', result);
+        },
+
+        getLabelForSlider() {
+            switch (this.selectedCarType) {
+                case "":
+                    return "Контейнеров";
+                case "gazel":
+                    return "Мусоровозов";
+                case "baw":
+                    return "Мусоровозов";
+                case "docker20":
+                    return "Контейнеров";
+                case "docker27":
+                    return "Контейнеров";
+                default:
+                    return "Контейнеров";
+            }
+        },
+        getHumanNameForCar(){
+            switch (this.selectedCarType) {
+                case "":
+                    return "Контейнер";
+                case "gazel":
+                    return this.config.cars.gazel.name;
+                case "baw":
+                    return this.config.cars.baw.name;
+                case "docker20":
+                    return this.config.cars.docker20.name;
+                case "docker27":
+                    return this.config.cars.docker27.name;
+                default:
+                    return "Контейнер";
+            }
+        },
+        selectCarType (elementId) {
+            let element = document.getElementById(elementId + "-div");
+            let elementRadio = document.getElementById(elementId + "-radio");
+
+            if (elementRadio.checked) {
+                element.classList.replace(elementId + "-on", elementId + "-off");
+                elementRadio.checked = false;
+                this.selectedCarType = "";
+            } else if (document.getElementById(this.selectedCarType + "-radio") != null) {
+                let element2 = document.getElementById(this.selectedCarType + "-div");
+                let elementRadio2 = document.getElementById(this.selectedCarType + "-radio");
+
+                element2.classList.replace(this.selectedCarType + "-on", this.selectedCarType + "-off");
+                elementRadio2.checked = false;
+                this.selectedCarType = "";
+
+                element.classList.replace(elementId + "-off", elementId + "-on");
+                this.selectedCarType = elementRadio.value;
+                elementRadio.checked = true;
+            } else {
+                element.classList.replace(elementId + "-off", elementId + "-on");
+                this.selectedCarType = elementRadio.value;
+                elementRadio.checked = true;
+            }
+
+            let carTypeString = this.getHumanNameForCar();
+            this.$store.commit('setCarType', carTypeString);
+        },
+        getSelectedNumberOfItems() {
+            this.$store.commit('setNumberOfItems', this.itemCount);
+            return this.$store.state.calculator.numberOfItems;
+        },
         getSelectedCarPrice(){
             if (this.selectedCarType == ""){
                 this.selectedCarPrice = "0";
@@ -530,7 +587,9 @@
             return this.selectedCarPrice;
         },
         getFullPrice(){
-            return this.selectedCarPrice * this.itemCount;
+            let result = this.selectedCarPrice * this.itemCount;
+            this.$store.commit('setTotalPrice', result);
+            return result
         }
     },
         data() {

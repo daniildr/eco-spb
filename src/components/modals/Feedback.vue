@@ -15,7 +15,6 @@
                 <h2>Оставить заявку</h2>
                 <div class="col-md-10 col-md-offset-1">
                     <p>Пожалуйста оставьте свой номер телефона, мы вам обязательно перезвоним перезвоним!</p>
-                    <p>{{this.$store.state.test}}</p>
                 </div>
                 <div class="col-md-12">
 
@@ -114,15 +113,9 @@
                     result = result + separator;
                 }
 
-                if (this.garbageType !== "") {
-                    garbageType = "Тип мусора: " + this.garbageType;
+                if (this.$store.state.calculator.garbageType !== "") {
+                    garbageType = "Тип мусора: " + this.$store.state.calculator.garbageType;
                     result = result + garbageType;
-                    result = result + separator;
-                }
-
-                if (this.carType !== "") {
-                    carType = "Тип техники: " + this.carType;
-                    result = result + carType;
                     result = result + separator;
                 }
 
@@ -132,16 +125,24 @@
                     result = result + separator;
                 }
 
-                if (this.numberOfCars !== 0) {
-                    count = "Кол-во техники: " + this.numberOfCars + " шт."
-                    result = result + count;
-                    result = result + separator;
-                }
-
-                if (this.fullPrice !== 0) {
-                    price = "Стоимость: " + this.fullPrice + " руб."
+                if (this.$store.state.calculator.totalPrice !== 0) {
+                    price = "Стоимость: " + this.$store.state.calculator.totalPrice + " руб."
                     result = result + price;
                     result = result + separator;
+
+                    if (this.$store.state.calculator.carType !== "") {
+                        carType = "Тип техники: " + this.$store.state.calculator.carType;
+                        result = result + carType;
+                        result = result + separator;
+                    }
+
+                    if (this.$store.state.calculator.numberOfItems !== 0 ) {
+                        if (this.$store.state.calculator.flagOfChangeNumberOfItems){
+                            count = "Кол-во техники: " + this.$store.state.calculator.numberOfItems + " шт."
+                            result = result + count;
+                            result = result + separator;
+                        }
+                    }
                 }
 
                 this.userComment = result;

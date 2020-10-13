@@ -23,7 +23,7 @@
 
 <script>
     import Advantages from "@/components/Advantages";
-    
+
     export default {
         name: "About",
         components: {Advantages}

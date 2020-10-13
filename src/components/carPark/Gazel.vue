@@ -16,7 +16,8 @@
                             Вместимость: 9 м<sup>3</sup>;<br/>
                             Грузоподъемность: до 1,5 т;<br/>
                         </p>
-                        <BlueButton custom-style="height: 40px; width: 300px;"/>
+                        <button v-on:click="show()" type="button" style="height: 40px; width: 300px;"
+                                class="btn btn-default submit-btn form_submit">Оставить заявку</button>
                     </div>
                 </div>
             </div>
@@ -25,10 +26,23 @@
 </template>
 
 <script>
-    import BlueButton from "@/components/Buttons/BlueButton";
+    import json from "@/assets/price.json";
+
     export default {
         name: "Gazel",
-        components: {BlueButton}
+        methods: {
+            show() {
+                this.$store.commit('setCarType', this.config.cars.gazel.name);
+                this.$store.commit('setNumberOfItems', 1);
+                this.$store.commit('setTotalPrice', this.config.cars.gazel.price1);
+                this.$modal.show("feedbackModal");
+            }
+        },
+        data() {
+            return {
+                config: json,
+            }
+        }
     }
 </script>
 
