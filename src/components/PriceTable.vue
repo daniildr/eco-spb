@@ -28,93 +28,93 @@
                             <td><p>Санкт-Петербург<br>(В пределах КАД)</p></td>
                             <td>
                                 <p class="pHover" v-on:click="selectItem('gazel.price1')" id="gazel.price1">
-                                от {{ needLoader ? parseInt(config.cars.gazel.price1) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price1 }} рублей
-                            </p>
+                                    от {{ needLoader ? parseInt(config.cars.gazel.price1) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price1 }} рублей
+                                </p>
                             </td>
                             <td>
-                                <p class="pHover" v-on:click="selectItem('gazel.price2')" id="gazel.price2">
-                                от {{ needLoader ? parseInt(config.cars.gazel.price2) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price2 }} рублей
-                            </p>
+                                <p class="pHover" v-on:click="selectItem('baw.price1')" id="baw.price1">
+                                    от {{ needLoader ? parseInt(config.cars.baw.price1) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price1 }} рублей
+                                </p>
                             </td>
                             <td>
-                                <p class="pHover" v-on:click="selectItem('gazel.price3')" id="gazel.price3">
-                                от {{ needLoader ? parseInt(config.cars.gazel.price3) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price3 }} рублей
-                            </p>
+                                <p class="pHover" v-on:click="selectItem('docker20.price1')" id="docker20.price1">
+                                    от {{ needLoader ? parseInt(config.cars.docker20.price1) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price1 }} рублей
+                                </p>
                             </td>
                             <td>
-                                <p class="pHover" v-on:click="selectItem('gazel.price4')" id="gazel.price4">
-                                от {{ needLoader ? parseInt(config.cars.gazel.price4) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price4 }} рублей
-                            </p>
+                                <p class="pHover" v-on:click="selectItem('docker27.price1')" id="docker27.price1">
+                                    от {{ needLoader ? parseInt(config.cars.docker27.price1) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price1 }} рублей
+                                </p>
                             </td>
                         </tr>
                         <tr>
                             <td><p>Санкт-Петербург<br>(В пределах 30км от КАД)</p></td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('baw.price1')" id="baw.price1">
-                                от {{ needLoader ? parseInt(config.cars.baw.price1) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price1 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('gazel.price2')" id="gazel.price2">
+                                    от {{ needLoader ? parseInt(config.cars.gazel.price2) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price2 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('baw.price2')" id="baw.price2">
-                                от {{ needLoader ? parseInt(config.cars.baw.price2) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price2 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('baw.price2')" id="baw.price2">
+                                    от {{ needLoader ? parseInt(config.cars.baw.price2) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price2 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('baw.price3')" id="baw.price3">
-                                от {{ needLoader ? parseInt(config.cars.baw.price3) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price3 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('docker20.price2')" id="docker20.price2">
+                                    от {{ needLoader ? parseInt(config.cars.docker20.price2) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price2 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('baw.price4')" id="baw.price4">
-                                от {{ needLoader ? parseInt(config.cars.baw.price4) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price4 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('docker27.price2')" id="docker27.price2">
+                                  от {{ needLoader ? parseInt(config.cars.docker27.price2) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price2 }} рублей
+                                </p>
+                            </td>
                         </tr>
                         <tr>
                             <td><p>Ленинградская Область<br>(В пределах 60км от КАД)</p></td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker20.price1')" id="docker20.price1">
-                                от {{ needLoader ? parseInt(config.cars.docker20.price1) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price1 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('gazel.price3')" id="gazel.price3">
+                                    от {{ needLoader ? parseInt(config.cars.gazel.price3) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price3 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker20.price2')" id="docker20.price2">
-                                от {{ needLoader ? parseInt(config.cars.docker20.price2) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price2 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('baw.price3')" id="baw.price3">
+                                    от {{ needLoader ? parseInt(config.cars.baw.price3) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price3 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker20.price3')" id="docker20.price3">
-                                от {{ needLoader ? parseInt(config.cars.docker20.price3) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price3 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('docker20.price3')" id="docker20.price3">
+                                  от {{ needLoader ? parseInt(config.cars.docker20.price3) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price3 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker20.price4')" id="docker20.price4">
-                                от {{ needLoader ? parseInt(config.cars.docker20.price4) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price4 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('docker27.price3')" id="docker27.price3">
+                                    от {{ needLoader ? parseInt(config.cars.docker27.price3) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price3 }} рублей
+                                </p>
+                            </td>
                         </tr>
                         <tr>
                             <td><p>Ленинградская Область<br>(В пределах 90км от КАД)</p></td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker27.price1')" id="docker27.price1">
-                                от {{ needLoader ? parseInt(config.cars.docker27.price1) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price1 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('gazel.price4')" id="gazel.price4">
+                                    от {{ needLoader ? parseInt(config.cars.gazel.price4) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price4 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker27.price2')" id="docker27.price2">
-                                от {{ needLoader ? parseInt(config.cars.docker27.price2) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price2 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('baw.price4')" id="baw.price4">
+                                    от {{ needLoader ? parseInt(config.cars.baw.price4) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price4 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover"  v-on:click="selectItem('docker27.price3')" id="docker27.price3">
-                                от {{ needLoader ? parseInt(config.cars.docker27.price3) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price3 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover"  v-on:click="selectItem('docker20.price4')" id="docker20.price4">
+                                    от {{ needLoader ? parseInt(config.cars.docker20.price4) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price4 }} рублей
+                                </p>
+                            </td>
                             <td>
-                            <p class="pHover" v-on:click="selectItem('docker27.price4')" id="docker27.price4">
-                                от {{ needLoader ? parseInt(config.cars.docker27.price4) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price4 }} рублей
-                            </p>
-                        </td>
+                                <p class="pHover" v-on:click="selectItem('docker27.price4')" id="docker27.price4">
+                                    от {{ needLoader ? parseInt(config.cars.docker27.price4) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price4 }} рублей
+                                </p>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -122,7 +122,7 @@
         </section>
         <section>
             <div class="container">
-                <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
+                <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" @change="changeState()" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
                 <label for="need-loader2"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
             </div>
         </section>
@@ -145,6 +145,125 @@
             }
         },
         methods: {
+            changeState(){
+                switch (this.selectedItem) {
+                    case "gazel.price1":{
+                        this.$store.commit('setCarType', this.config.cars.gazel.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.gazel.price1) + parseInt(this.config.cars.gazel.loaderPrice)
+                            : this.config.cars.gazel.price1);
+                    }break;
+                    case "gazel.price2":{
+                        this.$store.commit('setCarType', this.config.cars.gazel.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.gazel.price2) + parseInt(this.config.cars.gazel.loaderPrice)
+                            : this.config.cars.gazel.price2);
+                    }break;
+                    case "gazel.price3":{
+                        this.$store.commit('setCarType', this.config.cars.gazel.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.gazel.price3) + parseInt(this.config.cars.gazel.loaderPrice)
+                            : this.config.cars.gazel.price3);
+                    }break;
+                    case "gazel.price4":{
+                        this.$store.commit('setCarType', this.config.cars.gazel.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.gazel.price4) + parseInt(this.config.cars.gazel.loaderPrice)
+                            : this.config.cars.gazel.price4);
+                    }break;
+
+                    case "baw.price1":{
+                        this.$store.commit('setCarType', this.config.cars.baw.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.baw.price1) + parseInt(this.config.cars.baw.loaderPrice)
+                            : this.config.cars.baw.price1);
+                    }break;
+                    case "baw.price2":{
+                        this.$store.commit('setCarType', this.config.cars.baw.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.baw.price2) + parseInt(this.config.cars.baw.loaderPrice)
+                            : this.config.cars.baw.price2);
+                    }break;
+                    case "baw.price3":{
+                        this.$store.commit('setCarType', this.config.cars.baw.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.baw.price3) + parseInt(this.config.cars.baw.loaderPrice)
+                            : this.config.cars.baw.price3);
+                    }break;
+                    case "baw.price4":{
+                        this.$store.commit('setCarType', this.config.cars.baw.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.baw.price4) + parseInt(this.config.cars.baw.loaderPrice)
+                            : this.config.cars.baw.price4);
+                    }break;
+
+                    case "docker20.price1":{
+                        this.$store.commit('setCarType', this.config.cars.docker20.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker20.price1) + parseInt(this.config.cars.docker20.loaderPrice)
+                            : this.config.cars.docker20.price1);
+                    }break;
+                    case "docker20.price2":{
+                        this.$store.commit('setCarType', this.config.cars.docker20.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker20.price2) + parseInt(this.config.cars.docker20.loaderPrice)
+                            : this.config.cars.docker20.price2);
+                    }break;
+                    case "docker20.price3":{
+                        this.$store.commit('setCarType', this.config.cars.docker20.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker20.price3) + parseInt(this.config.cars.docker20.loaderPrice)
+                            : this.config.cars.docker20.price3);
+                    }break;
+                    case "docker20.price4":{
+                        this.$store.commit('setCarType', this.config.cars.docker20.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker20.price4) + parseInt(this.config.cars.docker20.loaderPrice)
+                            : this.config.cars.docker20.price4);
+                    }break;
+
+                    case "docker27.price1":{
+                        this.$store.commit('setCarType', this.config.cars.docker27.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker27.price1) + parseInt(this.config.cars.docker27.loaderPrice)
+                            : this.config.cars.docker27.price1);
+                    }break;
+                    case "docker27.price2":{
+                        this.$store.commit('setCarType', this.config.cars.docker27.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker27.price2) + parseInt(this.config.cars.docker27.loaderPrice)
+                            : this.config.cars.docker27.price2);
+                    }break;
+                    case "docker27.price3":{
+                        this.$store.commit('setCarType', this.config.cars.docker27.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker27.price3) + parseInt(this.config.cars.docker27.loaderPrice)
+                            : this.config.cars.docker27.price3);
+                    }break;
+                    case "docker27.price4":{
+                        this.$store.commit('setCarType', this.config.cars.docker27.name);
+                        this.$store.commit('setNumberOfItems', 1);
+                        this.$store.commit('setTotalPrice', this.needLoader
+                            ? parseInt(this.config.cars.docker27.price4) + parseInt(this.config.cars.docker27.loaderPrice)
+                            : this.config.cars.docker27.price4);
+                    }break;
+                }
+            },
             selectItem (elementId) {
                 let element = document.getElementById(elementId);
 
@@ -163,6 +282,8 @@
                         element.classList.replace("pHover", "pHover-select");
                     }
                 }
+
+                this.changeState();
             }
         }
     }

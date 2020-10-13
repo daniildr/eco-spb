@@ -418,8 +418,6 @@
             WorkInfo,
         },
     methods: {
-
-
         activeMapElement (element) {
             element.classList.remove(this.fillClassName);
             element.classList.add(this.hiddenFillClassName);

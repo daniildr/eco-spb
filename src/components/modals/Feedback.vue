@@ -22,10 +22,10 @@
                         <br/>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="tel" class="form-control" placeholder="Ваш номер телефона" id="phoneNumber">
+                                <input v-model="phoneNumber" type="tel" class="form-control" placeholder="Ваш номер телефона" id="phoneNumber">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Ваше имя" id="userName">
+                                <input v-model="clientName" type="text" class="form-control" placeholder="Ваше имя" id="userName">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -63,86 +63,40 @@
                 type: Number,
                 default: 800
             },
-            userMessage: {
-                type: String,
-                required: false,
-                default: "Перезвоните мне, пожалуйста, в ближайшее время."
-            },
-            userName: {
-                type: String
-            },
-            phoneNumber: {
-                type: String,
-                default: ""
-            },
-            numberOfCars: {
-                type: Number,
-                default: 0
-            },
-            garbageType: {
-                type: String,
-                default: ""
-            },
-            carType: {
-                type: String,
-                default: ""
-            },
             region: {
                 type: String,
                 default: ""
-            },
-            fullPrice: {
-                type: Number,
-                default: 0
             }
         },
         methods: {
             createMessage() {
+                if (this.$store.state.calculator.phoneNumber !== "")
+                    this.phoneNumber = this.$store.state.calculator.phoneNumber;
+
+                if (this.$store.state.calculator.clientName !== "")
+                    this.clientName = this.$store.state.calculator.clientName;
+
                 let separator =  "\r\n";
-                let comment = "";
-                let garbageType = "";
-                let region = "";
-                let carType = "";
-                let count = "";
-                let price = "";
                 let result = "";
 
-                if (this.userMessage !== "") {
-                    comment = "Ваш комментарий: " + this.userMessage;
-                    result = result + comment;
-                    result = result + separator;
-                }
+                if (this.$store.state.calculator.userMessage !== "")
+                    result = result + "Ваш комментарий: " + this.$store.state.calculator.userMessage + separator;
 
-                if (this.$store.state.calculator.garbageType !== "") {
-                    garbageType = "Тип мусора: " + this.$store.state.calculator.garbageType;
-                    result = result + garbageType;
-                    result = result + separator;
-                }
+                if (this.$store.state.calculator.garbageType !== "")
+                    result = result + "Тип мусора: " + this.$store.state.calculator.garbageType + separator;
 
-                if (this.region !== "") {
-                    region = "Район: " + this.region;
-                    result = result + region;
-                    result = result + separator;
-                }
+                if (this.region !== "")
+                    result = result + "Район: " + this.region + separator;
 
                 if (this.$store.state.calculator.totalPrice !== 0) {
-                    price = "Стоимость: " + this.$store.state.calculator.totalPrice + " руб."
-                    result = result + price;
-                    result = result + separator;
+                    result = result + "Стоимость: " + this.$store.state.calculator.totalPrice + " руб." + separator;
 
-                    if (this.$store.state.calculator.carType !== "") {
-                        carType = "Тип техники: " + this.$store.state.calculator.carType;
-                        result = result + carType;
-                        result = result + separator;
-                    }
+                    if (this.$store.state.calculator.carType !== "")
+                        result = result + "Тип техники: " + this.$store.state.calculator.carType + separator;
 
-                    if (this.$store.state.calculator.numberOfItems !== 0 ) {
-                        if (this.$store.state.calculator.flagOfChangeNumberOfItems){
-                            count = "Кол-во техники: " + this.$store.state.calculator.numberOfItems + " шт."
-                            result = result + count;
-                            result = result + separator;
-                        }
-                    }
+                    if (this.$store.state.calculator.numberOfItems !== 0 )
+                        if (this.$store.state.calculator.flagOfChangeNumberOfItems)
+                            result = result + "Кол-во техники: " + this.$store.state.calculator.numberOfItems + " шт." + separator;
                 }
 
                 this.userComment = result;
@@ -157,6 +111,8 @@
         data() {
             return {
                 config: json,
+                phoneNumber: "",
+                clientName: "",
                 userComment: ""
             }
         }

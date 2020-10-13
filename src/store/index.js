@@ -10,7 +10,10 @@ export const store = new Vuex.Store({
             carType: "",
             flagOfChangeNumberOfItems: false,
             numberOfItems: 1,
-            totalPrice: 0
+            totalPrice: 0,
+            phoneNumber: "",
+            clientName: "",
+            userMessage: "Перезвоните мне, пожалуйста, в ближайшее время."
         },
     },
     getters : {},
@@ -27,6 +30,24 @@ export const store = new Vuex.Store({
         },
         setTotalPrice(state, n){
             state.calculator.totalPrice = n;
+        },
+        setPhoneNumber(state, n){
+            state.calculator.phoneNumber = n
+        },
+        setClientName(state, n){
+            state.calculator.clientName = n
+        },
+        cleanForLastForm(state){
+            state.calculator.garbageType = "";
+            state.calculator.carType = "";
+            state.calculator.flagOfChangeNumberOfItems = false;
+            state.calculator.numberOfItems = 1;
+            state.calculator.totalPrice = 0;
+        },
+        cleanAll(state){
+            this.cleanForLastForm(state);
+            state.calculator.phoneNumber = "";
+            state.calculator.clientName = "";
         }
     },
     actions : {}

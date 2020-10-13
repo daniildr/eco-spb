@@ -1,6 +1,6 @@
 <template>
     <section class="inner_about_area page" style="margin-bottom: 30px;" id="CONTACT">
-        <CallBackForm :selected-item="this.SelectedType"/>
+        <CallBackForm/>
         <div class="section_overlay">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1">
@@ -24,15 +24,15 @@
                         <form>
                             <br/>
                             <div class="form-group">
-                                <input type="tel" class="form-control" placeholder="Ваш номер телефона" id="phoneNumber">
+                                <input v-model="phoneNumber" type="tel" class="form-control" placeholder="Ваш номер телефона" id="phoneNumber">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Ваше имя" id="userName">
+                                <input v-model="clientName" type="text" class="form-control" placeholder="Ваше имя" id="userName">
                             </div>
                         </form>
                         <div class="center-block center-text">
                             <p class="smallText center-text">*Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</p>
-                            <button class="btn btn-default submit-btn form_submit" style="width: 60%" v-on:click="createMessage()">Заказать звонок</button>
+                            <button class="btn btn-default submit-btn form_submit" style="width: 60%" v-on:click="show()">Заказать звонок</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,16 @@
             CallBackForm
         },
         props: {
-            SelectedType: String
+            phoneNumber: String,
+            clientName: String,
+        },
+        methods: {
+            show() {
+                this.$store.commit('setPhoneNumber', this.phoneNumber);
+                this.$store.commit('setClientName', this.clientName);
+                this.$store.commit('cleanForLastForm');
+                this.$modal.show("feedbackModal");
+            }
         }
     }
 </script>

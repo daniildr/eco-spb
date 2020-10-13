@@ -25,9 +25,6 @@
         components: {
             GreenButton
         },
-        props: {
-            SelectedItem: String
-        },
         data() {
             return {
                 config : json
