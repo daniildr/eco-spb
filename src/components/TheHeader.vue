@@ -27,12 +27,13 @@
                             </div>
                             <div class="col-md-6">
                                 <select v-model="selectedRegion" class="Shape_2">
-                                    <option value="">Выберите место:</option>
+                                    <option v-for="item in config.loRegions" :key="item.zone" :value="item.zone">{{item.label}}</option>
+                                    <!-- <option value="">Выберите место:</option>
                                     <option value="Тосно">Тосно</option>
                                     <option value="Любань">Любань</option>
                                     <option value="Лодейное Поле">Лодейное Поле</option>
                                     <option value="Гатчина">Гатчина</option>
-                                    <option value="Луга">Луга</option>
+                                    <option value="Луга">Луга</option> -->
                                 </select>
                             </div>
                         </div>
@@ -468,41 +469,27 @@
             else if (element.classList.contains(this.activeFillClassName))
                 this.disableMapElement(element);
         },
-
         setTypeOfGarbage(){
             let result = "";
-
             switch (this.selectedTrashType) {
-
-                case "Select": {
+                case "Select":
                     result = "";
-                }
-                break;
-
-                case "construction": {
+                    break;
+                case "construction":
                     result = "Строительный";
-                }
-                break;
-
-                case "household": {
+                    break;
+                case "household":
                     result = "Бытовой";
-                }
-                break;
-
-                case "bulky": {
+                    break;
+                case "bulky":
                     result = "Крупногабаритный";
-                }
-                break;
-
-                default: {
+                    break;
+                default:
                     result = "";
-                }
-                break;
+                    break;
             }
-
             this.$store.commit('setGarbageType', result);
         },
-
         getLabelForSlider() {
             switch (this.selectedCarType) {
                 case "":
@@ -850,6 +837,7 @@
     .custom-checkbox:disabled+label::before {
         background-color: #e9ecef;
     }
+
     .carInput {
         display: none;
     }
@@ -911,7 +899,123 @@
         .fixdiv{
             display: none;
         }
+
+        .gazel-off{
+            background-size: 25%;
+        }
+        .gazel-on{
+            background-size: 25%;
+        }
+
+        .baw-off{
+            background-size: 25%;
+        }
+        .baw-on{
+            background-size: 25%;
+        }
+
+        .docker20-off{
+            background-size: 25%;
+        }
+        .docker20-on{
+            background-size: 25%;
+        }
+
+        .docker27-off{
+            background-size: 25%;
+        }
+        .docker27-on{
+            background-size: 25%;
+        }
     }
+    @media (max-width: 700px){
+        .gazel-off{
+            background-size: 30%;
+        }
+        .gazel-on{
+            background-size: 30%;
+        }
+
+        .baw-off{
+            background-size: 30%;
+        }
+        .baw-on{
+            background-size: 30%;
+        }
+
+        .docker20-off{
+            background-size: 30%;
+        }
+        .docker20-on{
+            background-size: 30%;
+        }
+
+        .docker27-off{
+            background-size: 30%;
+        }
+        .docker27-on{
+            background-size: 30%;
+        }
+    }
+    @media (max-width: 500px){
+        .gazel-off{
+            background-size: 40%;
+        }
+        .gazel-on{
+            background-size: 40%;
+        }
+
+        .baw-off{
+            background-size: 40%;
+        }
+        .baw-on{
+            background-size: 40%;
+        }
+
+        .docker20-off{
+            background-size: 40%;
+        }
+        .docker20-on{
+            background-size: 40%;
+        }
+
+        .docker27-off{
+            background-size: 40%;
+        }
+        .docker27-on{
+            background-size: 40%;
+        }
+    }
+    @media (max-width: 400px){
+        .gazel-off{
+            background-size: 50%;
+        }
+        .gazel-on{
+            background-size: 50%;
+        }
+
+        .baw-off{
+            background-size: 50%;
+        }
+        .baw-on{
+            background-size: 50%;
+        }
+
+        .docker20-off{
+            background-size: 50%;
+        }
+        .docker20-on{
+            background-size: 50%;
+        }
+
+        .docker27-off{
+            background-size: 50%;
+        }
+        .docker27-on{
+            background-size: 50%;
+        }
+    }
+
     green-p {
         color: #1d890a;
     }

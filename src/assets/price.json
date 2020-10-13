@@ -36,5 +36,31 @@
       "loaderPrice": 4000,
       "name": "Контейнер 27 кубометров"
     }
+  },
+  "loRegions": {
+    "defaultValue": {
+      "label": "Выберите место:",
+      "zone": 1
+    },
+    "tosno": {
+      "label": "Тосно",
+      "zone": 1
+    },
+    "luban": {
+      "label": "Любань",
+      "zone": 2
+    },
+    "lodeinoePole": {
+      "label": "Лодейное Поле",
+      "zone": 3
+    },
+    "gatchina": {
+      "label": "Гатчина",
+      "zone": 1
+    },
+    "luga": {
+      "label": "Луга",
+      "zone": 4
+    }
   }
 }
