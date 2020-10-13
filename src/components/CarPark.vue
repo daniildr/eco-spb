@@ -8,7 +8,7 @@
         <Docker20/>
         <CarParkBg/>
         <Docker27/>
-        <car-park-bg bottom-position="bottom: 98px;"/>
+        <car-park-bg bottom-position="bottom: 95px;"/>
         <hr/>
     </section>
 </template>
