@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-md-6">
                                 <select v-model="selectedRegion" class="Shape_2">
-                                    <option value="Select">Выберите место:</option>
+                                    <option value="">Выберите место:</option>
                                     <option value="Тосно">Тосно</option>
                                     <option value="Любань">Любань</option>
                                     <option value="Лодейное Поле">Лодейное Поле</option>
