@@ -10,11 +10,11 @@
                 <div class="carpark">
                     <div class="carpark_title">
                         <h2>Газель (9 Кубометров)</h2>
-                        <p>Газель для самых низких арок в городе.<br/>
-                            Высота автомобиля: 2,50 м;<br/>
-                            Длина кузова: 3 м;<br/>
-                            Вместимость: 9 м<sup>3</sup>;<br/>
-                            Грузоподъемность: до 1,5 т;<br/>
+                        <p><strong>Газель для самых низких арок в городе.</strong><br/>
+                            <strong>Высота автомобиля:</strong> 2,50 м;<br/>
+                            <strong>Длина кузова:</strong> 3 м;<br/>
+                            <strong>Вместимость:</strong> 9 м<sup>3</sup>;<br/>
+                            <strong>Грузоподъемность:</strong> до 1,5 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
                                 class="btn btn-default submit-btn form_submit hidden-md hidden-lg">Оставить заявку</button>

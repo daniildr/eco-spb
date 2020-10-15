@@ -10,11 +10,11 @@
                 <div class="carpark">
                     <div class="carpark_title">
                         <h2>Контейнер (20 Кубометров)</h2>
-                        <p>Универсальный контейнер. Подходит для любого типа отходов.<br/>
-                            Ширина: 2,5 м;<br/>
-                            Длина: 3,9 м;<br/>
-                            Вместимость: до 20м<sup>3</sup>;<br/>
-                            Грузоподъемность: 10 т;<br/>
+                        <p><strong>Универсальный контейнер. Подходит для любого типа отходов.</strong><br/>
+                            <strong>Ширина:</strong> 2,5 м;<br/>
+                            <strong>Длина:</strong> 3,9 м;<br/>
+                            <strong>Вместимость:</strong> до 20м<sup>3</sup>;<br/>
+                            <strong>Грузоподъемность:</strong> 10 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
                                 class="btn btn-default submit-btn form_submit hidden-md hidden-lg">Оставить заявку</button>

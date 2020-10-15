@@ -5,11 +5,11 @@
                 <div class="carpark">
                     <div class="carpark_title right-text" style="padding-right: 80px;">
                         <h2>Контейнер (27 Кубометров)</h2>
-                        <p>Ультимативный вариант. Для требовательных клиентов.<br/>
-                            Ширина: 2,5 м;<br/>
-                            Длина: 5,9 м;<br/>
-                            Вместимость: 27 м<sup>3</sup>;<br/>
-                            Грузоподъемность: 10 т;<br/>
+                        <p><strong>Ультимативный вариант. Для требовательных клиентов.</strong><br/>
+                            <strong>Ширина:</strong> 2,5 м;<br/>
+                            <strong>Длина:</strong> 5,9 м;<br/>
+                            <strong>Вместимость:</strong> 27 м<sup>3</sup>;<br/>
+                            <strong>Грузоподъемность:</strong> 10 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 60%;"
                                 class="btn btn-default submit-btn form_submit hidden-xs hidden-sm">Оставить заявку</button>
@@ -33,11 +33,11 @@
                 <div class="carpark">
                     <div class="carpark_title">
                         <h2>Контейнер (27 Кубометров)</h2>
-                        <p>Ультимативный вариант. Для самых требовательных клиентов.<br/>
-                            Ширина: 2,5 м;<br/>
-                            Длина: 5,9 м;<br/>
-                            Вместимость: 27 м<sup>3</sup>;<br/>
-                            Грузоподъемность: 10 т;<br/>
+                        <p><strong>Ультимативный вариант. Для требовательных клиентов.</strong><br/>
+                            <strong>Ширина:</strong> 2,5 м;<br/>
+                            <strong>Длина:</strong> 5,9 м;<br/>
+                            <strong>Вместимость:</strong> 27 м<sup>3</sup>;<br/>
+                            <strong>Грузоподъемность:</strong> 10 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
                                 class="btn btn-default submit-btn form_submit hidden-md hidden-lg">Оставить заявку</button>

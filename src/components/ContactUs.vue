@@ -24,7 +24,16 @@
                         <form>
                             <br/>
                             <div class="form-group">
-                                <input v-model="phoneNumber" type="tel" class="form-control" placeholder="Ваш номер телефона" id="phoneNumber">
+                                <VuePhoneNumberInput
+                                        v-model="phoneNumber"
+                                        :id="phoneNumber"
+                                        :default-country-code="RU"
+                                        :only-countries="['RU','AZ','AM','BY','GE','KZ','KG','LV','LT','UA']"
+                                        :translations="{countrySelectorLabel: 'Код страны',phoneNumberLabel: 'Ваш номер телефона',example: 'Пример:'}"
+                                        :valid-color="'#62bc00'"
+                                        :color="'#094071'"
+
+                                />
                             </div>
                             <div class="form-group">
                                 <input v-model="clientName" type="text" class="form-control" placeholder="Ваше имя" id="userName">
@@ -42,11 +51,13 @@
 </template>
 
 <script>
+    import VuePhoneNumberInput from 'vue-phone-number-input';
+    import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 
     export default {
         name: "ContactUs",
         components: {
-
+            VuePhoneNumberInput
         },
         props: {
             phoneNumber: String,
@@ -66,6 +77,10 @@
 <style scoped>
     section {
         padding-bottom: 20px;
+    }
+    .form-control{
+        height: 40px;
+        font-weight: 400;
     }
     .smallText{
         font-size: 0.7em;
