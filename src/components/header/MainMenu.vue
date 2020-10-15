@@ -7,17 +7,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand " href="#"><img class="mobile-hidden" src="@/images/for-popup-menu-logo.png" alt="Logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#HOME">ГЛАВНАЯ</a></li>
-                    <li><a href="#ABOUT">О НАС </a></li>
-                    <li><a href="#CARPARK">АВТОПАРК</a></li>
-                    <li><a href="#PRICE">ПРАЙС-ЛИСТ</a></li>
-                    <li><a href="#CONTACT">КОНТАКТЫ </a></li>
-                    <li><a v-bind:href="'callto:' + config.RuNumber"><i class="fa fa-phone"></i><strong>&nbsp;{{ config.RuNumber }}</strong></a></li>
+                    <li><a style="color: #FFFFFF" href="#HOME">ГЛАВНАЯ</a></li>
+                    <li><a style="color: #FFFFFF" href="#ABOUT">О НАС </a></li>
+                    <li><a style="color: #FFFFFF" href="#CARPARK">АВТОПАРК</a></li>
+                    <li><a style="color: #FFFFFF" href="#PRICE">ПРАЙС-ЛИСТ</a></li>
+                    <li><a style="color: #FFFFFF" href="#CONTACT">КОНТАКТЫ </a></li>
+                    <li><a style="color: #FFFFFF" v-bind:href="'callto:' + config.RuNumber"><i class="fa fa-phone"></i><strong>&nbsp;{{ config.RuNumber }}</strong></a></li>
                 </ul>
             </div>
         </div>

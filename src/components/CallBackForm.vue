@@ -36,7 +36,7 @@
 <style scoped>
     .linka {
         font-size: 24px;
-        font-family: "Roboto";
+        font-family: "Roboto", sans-serif;
         color: rgb(46, 106, 152);
         font-weight: bold;
         line-height: 0.917;

@@ -70,7 +70,8 @@
     a {
         color: #FFFFFF;
         font-size: 200%;
-        font-family: "Roboto Medium",serif;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
         transition: 0.5s;
     }
     a:hover {

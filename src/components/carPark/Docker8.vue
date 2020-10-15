@@ -5,7 +5,7 @@
                 <div class="carpark">
                     <div class="carpark_title right-text" style="padding-right: 80px;">
                         <h2>BAW Fenix (8-12 Кубометров)</h2>
-                        <p>Разумный компромисс между габаритами и маневренностью.<br/>
+                        <p>Разумный компромисс.<br/>
                             Ширина кузова: 1,85 м;<br/>
                             Длина кузова: 4 м;<br/>
                             Вместимость: от 8м<sup>3</sup> до 12м<sup>3</sup>;<br/>

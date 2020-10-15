@@ -17,6 +17,16 @@ $(document).ready(function() {
         "use strict";
         
         if ($(window).scrollTop() > 80) {
+            if ($(document).scrollTop() < $(document).height() - 1100){
+                $("#fabUp").css({
+                    'display': 'block'
+                })
+            }
+            else {
+                $("#fabUp").css({
+                    'display': 'none'
+                })
+            }
             $(".navbar").css({
                 'margin-top': '0px',
                 'opacity': '1'
@@ -50,6 +60,8 @@ $(document).ready(function() {
             $(".navbar-default").css({
                 'background-color': 'rgba(59, 59, 59, 0)'
             });
+
+
         }
     });
 });

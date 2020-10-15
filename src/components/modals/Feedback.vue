@@ -12,8 +12,8 @@
                 <hr style="margin-top: 0px; margin-bottom: 0px;"/>
             </div>
             <div class="col-md-12 center-text inner_about_title">
-                <h2>Оставить заявку</h2>
-                <div class="col-md-10 col-md-offset-1">
+                <h2 style="color: #094071;">Оставить заявку</h2>
+                <div class="col-md-10 col-md-offset-1" style="color: #094071;">
                     <p>Пожалуйста оставьте свой номер телефона, мы вам обязательно перезвоним перезвоним!</p>
                 </div>
                 <div class="col-md-12">

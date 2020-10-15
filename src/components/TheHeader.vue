@@ -18,7 +18,7 @@
                             <TopMenu/>
                         </div>
                         <div class="section_title" style="padding-bottom: 0px;">
-                            <customP>Вывоз мусора в Санкт-Петербурге и Ленинградской области...</customP>
+                            <customP>Вывоз мусора в Санкт-Петербурге и Ленинградской области</customP>
                         </div>
 
                         <div class="col-md-pull-12" style="margin-bottom: 15px; margin-top: 15px;">
@@ -1068,7 +1068,7 @@
         width: 250px;
         background-color: rgba(255, 255, 255, 0.9);
         font-weight: 500;
-        font-family: "Roboto",serif;
+        font-family: "Roboto", sans-serif; /* "Roboto", sans-serif; */
         color: #094071;
         padding: 5px 15px;
         border: 1px solid black;
@@ -1099,11 +1099,12 @@
     .carTypeLabel {
         margin-top: 20px;
         font-size: 18px;
-        font-family: "Roboto",serif;
+        font-family: "Roboto", sans-serif; /* "Roboto", sans-serif; */
         color: rgb(255, 255, 255);
         line-height: 0.917;
         text-align: center;
         z-index: 990;
+        cursor: pointer;
     }
     .z-first {
         z-index: 989;
@@ -1118,8 +1119,8 @@
         margin-top: 20px;
         margin-bottom: 20px;
         width: 100%;
-        font-size: 23px;
-        font-family: "Bebas Neue Cyrillic";
+        font-size: large;
+        font-family: "Roboto", sans-serif; /* "Roboto", sans-serif; */
         color: rgb(255, 255, 255);
         line-height: 0.511;
         text-align: left;
@@ -1140,7 +1141,7 @@
         height: 40px;
 
             font-size: 14px;
-            font-family: "Roboto";
+            font-family: "Roboto", sans-serif; /* "Roboto", sans-serif; */
             color: rgb(255, 255, 255);
             line-height: 1.571;
             text-align: left;

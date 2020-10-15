@@ -1,14 +1,14 @@
 <template>
     <section class="inner_about_area page" style="margin-bottom: 30px;" id="CONTACT">
-        <CallBackForm/>
         <div class="section_overlay">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="inner_about_title">
                         <h2>Свяжитесь с нами</h2>
-                        <div class="col-md-8 col-md-offset-2">
-                            <p>
-                                Спасибо за Ваш интерес! Пожалуйста, заполните форму ниже, чтобы отправить нам вопрос или комментарий. <br>
+                        <div class="col-md-8 col-md-offset-2" >
+                            <p style="font-weight: 500; margin-top: 10px;">
+                                Спасибо за Ваш интерес!<br>
+                                Пожалуйста, заполните форму ниже.<br>
                                 <strong>Мы ответим вам в ближайшее время.</strong>
                             </p>
                         </div>
@@ -42,12 +42,11 @@
 </template>
 
 <script>
-    import CallBackForm from "@/components/CallBackForm";
 
     export default {
         name: "ContactUs",
         components: {
-            CallBackForm
+
         },
         props: {
             phoneNumber: String,

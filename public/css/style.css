@@ -5,11 +5,23 @@
 a {
     color: #2a6496;
 }
+a:hover {
+    cursor: pointer
+}
+path:hover,
+polygon:hover,
+td > p:hover,
+select:hover,
+label:hover{
+    cursor: pointer;
+}
 body {
-    font-family: 'Roboto Light', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
 }
 p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     font-size: 14px;
 }
 html {
@@ -165,8 +177,8 @@ table {
 .top-menu > li > a {
     color: #FFFFFF;
     display: block;
-    font-family: "Roboto Medium";
-    /* text-decoration: underline; */
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     font-size: 100%;
     padding: 4px 6px;
     white-space: nowrap;
@@ -216,7 +228,8 @@ table {
     }
     .navbar-default .navbar-nav>li>a {
         color: #FFFFFF;
-        font-family: 'Roboto Medium', sans-serif;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
     }
     .navbar-default .navbar-nav>li>a:hover {
         color: #84c225;
@@ -373,11 +386,13 @@ tuor:visited {
 }
 
 .about {
-    font-family: "Corsica LX";
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     background: #135693;
 }
 .inner_about_area {
-    font-family: "Corsica LX";
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     color: #094071;
 }
 .inner_about_title {
@@ -437,7 +452,8 @@ tuor:visited {
 .green-btn:active,
 .green-btn:focus,
 .green-btn:visited{
-    font-family: "Roboto Medium", monospace;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     font-size: 18px;
     border-radius: 7px;
     background-image: -moz-linear-gradient( 90deg, rgb(142,236,8) 0%, rgb(203,232,116) 100%);
@@ -477,7 +493,7 @@ tuor:visited {
     padding-bottom: 30px;
 }
 .carpark_title h2 {
-    font-family: "Roboto", serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-size: 30px;
     line-height: 37px;
@@ -854,7 +870,8 @@ tuor:visited {
 .submit-btn:active,
 .submit-btn:focus,
 .submit-btn:visited {
-    font-family: "Roboto Medium", monospace;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
     border-style: solid;
     border-width: 1px;
     border-color: rgb(6, 35, 62);

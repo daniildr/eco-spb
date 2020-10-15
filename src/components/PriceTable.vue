@@ -122,11 +122,33 @@
         </section>
         <section>
             <div class="container">
-                <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" @change="changeState()" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
+                <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
                 <label for="need-loader2"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
             </div>
         </section>
         <PriceBg/>
+        <div class="inner_about_title">
+            <div class="container">
+                <div class="row col-md-12">
+                    <div class="col-md-9 left-text left-blok">
+                        <p class="linka">Сделать заказ можно по телефону: <a v-bind:href="'callto:' + config.SpbFirstNumber">{{ config.SpbFirstNumber }}</a></p>
+                        <p class="linka" style="font-size: 18px; font-weight: normal; margin-top: 0px;">Наши менеджеры рассчитают график и стоимость, ответят на все возникшие вопросы.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <br/>
+                        <button
+                                v-on:click="show()"
+                                type="button"
+                                style="width: 260px; height: 50px;"
+                                class="btn btn-default green-btn"
+                        >
+                            Оставить заявку
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        </div>
     </section>
 </template>
 
@@ -145,6 +167,10 @@
             }
         },
         methods: {
+            show(){
+                this.changeState();
+                this.$modal.show("feedbackModal");
+            },
             changeState(){
                 switch (this.selectedItem) {
                     case "gazel.price1":{
@@ -152,28 +178,29 @@
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price1) + parseInt(this.config.cars.gazel.loaderPrice)
-                            : this.config.cars.gazel.price1);
+                            : parseInt(this.config.cars.gazel.price1));
                     }break;
                     case "gazel.price2":{
+
                         this.$store.commit('setCarType', this.config.cars.gazel.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price2) + parseInt(this.config.cars.gazel.loaderPrice)
-                            : this.config.cars.gazel.price2);
+                            : parseInt(this.config.cars.gazel.price2));
                     }break;
                     case "gazel.price3":{
                         this.$store.commit('setCarType', this.config.cars.gazel.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price3) + parseInt(this.config.cars.gazel.loaderPrice)
-                            : this.config.cars.gazel.price3);
+                            : parseInt(this.config.cars.gazel.price3));
                     }break;
                     case "gazel.price4":{
                         this.$store.commit('setCarType', this.config.cars.gazel.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price4) + parseInt(this.config.cars.gazel.loaderPrice)
-                            : this.config.cars.gazel.price4);
+                            : parseInt(this.config.cars.gazel.price4));
                     }break;
 
                     case "baw.price1":{
@@ -181,28 +208,28 @@
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price1) + parseInt(this.config.cars.baw.loaderPrice)
-                            : this.config.cars.baw.price1);
+                            : parseInt(this.config.cars.baw.price1));
                     }break;
                     case "baw.price2":{
                         this.$store.commit('setCarType', this.config.cars.baw.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price2) + parseInt(this.config.cars.baw.loaderPrice)
-                            : this.config.cars.baw.price2);
+                            : parseInt(this.config.cars.baw.price2));
                     }break;
                     case "baw.price3":{
                         this.$store.commit('setCarType', this.config.cars.baw.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price3) + parseInt(this.config.cars.baw.loaderPrice)
-                            : this.config.cars.baw.price3);
+                            : parseInt(this.config.cars.baw.price3));
                     }break;
                     case "baw.price4":{
                         this.$store.commit('setCarType', this.config.cars.baw.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price4) + parseInt(this.config.cars.baw.loaderPrice)
-                            : this.config.cars.baw.price4);
+                            : parseInt(this.config.cars.baw.price4));
                     }break;
 
                     case "docker20.price1":{
@@ -210,28 +237,28 @@
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price1) + parseInt(this.config.cars.docker20.loaderPrice)
-                            : this.config.cars.docker20.price1);
+                            : parseInt(this.config.cars.docker20.price1));
                     }break;
                     case "docker20.price2":{
                         this.$store.commit('setCarType', this.config.cars.docker20.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price2) + parseInt(this.config.cars.docker20.loaderPrice)
-                            : this.config.cars.docker20.price2);
+                            : parseInt(this.config.cars.docker20.price2));
                     }break;
                     case "docker20.price3":{
                         this.$store.commit('setCarType', this.config.cars.docker20.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price3) + parseInt(this.config.cars.docker20.loaderPrice)
-                            : this.config.cars.docker20.price3);
+                            : parseInt(this.config.cars.docker20.price3));
                     }break;
                     case "docker20.price4":{
                         this.$store.commit('setCarType', this.config.cars.docker20.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price4) + parseInt(this.config.cars.docker20.loaderPrice)
-                            : this.config.cars.docker20.price4);
+                            : parseInt(this.config.cars.docker20.price4));
                     }break;
 
                     case "docker27.price1":{
@@ -239,28 +266,28 @@
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price1) + parseInt(this.config.cars.docker27.loaderPrice)
-                            : this.config.cars.docker27.price1);
+                            : parseInt(this.config.cars.docker27.price1));
                     }break;
                     case "docker27.price2":{
                         this.$store.commit('setCarType', this.config.cars.docker27.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price2) + parseInt(this.config.cars.docker27.loaderPrice)
-                            : this.config.cars.docker27.price2);
+                            : parseInt(this.config.cars.docker27.price2));
                     }break;
                     case "docker27.price3":{
                         this.$store.commit('setCarType', this.config.cars.docker27.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price3) + parseInt(this.config.cars.docker27.loaderPrice)
-                            : this.config.cars.docker27.price3);
+                            : parseInt(this.config.cars.docker27.price3));
                     }break;
                     case "docker27.price4":{
                         this.$store.commit('setCarType', this.config.cars.docker27.name);
                         this.$store.commit('setNumberOfItems', 1);
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price4) + parseInt(this.config.cars.docker27.loaderPrice)
-                            : this.config.cars.docker27.price4);
+                            : parseInt(this.config.cars.docker27.price4));
                     }break;
                 }
             },
@@ -282,8 +309,6 @@
                         element.classList.replace("pHover", "pHover-select");
                     }
                 }
-
-                this.changeState();
             }
         }
     }
@@ -456,5 +481,14 @@
             background-image: url("../images/bg_color_price.png");
             background-repeat: round;
         }
+    }
+
+    .linka {
+        font-size: 24px;
+        font-family: "Roboto", sans-serif;
+        color: rgb(46, 106, 152);
+        font-weight: bold;
+        line-height: 0.917;
+        text-align: left;
     }
 </style>
