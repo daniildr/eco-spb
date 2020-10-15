@@ -32,7 +32,8 @@
                                         :translations="{countrySelectorLabel: 'Код страны',phoneNumberLabel: 'Ваш номер телефона',example: 'Пример:'}"
                                         :valid-color="'#62bc00'"
                                         :color="'#094071'"
-
+                                        :countries-height="20"
+                                        :clearable="true"
                                 />
                             </div>
                             <div class="form-group">

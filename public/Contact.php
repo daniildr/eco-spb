@@ -31,7 +31,7 @@ if(isset($_POST['name']) and isset($_POST['phone']) and isset($_POST['message'])
 	$phone = $_POST['phone'];
 	$subjectForm = 'Письмо с сайта eco-spb. От ';
 	$messageForm = $_POST['message'];
-	$mail = 'no-reply@eco.spb.ru';
+	$mail = 'dfg_hjkl@mail.ru';
 
     if($name == '') {
         echo json_encode(array('info' => 'error', 'msg' => "Пожалуйста, введите Ваше имя."));

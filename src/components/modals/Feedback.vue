@@ -32,6 +32,8 @@
                                                 :valid-color="'#62bc00'"
                                                 :error-color="'#8B0000'"
                                                 :color="'#094071'"
+                                                :countries-height="20"
+                                                :clearable="true"
                                         />
                                     </div>
                                 </div>
