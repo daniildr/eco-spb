@@ -7,49 +7,29 @@ export default new Router({
     routes: [
         {
             path: "/",
-            title: "123 123 1234",
             component: () => import("@/views/Home"),
             meta: {
-                title: 'Home Page - Example App',
+                title: 'Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
                 metaTags: [
                     {
                         name: 'description',
                         content: 'The home page of our example app.'
-                    },
-                    {
-                        property: 'og:description',
-                        content: 'The home page of our example app.'
                     }
                 ]
             }
-        },
-        {
-            path: "/HOME",
-            title: "123 123 1234",
-            component: () => import("@/views/Home"),
-            meta: {
-                title: 'Home Page - Example App',
-                metaTags: [
-                    {
-                        name: 'description',
-                        content: 'The home page of our example app.'
-                    },
-                    {
-                        property: 'og:description',
-                        content: 'The home page of our example app.'
-                    }
-                ]
-            }
-        },
-        {
-            path: "/test",
-            title: "4321 321 321",
-            component: () => import("@/views/Test"),
         },
         {
             path: "*",
-            title: "УПППС",
             component: () => import("@/views/404"),
+            meta: {
+                title: 'Страница не найдена - Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'The home page of our example app.'
+                    }
+                ]
+            }
         }
     ]
 });
