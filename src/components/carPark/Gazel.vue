@@ -17,9 +17,9 @@
                             <strong>Грузоподъемность:</strong> до 1,5 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
-                                class="btn btn-default submit-btn form_submit hidden-md hidden-lg">Оставить заявку</button>
+                                class="btn btn-default submit-btn form_submit hidden-md hidden-lg">Заказать</button>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 60%;"
-                                class="btn btn-default submit-btn form_submit hidden-xs hidden-sm">Оставить заявку</button>
+                                class="btn btn-default submit-btn form_submit hidden-xs hidden-sm">Заказать</button>
                     </div>
                 </div>
             </div>

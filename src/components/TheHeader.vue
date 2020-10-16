@@ -371,7 +371,8 @@
                     </div>
                     <div class="col-md-12 center-text">
                         <h3 style="margin-bottom: 25px; font-size: 22px;">
-                            Общая стоимость вывоза мусора: Контейнеров - <green-p>{{ getSelectedNumberOfItems() }}</green-p> |
+                            Общая стоимость вывоза мусора: {{getLabelForSlider()}} -
+                            <green-p>{{ getSelectedNumberOfItems() }}</green-p> <br/>
                             Стоимость каждого - <green-p>{{getSelectedCarPrice()}}</green-p> |
                             Всего - <green-p>{{getFullPrice()}}</green-p> рублей</h3>
                     </div>
@@ -499,13 +500,13 @@
                     case "":
                         return "Контейнеров";
                     case "gazel":
-                        return "Мусоровозов";
+                        return "Мусоровозов ГАЗель";
                     case "baw":
-                        return "Мусоровозов";
+                        return "Мусоровозов BAW";
                     case "docker20":
-                        return "Контейнеров";
+                        return "Контейнеров 20куб.м.";
                     case "docker27":
-                        return "Контейнеров";
+                        return "Контейнеров 27куб.м.";
                     default:
                         return "Контейнеров";
                 }
@@ -604,7 +605,12 @@
             },
             getFullPrice(){
                 let result = this.selectedCarPrice * this.itemCount;
+
+                this.setTypeOfGarbage()
+                this.$store.commit('setNumberOfItems', this.itemCount);
+                this.$store.commit('setCarType', this.getHumanNameForCar());
                 this.$store.commit('setTotalPrice', result);
+
                 return result
             },
             setRegionAndZone(type){
@@ -653,9 +659,9 @@
         },
         data() {
             return {
-                config : json,
-                loRegions : loJson,
-                spbRegions : spbJson,
+                config: json,
+                loRegions: loJson,
+                spbRegions: spbJson,
 
                 // calc props
                 selectedCarType: "",

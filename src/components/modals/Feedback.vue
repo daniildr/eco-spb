@@ -5,7 +5,6 @@
                height="auto"
                :resizable="true"
                :adaptive="true"
-               :draggable="false"
                :scrollable="true"
                @before-open = "beforeOpen"
         >
@@ -110,23 +109,23 @@
                 let result = "";
 
                 if (this.$store.state.calculator.userMessage !== "")
-                    result = result + "Ваш комментарий: " + this.$store.state.calculator.userMessage + ";" + separator;
+                    result = result + "Ваш комментарий: " + this.$store.state.calculator.userMessage + separator;
 
                 if (this.$store.state.calculator.garbageType !== "")
-                    result = result + "Тип мусора: " + this.$store.state.calculator.garbageType + ";" + separator;
+                    result = result + "Тип мусора: " + this.$store.state.calculator.garbageType + "." + separator;
 
                 if (this.$store.state.calculator.region !== "")
-                    result = result + "Район: " + this.$store.state.calculator.region + ";" + separator;
+                    result = result + "Район: " + this.$store.state.calculator.region + "." + separator;
 
                 if (this.$store.state.calculator.totalPrice !== 0) {
-                    result = result + "Стоимость: " + this.$store.state.calculator.totalPrice + " руб." + ";" + separator;
+                    result = result + "Стоимость: " + this.$store.state.calculator.totalPrice + " руб." + separator;
 
                     if (this.$store.state.calculator.carType !== "")
-                        result = result + "Тип техники: " + this.$store.state.calculator.carType + ";" + separator;
+                        result = result + "Тип техники: " + this.$store.state.calculator.carType + "." + separator;
 
                     if (this.$store.state.calculator.numberOfItems !== 0 )
                         if (this.$store.state.calculator.flagOfChangeNumberOfItems)
-                            result = result + "Кол-во техники: " + this.$store.state.calculator.numberOfItems + " шт." + ";" + separator;
+                            result = result + "Кол-во техники: " + this.$store.state.calculator.numberOfItems + " шт." + separator;
                 }
 
                 this.userComment = result;

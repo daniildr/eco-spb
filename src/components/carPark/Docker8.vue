@@ -6,13 +6,13 @@
                     <div class="carpark_title right-text" style="padding-right: 80px;">
                         <h2>BAW Fenix (8-12 Кубометров)</h2>
                         <p><strong>Разумный компромисс.</strong><br/>
-                            <strong>Ширина кузова:</strong> 1,85 м;<br/>
+                            <strong>Ширина кузова:</strong> 2,2 м;<br/>
                             <strong>Длина кузова:</strong> 4 м;<br/>
                             <strong>Вместимость:</strong> от 8м<sup>3</sup> до 12м<sup>3</sup>;<br/>
                             <strong>Грузоподъемность:</strong> 3,5 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 60%;"
-                                class="btn btn-default submit-btn form_submit">Оставить заявку</button>
+                                class="btn btn-default submit-btn form_submit">Заказать</button>
                     </div>
                 </div>
             </div>
@@ -33,14 +33,14 @@
                 <div class="carpark">
                     <div class="carpark_title">
                         <h2>BAW Fenix (8-12 Кубометров)</h2>
-                        <p>Разумный компромисс между габаритами и маневренностью.<br/>
-                            Ширина кузова: 1,85 м;<br/>
-                            Длина кузова: 4 м;<br/>
-                            Вместимость: от 8м<sup>3</sup> до 12м<sup>3</sup>;<br/>
-                            Грузоподъемность: 3,5 т;<br/>
+                        <p><strong>Разумный компромисс.</strong><br/>
+                            <strong>Ширина кузова:</strong> 1,85 м;<br/>
+                            <strong>Длина кузова:</strong> 4 м;<br/>
+                            <strong>Вместимость:</strong> от 8м<sup>3</sup> до 12м<sup>3</sup>;<br/>
+                            <strong>Грузоподъемность:</strong> 3,5 т;<br/>
                         </p>
                         <button v-on:click="show()" type="button" style="height: 40px; width: 100%;"
-                                class="btn btn-default submit-btn form_submit">Оставить заявку</button>
+                                class="btn btn-default submit-btn form_submit">Заказать</button>
                     </div>
                 </div>
             </div>
