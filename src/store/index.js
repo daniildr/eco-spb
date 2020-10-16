@@ -13,7 +13,8 @@ export const store = new Vuex.Store({
             totalPrice: 0,
             phoneNumber: "",
             clientName: "",
-            userMessage: "Перезвоните мне, пожалуйста, в ближайшее время."
+            userMessage: "Перезвоните мне, пожалуйста, в ближайшее время.",
+            region: ""
         },
     },
     getters : {},
@@ -36,6 +37,9 @@ export const store = new Vuex.Store({
         },
         setClientName(state, n){
             state.calculator.clientName = n
+        },
+        setRegion(state, n){
+            state.calculator.region = n;
         },
         cleanForLastForm(state){
             state.calculator.garbageType = "";

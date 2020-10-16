@@ -8,7 +8,7 @@
                @before-open = "beforeOpen"
         >
             <div class="col-md-12 right-text">
-                <p style="margin-top: 10px; margin-right: 15px;"><a v-on:click="hide()"><i class="fa fa-close"></i> Закрыть окно</a></p>
+                <p style="margin-top: 20px; margin-right: 15px;"><a v-on:click="hide()"><i class="fa fa-close"></i> Закрыть окно</a></p>
                 <hr style="margin-top: 0px; margin-bottom: 0px;"/>
             </div>
             <div class="col-md-12 center-text inner_about_title">
@@ -16,8 +16,7 @@
                 <div class="col-md-10 col-md-offset-1" style="color: #094071;">
                     <p>Пожалуйста оставьте свой номер телефона, мы вам обязательно перезвоним перезвоним!</p>
                 </div>
-
-                    <form action="Contact.php" method="post">
+                    <form action="contact.php" method="post">
                         <br/>
                         <div class="col-md-12 ">
                             <div class="col-md-12">
@@ -25,6 +24,7 @@
                                     <div class="form-group">
                                         <VuePhoneNumberInput
                                                 v-model="phoneNumber"
+                                                name="phone"
                                                 :default-country-code="RU"
                                                 :only-countries="['RU','AZ','AM','BY','GE','KZ','KG','LV','LT','UA']"
                                                 :translations="{countrySelectorLabel: 'Код страны',phoneNumberLabel: 'Ваш номер телефона',example: 'Пример:'}"
@@ -41,7 +41,13 @@
                             <div class="col-md-12">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input v-model="clientName" name="name" type="text" class="form-control" placeholder="Ваше имя" id="userName">
+                                        <VueInputUi v-model="clientName"
+                                                    name="name"
+                                                    :color="'#094071'"
+                                                    :required="true"
+                                                    :clearable="true"
+                                                    label="Ваше имя"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -54,15 +60,13 @@
                                                   class="form-control"
                                                   id="exampleFormControlTextarea1"
                                                   placeholder="Ваш Комментарий"
-                                                  rows="4"/>
+                                                  rows="6"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <p class="smallText center-text">*Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</p>
                                 <button type="submit" class="btn btn-default submit-btn form_submit">Отправить</button>
-                                <br/>
-                                <button class="btn btn-default submit-btn form_submit" v-on:click="hide()">Закрыть окно</button>
                             </div>
                         </div>
                     </form>
@@ -76,20 +80,19 @@
     import json from "@/assets/price.json";
     import VuePhoneNumberInput from 'vue-phone-number-input';
     import 'vue-phone-number-input/dist/vue-phone-number-input.css';
+    import VueInputUi from 'vue-input-ui';
+    import 'vue-input-ui/dist/vue-input-ui.css';
 
     export default {
         name: "Feedback",
         components: {
-            VuePhoneNumberInput
+            VuePhoneNumberInput,
+            VueInputUi
         },
         props: {
             modalWidth: {
                 type: Number,
                 default: 600
-            },
-            region: {
-                type: String,
-                default: ""
             }
         },
         methods: {
@@ -109,8 +112,8 @@
                 if (this.$store.state.calculator.garbageType !== "")
                     result = result + "Тип мусора: " + this.$store.state.calculator.garbageType + ";" + separator;
 
-                if (this.region !== "")
-                    result = result + "Район: " + this.region + separator;
+                if (this.$store.state.calculator.region !== "")
+                    result = result + "Район: " + this.$store.state.calculator.region + ";" + separator;
 
                 if (this.$store.state.calculator.totalPrice !== 0) {
                     result = result + "Стоимость: " + this.$store.state.calculator.totalPrice + " руб." + ";" + separator;
@@ -137,7 +140,8 @@
                 config: json,
                 phoneNumber: "",
                 clientName: "",
-                userComment: ""
+                userComment: "",
+                clientName1: "",
             }
         }
     }

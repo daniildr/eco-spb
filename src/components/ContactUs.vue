@@ -37,7 +37,12 @@
                                 />
                             </div>
                             <div class="form-group">
-                                <input v-model="clientName" type="text" class="form-control" placeholder="Ваше имя" id="userName">
+                                <VueInputUi v-model="clientName"
+                                            name="name"
+                                            :color="'#094071'"
+                                            :clearable="true"
+                                            label="Ваше имя"
+                                />
                             </div>
                         </form>
                         <div class="center-block center-text">
@@ -54,11 +59,14 @@
 <script>
     import VuePhoneNumberInput from 'vue-phone-number-input';
     import 'vue-phone-number-input/dist/vue-phone-number-input.css';
+    import VueInputUi from 'vue-input-ui';
+    import 'vue-input-ui/dist/vue-input-ui.css';
 
     export default {
         name: "ContactUs",
         components: {
-            VuePhoneNumberInput
+            VuePhoneNumberInput,
+            VueInputUi
         },
         props: {
             phoneNumber: String,

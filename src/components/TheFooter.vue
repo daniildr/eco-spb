@@ -6,7 +6,7 @@
             <br/>
             <copyright/>
             <a id="fabUp" href="#HOME">
-                <i class="fa fa-arrow-up" title="Вверх"></i>
+                <i class="fa fa-angle-up" title="Вверх"></i>
             </a>
         </div>
     </section>
@@ -41,7 +41,7 @@
         border-radius: 4px;
         transition: all 0.5s;
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-        width: 54px;
+        width: 50px;
         margin-top: 5px;
         margin-bottom: 5px;
     }

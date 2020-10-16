@@ -26,14 +26,8 @@
                                 <h4 style="font-size: 150%; margin-top: 0px; margin-bottom: 0px;">Ленинградская область:</h4>
                             </div>
                             <div class="col-md-6">
-                                <select v-model="selectedRegion" class="Shape_2">
-                                    <option v-for="item in config.loRegions" :key="item.zone" :value="item.zone">{{item.label}}</option>
-                                    <!-- <option value="">Выберите место:</option>
-                                    <option value="Тосно">Тосно</option>
-                                    <option value="Любань">Любань</option>
-                                    <option value="Лодейное Поле">Лодейное Поле</option>
-                                    <option value="Гатчина">Гатчина</option>
-                                    <option value="Луга">Луга</option> -->
+                                <select v-model="selectedRegionLo" @change="setRegionAndZone('lo')" class="Shape_2">
+                                    <option v-for="item in loRegions.regions" :key="item.label" :value="item.label">{{item.label}}</option>
                                 </select>
                             </div>
                         </div>
@@ -44,13 +38,8 @@
                                     <h4 style="font-size: 150%; margin-top: 0px; margin-bottom: 0px;">Санкт-Петербург:</h4>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="Shape_2">
-                                        <option value="Select">Выберите место:</option>
-                                        <option value="Тосно">Тосно</option>
-                                        <option value="Любань">Любань</option>
-                                        <option value="Лодейное Поле">Лодейное Поле</option>
-                                        <option value="Гатчина">Гатчина</option>
-                                        <option value="Луга">Луга</option>
+                                    <select v-model="selectedRegionSpb" @change="setRegionAndZone('spb')" class="Shape_2">
+                                        <option v-for="item in spbRegions.regions" :key="item.label" :value="item.label">{{item.label}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -407,6 +396,8 @@
     import TopMenu from "@/components/header/TopMenu";
     import MapBackground from "@/components/map/MapBackground";
     import json from "@/assets/price.json";
+    import loJson from "@/assets/loRegions.json";
+    import spbJson from "@/assets/spbRegions.json";
     import GreenButton from "@/components/Buttons/GreenButton";
 
     export default {
@@ -418,174 +409,270 @@
             MainMenu,
             WorkInfo,
         },
-    methods: {
-        activeMapElement (element) {
-            element.classList.remove(this.fillClassName);
-            element.classList.add(this.hiddenFillClassName);
-            this.selectedRegion = element.id;
+        methods: {
+            activeMapElement (element) {
+                element.classList.remove(this.fillClassName);
+                element.classList.add(this.hiddenFillClassName);
 
-            let elementOn = document.getElementById(element.id + "-on")
-            elementOn.classList.remove(this.hiddenFillClassName);
-
-            let elementLabel = document.getElementById(element.id + "-label")
-            elementLabel.classList.remove(this.hiddenFillClassName);
-        },
-        disableMapElement(element){
-            element.classList.remove(this.activeFillClassName);
-            element.classList.add(this.fillClassName);
-            this.selectedRegion = '';
-
-            let elementOn = document.getElementById(element.id + "-on")
-            elementOn.classList.add(this.hiddenFillClassName);
-
-            let elementLabel = document.getElementById(element.id + "-label")
-            elementLabel.classList.add(this.hiddenFillClassName);
-        },
-        disableOtherMapElements() {
-            let elementOld = document.getElementById(this.selectedRegion);
-            elementOld.classList.remove(this.hiddenFillClassName);
-            elementOld.classList.add(this.fillClassName);
-            this.selectedRegion = '';
-
-            let elementOn = document.getElementById(elementOld.id + "-on")
-            elementOn.classList.add(this.hiddenFillClassName);
-
-            let elementLabel = document.getElementById(elementOld.id + "-label")
-            elementLabel.classList.add(this.hiddenFillClassName);
-        },
-        activeRegion(polygonId) {
-            let element = document.getElementById(polygonId);
-
-            if (this.selectedRegion !== '' && this.selectedRegion !== polygonId)
-                this.disableOtherMapElements();
-            else if (this.selectedRegion === polygonId)
-            {
-                this.disableOtherMapElements();
-                return;
-            }
-
-            if(element.classList.contains(this.fillClassName))
-                this.activeMapElement(element);
-            else if (element.classList.contains(this.activeFillClassName))
-                this.disableMapElement(element);
-        },
-        setTypeOfGarbage(){
-            let result = "";
-            switch (this.selectedTrashType) {
-                case "Select":
-                    result = "";
-                    break;
-                case "construction":
-                    result = "Строительный";
-                    break;
-                case "household":
-                    result = "Бытовой";
-                    break;
-                case "bulky":
-                    result = "Крупногабаритный";
-                    break;
-                default:
-                    result = "";
-                    break;
-            }
-            this.$store.commit('setGarbageType', result);
-        },
-        getLabelForSlider() {
-            switch (this.selectedCarType) {
-                case "":
-                    return "Контейнеров";
-                case "gazel":
-                    return "Мусоровозов";
-                case "baw":
-                    return "Мусоровозов";
-                case "docker20":
-                    return "Контейнеров";
-                case "docker27":
-                    return "Контейнеров";
-                default:
-                    return "Контейнеров";
-            }
-        },
-        getHumanNameForCar(){
-            switch (this.selectedCarType) {
-                case "":
-                    return "Контейнер";
-                case "gazel":
-                    return this.config.cars.gazel.name;
-                case "baw":
-                    return this.config.cars.baw.name;
-                case "docker20":
-                    return this.config.cars.docker20.name;
-                case "docker27":
-                    return this.config.cars.docker27.name;
-                default:
-                    return "Контейнер";
-            }
-        },
-        selectCarType (elementId) {
-            let element = document.getElementById(elementId + "-div");
-            let elementRadio = document.getElementById(elementId + "-radio");
-
-            if (elementRadio.checked) {
-                element.classList.replace(elementId + "-on", elementId + "-off");
-                elementRadio.checked = false;
-                this.selectedCarType = "";
-            } else if (document.getElementById(this.selectedCarType + "-radio") != null) {
-                let element2 = document.getElementById(this.selectedCarType + "-div");
-                let elementRadio2 = document.getElementById(this.selectedCarType + "-radio");
-
-                element2.classList.replace(this.selectedCarType + "-on", this.selectedCarType + "-off");
-                elementRadio2.checked = false;
-                this.selectedCarType = "";
-
-                element.classList.replace(elementId + "-off", elementId + "-on");
-                this.selectedCarType = elementRadio.value;
-                elementRadio.checked = true;
-            } else {
-                element.classList.replace(elementId + "-off", elementId + "-on");
-                this.selectedCarType = elementRadio.value;
-                elementRadio.checked = true;
-            }
-
-            let carTypeString = this.getHumanNameForCar();
-            this.$store.commit('setCarType', carTypeString);
-        },
-        getSelectedNumberOfItems() {
-            this.$store.commit('setNumberOfItems', this.itemCount);
-            return this.$store.state.calculator.numberOfItems;
-        },
-        getSelectedCarPrice(){
-            if (this.selectedCarType == ""){
-                this.selectedCarPrice = "0";
-            }
-            else {
-                if (this.needLoaders){
-                    let carPrise = parseInt(this.config.cars[this.selectedCarType].price1, 10);
-                    let loaderPrise = parseInt(this.config.cars[this.selectedCarType].loaderPrice, 10);
-                    let fullPrice = carPrise + loaderPrise;
-
-                    this.selectedCarPrice =  fullPrice;
+                this.selectedRegionLo = "Выберите место:"
+                this.selectedRegion = element.id;
+                for (let i = 0; i < spbJson.regions.length; i++){
+                    if (spbJson.regions[i].mapId === this.selectedRegion){
+                        this.selectedZone = spbJson.regions[i].region;
+                        this.selectedRegionSpb = spbJson.regions[i].label;
+                        this.$store.commit('setRegion', this.selectedRegionSpb);
+                        break;
+                    }
                 }
-                else
-                    this.selectedCarPrice = this.config.cars[this.selectedCarType].price1
+
+                let elementOn = document.getElementById(element.id + "-on")
+                elementOn.classList.remove(this.hiddenFillClassName);
+
+                let elementLabel = document.getElementById(element.id + "-label")
+                elementLabel.classList.remove(this.hiddenFillClassName);
+            },
+            disableMapElement(element){
+                element.classList.remove(this.activeFillClassName);
+                element.classList.add(this.fillClassName);
+                this.selectedRegionLo = "Выберите место:"
+                this.selectedRegionSpb = "Выберите место:"
+                this.selectedZone = 1;
+                this.$store.commit('setRegion', "");
+                this.selectedRegion = '';
+
+                let elementOn = document.getElementById(element.id + "-on")
+                elementOn.classList.add(this.hiddenFillClassName);
+
+                let elementLabel = document.getElementById(element.id + "-label")
+                elementLabel.classList.add(this.hiddenFillClassName);
+            },
+            disableOtherMapElements() {
+                let elementOld = document.getElementById(this.selectedRegion);
+                elementOld.classList.remove(this.hiddenFillClassName);
+                elementOld.classList.add(this.fillClassName);
+                this.selectedRegion = '';
+
+                let elementOn = document.getElementById(elementOld.id + "-on")
+                elementOn.classList.add(this.hiddenFillClassName);
+
+                let elementLabel = document.getElementById(elementOld.id + "-label")
+                elementLabel.classList.add(this.hiddenFillClassName);
+
+                this.selectedRegionLo = "Выберите место:"
+                this.selectedRegionSpb = "Выберите место:"
+                this.selectedZone = 1;
+                this.$store.commit('setRegion', "");
+            },
+            activeRegion(polygonId) {
+                let element = document.getElementById(polygonId);
+
+                if (this.selectedRegion !== '' && this.selectedRegion !== polygonId)
+                    this.disableOtherMapElements();
+                else if (this.selectedRegion === polygonId)
+                {
+                    this.disableOtherMapElements();
+                    return;
+                }
+
+                if(element.classList.contains(this.fillClassName))
+                    this.activeMapElement(element);
+                else if (element.classList.contains(this.activeFillClassName))
+                    this.disableMapElement(element);
+            },
+            setTypeOfGarbage(){
+                let result = "";
+                switch (this.selectedTrashType) {
+                    case "Select":
+                        result = "";
+                        break;
+                    case "construction":
+                        result = "Строительный";
+                        break;
+                    case "household":
+                        result = "Бытовой";
+                        break;
+                    case "bulky":
+                        result = "Крупногабаритный";
+                        break;
+                    default:
+                        result = "";
+                        break;
+                }
+                this.$store.commit('setGarbageType', result);
+            },
+            getLabelForSlider() {
+                switch (this.selectedCarType) {
+                    case "":
+                        return "Контейнеров";
+                    case "gazel":
+                        return "Мусоровозов";
+                    case "baw":
+                        return "Мусоровозов";
+                    case "docker20":
+                        return "Контейнеров";
+                    case "docker27":
+                        return "Контейнеров";
+                    default:
+                        return "Контейнеров";
+                }
+            },
+            getHumanNameForCar(){
+                switch (this.selectedCarType) {
+                    case "":
+                        return "Контейнер";
+                    case "gazel":
+                        return this.config.cars.gazel.name;
+                    case "baw":
+                        return this.config.cars.baw.name;
+                    case "docker20":
+                        return this.config.cars.docker20.name;
+                    case "docker27":
+                        return this.config.cars.docker27.name;
+                    default:
+                        return "Контейнер";
+                }
+            },
+            selectCarType (elementId) {
+                let element = document.getElementById(elementId + "-div");
+                let elementRadio = document.getElementById(elementId + "-radio");
+
+                if (elementRadio.checked) {
+                    element.classList.replace(elementId + "-on", elementId + "-off");
+                    elementRadio.checked = false;
+                    this.selectedCarType = "";
+                } else if (document.getElementById(this.selectedCarType + "-radio") != null) {
+                    let element2 = document.getElementById(this.selectedCarType + "-div");
+                    let elementRadio2 = document.getElementById(this.selectedCarType + "-radio");
+
+                    element2.classList.replace(this.selectedCarType + "-on", this.selectedCarType + "-off");
+                    elementRadio2.checked = false;
+                    this.selectedCarType = "";
+
+                    element.classList.replace(elementId + "-off", elementId + "-on");
+                    this.selectedCarType = elementRadio.value;
+                    elementRadio.checked = true;
+                } else {
+                    element.classList.replace(elementId + "-off", elementId + "-on");
+                    this.selectedCarType = elementRadio.value;
+                    elementRadio.checked = true;
+                }
+
+                let carTypeString = this.getHumanNameForCar();
+                this.$store.commit('setCarType', carTypeString);
+            },
+            getSelectedNumberOfItems() {
+                this.$store.commit('setNumberOfItems', this.itemCount);
+                return this.$store.state.calculator.numberOfItems;
+            },
+            getSelectedCarPrice(){
+                if (this.selectedCarType == ""){
+                    this.selectedCarPrice = "0";
+                }
+                else {
+                    if (this.needLoaders){
+                        let carPrise;
+                        switch (this.selectedZone) {
+                            case 1:
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price1, 10);
+                                break;
+                            case 2:
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price2, 10);
+                                break;
+                            case 3:
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price3, 10);
+                                break;
+                            case 4:
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price4, 10);
+                                break;
+                        }
+
+                        let loaderPrise = parseInt(this.config.cars[this.selectedCarType].loaderPrice, 10);
+                        this.selectedCarPrice = carPrise + loaderPrise;
+                    }
+                    else{
+                        switch (this.selectedZone) {
+                            case 1:
+                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price1
+                                break;
+                            case 2:
+                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price2
+                                break;
+                            case 3:
+                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price3
+                                break;
+                            case 4:
+                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price4
+                                break;
+                        }
+                    }
+                }
+                return this.selectedCarPrice;
+            },
+            getFullPrice(){
+                let result = this.selectedCarPrice * this.itemCount;
+                this.$store.commit('setTotalPrice', result);
+                return result
+            },
+            setRegionAndZone(type){
+                switch (type) {
+                    case 'spb':{
+                        this.selectedRegionLo = "Выберите место:"
+                        this.$store.commit('setRegion', this.selectedRegionSpb);
+
+                        for (let i = 0; i < spbJson.regions.length; i++){
+                            if (spbJson.regions[i].label === this.selectedRegionSpb){
+                                this.selectedZone = spbJson.regions[i].region;
+                                break;
+                            }
+                        }
+                    } break;
+
+                    case 'lo':{
+                        let backUpValue = this.selectedRegionLo;
+                        let backUpZone;
+                        this.selectedRegionSpb = "Выберите место:"
+                        this.$store.commit('setRegion', this.selectedRegionLo);
+
+                        for (let i = 0; i < loJson.regions.length; i++){
+                            if (loJson.regions[i].label === this.selectedRegionLo){
+                                this.selectedZone = loJson.regions[i].region;
+                                backUpZone = this.selectedZone;
+                                break;
+                            }
+                        }
+
+                        this.disableOtherMapElements();
+                        this.selectedRegionLo = backUpValue;
+                        this.selectedZone = backUpZone;
+                        this.$store.commit('setRegion', this.selectedRegionLo);
+                    } break;
+
+                    default:{
+                        this.selectedRegionLo = "Выберите место:"
+                        this.selectedRegionSpb = "Выберите место:"
+                        this.selectedZone = 1;
+                        this.$store.commit('setRegion', "");
+                    }break;
+
+                }
             }
-            return this.selectedCarPrice;
         },
-        getFullPrice(){
-            let result = this.selectedCarPrice * this.itemCount;
-            this.$store.commit('setTotalPrice', result);
-            return result
-        }
-    },
         data() {
             return {
                 config : json,
+                loRegions : loJson,
+                spbRegions : spbJson,
 
                 // calc props
                 selectedCarType: "",
                 selectedCarPrice: "0",
                 selectedTrashType: 'Select',
                 selectedRegion: '',
+
+                selectedRegionLo: "Выберите место:",
+                selectedRegionSpb: "Выберите место:",
+                selectedZone: 1,
+
                 needLoaders: false,
                 itemCount: 1,
 
@@ -598,11 +685,6 @@
                     // other
                     carIconCssClass: "carIcon",
                     carIconDisableCssClass: "carIconDisable",
-                    svgPalette: {
-                        fill: '#FFFFFF',
-                        width: '585px',
-                        height: '544px'
-                    }
             }
         }
     }

@@ -7,7 +7,7 @@
                 в соответствии со статьей 435 и пунктом 2 статьи 437 Гражданского кодекса Российской Федерации.</p></div>
             <div class="col-md-4 right-text mobile-st">
                 <a href="#HOME">
-                    <i class="fa fa-arrow-up" title="Вверх"> Вернуться наверх</i>
+                    <i class="fa fa-angle-up" title="Вверх"> Вернуться наверх</i>
                 </a>
             </div>
         </div>

@@ -38,10 +38,9 @@ if(isset($_POST['name']) and isset($_POST['phone']) and isset($_POST['message'])
         exit();
     } else {
         $to = __TO__;
-        $subject = $subjectForm . ' ' . $name. '(телефон: '.$phone.').';
+        $subject = $subjectForm . ' ' . $name. ' (телефон: '.$phone.').';
         $message = 'Пользователь ' . $name . ' отправил вам сообщение:<br />' . $messageForm . '<br />
-        Связяться с ним можно по телефону <a href="callto:' . $phone . '">' . $phone . '</a>'
-        ;
+        Связяться с ним можно по телефону <a href="callto:' . $phone . '">' . $phone . '</a>';
 
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";

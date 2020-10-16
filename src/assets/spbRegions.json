@@ -1,0 +1,109 @@
+{
+  "regions": [
+    {
+      "label": "Выберите место:",
+      "mapId": "",
+      "region": 0
+    },
+    {
+      "label": "Адмиралтейский район",
+      "mapId": "admiral",
+      "region": 1
+    },
+    {
+      "label": "Василеостровский район",
+      "mapId": "vaska",
+      "region": 1
+    },
+    {
+      "label": "Курортный район",
+      "mapId": "kurort",
+      "region": 2
+    },
+    {
+      "label": "Приморский район",
+      "mapId": "prima",
+      "region": 1
+    },
+    {
+      "label": "Выборгский район",
+      "mapId": "viborg",
+      "region": 1
+    },
+    {
+      "label": "Петроградский район",
+      "mapId": "petr",
+      "region": 1
+    },
+    {
+      "label": "Кронштадтский район",
+      "mapId": "kron",
+      "region": 3
+    },
+    {
+      "label": "Центральный район",
+      "mapId": "center",
+      "region": 1
+    },
+    {
+      "label": "Красногвардейский район",
+      "mapId": "krasnogvar",
+      "region": 1
+    },
+    {
+      "label": "Калининский район",
+      "mapId": "kalin",
+      "region": 1
+    },
+    {
+      "label": "Невский район",
+      "mapId": "nevskii",
+      "region": 1
+    },
+    {
+      "label": "Фрунзенский район",
+      "mapId": "frunzen",
+      "region": 1
+    },
+    {
+      "label": "Московский район",
+      "mapId": "moscow",
+      "region": 1
+    },
+    {
+      "label": "Кировский район",
+      "mapId": "kirovskii",
+      "region": 1
+    },
+    {
+      "label": "Красносельский район",
+      "mapId": "krasnosel",
+      "region": 1
+    },
+    {
+      "label": "Петродворцовый район",
+      "mapId": "petrodvor",
+      "region": 2
+    },
+    {
+      "label": "Ломоносовский район",
+      "mapId": "lomonosov",
+      "region": 2
+    },
+    {
+      "label": "Пушкинский район",
+      "mapId": "pushkin",
+      "region": 1
+    },
+    {
+      "label": "Павловский район",
+      "mapId": "pavel",
+      "region": 2
+    },
+    {
+      "label": "Колпинский район",
+      "mapId": "kolpinskii",
+      "region": 1
+    }
+  ]
+}
