@@ -1,0 +1,40 @@
+{
+  "RuNumber": "8 (800) 555-55-49",
+  "SpbFirstNumber": "8 (812) 007-07-05",
+  "SpbSecondNumber": "8 (812) 007-08-05",
+  "MaxSliderSize": 50,
+  "cars": {
+    "gazel": {
+      "price1": "2000",
+      "price2": "2500",
+      "price3": "3000",
+      "price4": "3500",
+      "loaderPrice": 2500,
+      "name": "ГАЗ «ГАЗель»"
+    },
+    "baw": {
+      "price1": "2500",
+      "price2": "3000",
+      "price3": "3500",
+      "price4": "4000",
+      "loaderPrice": 3000,
+      "name": "BAW Fenix"
+    },
+    "docker20": {
+      "price1": "3000",
+      "price2": "3500",
+      "price3": "4000",
+      "price4": "4500",
+      "loaderPrice": 3500,
+      "name": "Контейнер 20 кубометров"
+    },
+    "docker27": {
+      "price1": "3500",
+      "price2": "4000",
+      "price3": "4500",
+      "price4": "5000",
+      "loaderPrice": 4000,
+      "name": "Контейнер 27 кубометров"
+    }
+  }
+}

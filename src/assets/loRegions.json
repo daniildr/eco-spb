@@ -1,0 +1,34 @@
+{
+  "regions": [
+    {
+      "label": "Выберите место:",
+      "sysLabel": "Select",
+      "region": 0
+    },
+    {
+      "label": "Тосно",
+      "sysLabel": "tosno",
+      "region": 1
+    },
+    {
+      "label": "Любань",
+      "sysLabel": "luban",
+      "region": 2
+    },
+    {
+      "label": "Лодейное Поле",
+      "sysLabel": "lodeinoePole",
+      "region": 3
+    },
+    {
+      "label": "Гатчина",
+      "sysLabel": "gatchina",
+      "region": 1
+    },
+    {
+      "label": "Луга",
+      "sysLabel": "luga",
+      "region": 4
+    }
+  ]
+}
