@@ -1,13 +1,15 @@
 <template>
-    <section>
+    <section style="z-index: 9999;">
         <modal name="feedbackModal"
                :width="modalWidth"
                height="auto"
+               :resizable="true"
                :adaptive="true"
                :draggable="false"
+               :scrollable="true"
                @before-open = "beforeOpen"
         >
-            <div class="col-md-12 right-text">
+            <div class="col-md-12 right-text hidden-sm hidden-xs">
                 <p style="margin-top: 20px; margin-right: 15px;"><a v-on:click="hide()"><i class="fa fa-close"></i> Закрыть окно</a></p>
                 <hr style="margin-top: 0px; margin-bottom: 0px;"/>
             </div>
@@ -67,6 +69,7 @@
                             <div class="col-md-12">
                                 <p class="smallText center-text">*Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</p>
                                 <button type="submit" class="btn btn-default submit-btn form_submit">Отправить</button>
+                                <button type="button" v-on:click="hide()" class="btn btn-default submit-btn form_submit">Закрыть окно</button>
                             </div>
                         </div>
                     </form>

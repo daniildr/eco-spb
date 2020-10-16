@@ -179,6 +179,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price1) + parseInt(this.config.cars.gazel.loaderPrice)
                             : parseInt(this.config.cars.gazel.price1));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "gazel.price2":{
 
@@ -187,6 +189,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price2) + parseInt(this.config.cars.gazel.loaderPrice)
                             : parseInt(this.config.cars.gazel.price2));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "gazel.price3":{
                         this.$store.commit('setCarType', this.config.cars.gazel.name);
@@ -194,6 +198,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price3) + parseInt(this.config.cars.gazel.loaderPrice)
                             : parseInt(this.config.cars.gazel.price3));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "gazel.price4":{
                         this.$store.commit('setCarType', this.config.cars.gazel.name);
@@ -201,6 +207,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.gazel.price4) + parseInt(this.config.cars.gazel.loaderPrice)
                             : parseInt(this.config.cars.gazel.price4));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
 
                     case "baw.price1":{
@@ -209,6 +217,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price1) + parseInt(this.config.cars.baw.loaderPrice)
                             : parseInt(this.config.cars.baw.price1));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "baw.price2":{
                         this.$store.commit('setCarType', this.config.cars.baw.name);
@@ -216,6 +226,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price2) + parseInt(this.config.cars.baw.loaderPrice)
                             : parseInt(this.config.cars.baw.price2));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "baw.price3":{
                         this.$store.commit('setCarType', this.config.cars.baw.name);
@@ -223,6 +235,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price3) + parseInt(this.config.cars.baw.loaderPrice)
                             : parseInt(this.config.cars.baw.price3));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "baw.price4":{
                         this.$store.commit('setCarType', this.config.cars.baw.name);
@@ -230,6 +244,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.baw.price4) + parseInt(this.config.cars.baw.loaderPrice)
                             : parseInt(this.config.cars.baw.price4));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
 
                     case "docker20.price1":{
@@ -238,6 +254,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price1) + parseInt(this.config.cars.docker20.loaderPrice)
                             : parseInt(this.config.cars.docker20.price1));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "docker20.price2":{
                         this.$store.commit('setCarType', this.config.cars.docker20.name);
@@ -245,6 +263,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price2) + parseInt(this.config.cars.docker20.loaderPrice)
                             : parseInt(this.config.cars.docker20.price2));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "docker20.price3":{
                         this.$store.commit('setCarType', this.config.cars.docker20.name);
@@ -252,6 +272,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price3) + parseInt(this.config.cars.docker20.loaderPrice)
                             : parseInt(this.config.cars.docker20.price3));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "docker20.price4":{
                         this.$store.commit('setCarType', this.config.cars.docker20.name);
@@ -259,6 +281,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker20.price4) + parseInt(this.config.cars.docker20.loaderPrice)
                             : parseInt(this.config.cars.docker20.price4));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
 
                     case "docker27.price1":{
@@ -267,6 +291,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price1) + parseInt(this.config.cars.docker27.loaderPrice)
                             : parseInt(this.config.cars.docker27.price1));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "docker27.price2":{
                         this.$store.commit('setCarType', this.config.cars.docker27.name);
@@ -274,6 +300,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price2) + parseInt(this.config.cars.docker27.loaderPrice)
                             : parseInt(this.config.cars.docker27.price2));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "docker27.price3":{
                         this.$store.commit('setCarType', this.config.cars.docker27.name);
@@ -281,6 +309,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price3) + parseInt(this.config.cars.docker27.loaderPrice)
                             : parseInt(this.config.cars.docker27.price3));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                     case "docker27.price4":{
                         this.$store.commit('setCarType', this.config.cars.docker27.name);
@@ -288,6 +318,8 @@
                         this.$store.commit('setTotalPrice', this.needLoader
                             ? parseInt(this.config.cars.docker27.price4) + parseInt(this.config.cars.docker27.loaderPrice)
                             : parseInt(this.config.cars.docker27.price4));
+                        this.$store.commit('setRegion', "");
+                        this.$store.commit('setGarbageType', "");
                     }break;
                 }
             },

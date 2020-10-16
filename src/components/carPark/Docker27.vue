@@ -58,6 +58,8 @@
                 this.$store.commit('setCarType', this.config.cars.docker27.name);
                 this.$store.commit('setNumberOfItems', 1);
                 this.$store.commit('setTotalPrice', this.config.cars.docker27.price1);
+                this.$store.commit('setRegion', "");
+                this.$store.commit('setGarbageType', "");
                 this.$modal.show("feedbackModal");
             }
         },

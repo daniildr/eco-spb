@@ -37,6 +37,8 @@
                 this.$store.commit('setCarType', this.config.cars.gazel.name);
                 this.$store.commit('setNumberOfItems', 1);
                 this.$store.commit('setTotalPrice', this.config.cars.gazel.price1);
+                this.$store.commit('setRegion', "");
+                this.$store.commit('setGarbageType', "");
                 this.$modal.show("feedbackModal");
             }
         },

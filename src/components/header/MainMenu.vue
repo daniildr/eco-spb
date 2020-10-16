@@ -44,5 +44,8 @@
     .mobile-hidden{
         height: 50px;
     }
+    .navbar-fixed-top, .navbar-fixed-bottom{
+        z-index: 999;
+    }
 }
 </style>
