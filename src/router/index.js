@@ -19,6 +19,19 @@ export default new Router({
             }
         },
         {
+            path: "/success",
+            component: () => import("@/views/SuccessPage"),
+            meta: {
+                title: 'Ваше сообщение успешно отправлено - Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
+                metaTags: [
+                    {
+                        name: 'description',
+                        content: 'The home page of our example app.'
+                    }
+                ]
+            }
+        },
+        {
             path: "*",
             component: () => import("@/views/404"),
             meta: {

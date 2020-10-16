@@ -21,7 +21,8 @@ function send_mail($to, $subject, $message, $headers){
     if(@mail($to,$subject,$message,$headers)){
         echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
     } else {
-        echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
+        $url = 'http://daniildr.beget.tech/#/success';
+        header( "Location: $url" );
     }
 }
 
