@@ -121,15 +121,13 @@
                     </table>
                 </div>
             </section>
-            <section>
-                <div class="container">
-                    <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
-                    <label for="need-loader2"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
-                </div>
-            </section>
-            <PriceBg/>
         </section>
         <section class="page" id="CONTACT">
+            <div class="container">
+                <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
+                <label for="need-loader2"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
+            </div>
+            <PriceBg/>
             <div class="inner_about_title">
                 <div class="container">
                     <div class="row col-md-12">

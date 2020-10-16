@@ -4,8 +4,9 @@
             <social/>
             <br/>
             <br/>
+            <hr/>
             <copyright/>
-            <a id="fabUp" href="#HOME" v-smooth-scroll>
+            <a id="fabUp" href="#HOME">
                 <i class="fa fa-angle-up" title="Вверх"></i>
             </a>
         </div>

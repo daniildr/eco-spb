@@ -43,6 +43,26 @@ export default new Router({
                     }
                 ]
             }
+        },
+        {
+            path: '/HOME',
+            redirect: '/'
+        },
+        {
+            path: '/ABOUT',
+            redirect: '/'
+        },
+        {
+            path: '/CARPARK',
+            redirect: '/'
+        },
+        {
+            path: '/PRICE',
+            redirect: '/'
+        },
+        {
+            path: '/CONTACT',
+            redirect: '/'
         }
     ]
 });
