@@ -22,7 +22,7 @@ function send_mail($to, $subject, $message, $headers){
         $url = 'http://daniildr.beget.tech/#/success';
         header( "Location: $url" );
     } else {
-        echo json_encode(array('info' => 'error', 'msg' => __ERROR_MESSAGE__));
+        echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));
     }
 }
 
