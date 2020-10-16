@@ -13,12 +13,12 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a style="color: #FFFFFF" href="#HOME">ГЛАВНАЯ</a></li>
-                    <li><a style="color: #FFFFFF" href="#ABOUT">О НАС </a></li>
-                    <li><a style="color: #FFFFFF" href="#CARPARK">АВТОПАРК</a></li>
-                    <li><a style="color: #FFFFFF" href="#PRICE">ПРАЙС-ЛИСТ</a></li>
-                    <li><a style="color: #FFFFFF" href="#CONTACT">КОНТАКТЫ </a></li>
-                    <li><a style="color: #FFFFFF" v-bind:href="'callto:' + config.RuNumber"><i class="fa fa-phone"></i><strong>&nbsp;{{ config.RuNumber }}</strong></a></li>
+                    <li><a  href="#HOME" v-smooth-scroll>ГЛАВНАЯ</a></li>
+                    <li><a  href="#ABOUT" v-smooth-scroll>О НАС </a></li>
+                    <li><a  href="#CARPARK" v-smooth-scroll>АВТОПАРК</a></li>
+                    <li><a  href="#PRICE" v-smooth-scroll>ПРАЙС-ЛИСТ</a></li>
+                    <li><a  href="#CONTACT" v-smooth-scroll>КОНТАКТЫ </a></li>
+                    <li><a  v-bind:href="'callto:' + config.RuNumber"><i class="fa fa-phone"></i><strong>&nbsp;{{ config.RuNumber }}</strong></a></li>
                 </ul>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
-    <section id="ABOUT">
-        <section class="about page">
+    <section id="ABOUT" class="page">
+        <section class="about">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 center-text">

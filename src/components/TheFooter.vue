@@ -5,7 +5,7 @@
             <br/>
             <br/>
             <copyright/>
-            <a id="fabUp" href="#HOME">
+            <a id="fabUp" href="#HOME" v-smooth-scroll>
                 <i class="fa fa-angle-up" title="Вверх"></i>
             </a>
         </div>

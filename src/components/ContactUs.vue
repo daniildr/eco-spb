@@ -1,5 +1,5 @@
 <template>
-    <section class="inner_about_area page" style="margin-bottom: 30px;" id="CONTACT">
+    <section class="inner_about_area" style="margin-bottom: 30px;">
         <div class="section_overlay">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1">
@@ -27,7 +27,7 @@
                                 <VuePhoneNumberInput
                                         v-model="phoneNumber"
                                         :id="phoneNumber"
-                                        :default-country-code="RU"
+                                        :default-country-code="'RU'"
                                         :only-countries="['RU','AZ','AM','BY','GE','KZ','KG','LV','LT','UA']"
                                         :translations="{countrySelectorLabel: 'Код страны',phoneNumberLabel: 'Ваш номер телефона',example: 'Пример:'}"
                                         :valid-color="'#62bc00'"

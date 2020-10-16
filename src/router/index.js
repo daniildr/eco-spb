@@ -33,7 +33,7 @@ export default new Router({
         },
         {
             path: "*",
-            component: () => import("@/views/404"),
+            component: () => import("@/views/NoFoundPage"),
             meta: {
                 title: 'Страница не найдена - Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
                 metaTags: [

@@ -1,8 +1,8 @@
 <template>
-    <section id="HOME">
+    <section id="HOME" class="page">
         <section class="copyright">
             <MainMenu/>
-            <div class="container" >
+            <div class="container">
                 <HeaderInfo/>
 
                 <div class="col-md-12">

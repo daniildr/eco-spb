@@ -1,29 +1,30 @@
 <template>
-    <section class="page" id="PRICE">
-        <section class="inner_about_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-md-offset-1">
-                        <div class="col-md-10 inner_about_title">
-                            <h2>Цены на вывоз мусора</h2>
+    <section>
+        <section class="page" id="PRICE">
+            <section class="inner_about_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-1">
+                            <div class="col-md-10 inner_about_title">
+                                <h2>Цены на вывоз мусора</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="inner_about_area">
-            <div class="table-responsive container">
-                <table class="table">
-                    <thead>
+            </section>
+            <section class="inner_about_area">
+                <div class="table-responsive container">
+                    <table class="table">
+                        <thead>
                         <tr>
-                        <td></td>
-                        <td><h4>Газель (до 1.5 тонн)</h4></td>
-                        <td><h4>BAW Fenix 8-12 м<sup>3</sup></h4></td>
-                        <td><h4>Контейнер 20 м<sup>3</sup></h4></td>
-                        <td><h4>Контейнер 27 м<sup>3</sup></h4></td>
-                    </tr>
-                    </thead>
-                    <tbody>
+                            <td></td>
+                            <td><h4>Газель (до 1.5 тонн)</h4></td>
+                            <td><h4>BAW Fenix 8-12 м<sup>3</sup></h4></td>
+                            <td><h4>Контейнер 20 м<sup>3</sup></h4></td>
+                            <td><h4>Контейнер 27 м<sup>3</sup></h4></td>
+                        </tr>
+                        </thead>
+                        <tbody>
                         <tr>
                             <td><p>Санкт-Петербург<br>(В пределах КАД)</p></td>
                             <td>
@@ -66,7 +67,7 @@
                             </td>
                             <td>
                                 <p class="pHover" v-on:click="selectItem('docker27.price2')" id="docker27.price2">
-                                  от {{ needLoader ? parseInt(config.cars.docker27.price2) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price2 }} рублей
+                                    от {{ needLoader ? parseInt(config.cars.docker27.price2) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price2 }} рублей
                                 </p>
                             </td>
                         </tr>
@@ -84,7 +85,7 @@
                             </td>
                             <td>
                                 <p class="pHover" v-on:click="selectItem('docker20.price3')" id="docker20.price3">
-                                  от {{ needLoader ? parseInt(config.cars.docker20.price3) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price3 }} рублей
+                                    от {{ needLoader ? parseInt(config.cars.docker20.price3) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price3 }} рублей
                                 </p>
                             </td>
                             <td>
@@ -116,49 +117,55 @@
                                 </p>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
+                    <label for="need-loader2"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
+                </div>
+            </section>
+            <PriceBg/>
         </section>
-        <section>
-            <div class="container">
-                <input id="need-loader2" class="custom-radio2 hidden" type="checkbox" v-bind:value="true" v-on:input="needLoader == true ? needLoader = false : needLoader = true">
-                <label for="need-loader2"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
-            </div>
-        </section>
-        <PriceBg/>
-        <div class="inner_about_title">
-            <div class="container">
-                <div class="row col-md-12">
-                    <div class="col-md-9 left-text left-blok">
-                        <p class="linka">Сделать заказ можно по телефону: <a v-bind:href="'callto:' + config.SpbFirstNumber">{{ config.SpbFirstNumber }}</a></p>
-                        <p class="linka" style="font-size: 18px; font-weight: normal; margin-top: 0px;">Наши менеджеры рассчитают график и стоимость, ответят на все возникшие вопросы.</p>
-                    </div>
-                    <div class="col-md-3">
-                        <br/>
-                        <button
-                                v-on:click="show()"
-                                type="button"
-                                style="width: 260px; height: 50px;"
-                                class="btn btn-default green-btn"
-                        >
-                            Оставить заявку
-                        </button>
+        <section class="page" id="CONTACT">
+            <div class="inner_about_title">
+                <div class="container">
+                    <div class="row col-md-12">
+                        <div class="col-md-9 left-text left-blok">
+                            <p class="linka">Сделать заказ можно по телефону: <a v-bind:href="'callto:' + config.SpbFirstNumber">{{ config.SpbFirstNumber }}</a></p>
+                            <p class="linka" style="font-size: 18px; font-weight: normal; margin-top: 0px;">Наши менеджеры рассчитают график и стоимость, ответят на все возникшие вопросы.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <br/>
+                            <button
+                                    v-on:click="show()"
+                                    type="button"
+                                    style="width: 260px; height: 50px;"
+                                    class="btn btn-default green-btn"
+                            >
+                                Оставить заявку
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <hr/>
             </div>
-            <hr/>
-        </div>
+            <ContactUs/>
+        </section>
+
     </section>
 </template>
 
 <script>
     import json from '@/assets/price.json'
     import PriceBg from "@/components/priceBg";
+    import ContactUs from "@/components/ContactUs";
 
     export default {
         name: "Price",
-        components: {PriceBg},
+        components: {ContactUs, PriceBg},
         data() {
             return {
                 needLoader: false,

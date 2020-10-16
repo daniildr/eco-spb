@@ -27,7 +27,7 @@
                                         <VuePhoneNumberInput
                                                 v-model="phoneNumber"
                                                 name="phone"
-                                                :default-country-code="RU"
+                                                :default-country-code="'RU'"
                                                 :only-countries="['RU','AZ','AM','BY','GE','KZ','KG','LV','LT','UA']"
                                                 :translations="{countrySelectorLabel: 'Код страны',phoneNumberLabel: 'Ваш номер телефона',example: 'Пример:'}"
                                                 :required="true"

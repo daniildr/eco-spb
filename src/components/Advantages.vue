@@ -1,5 +1,5 @@
 <template>
-    <section class="inner_about_area page">
+    <section class="inner_about_area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ">
