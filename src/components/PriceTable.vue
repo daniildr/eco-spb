@@ -442,14 +442,14 @@
         background-color: #e7e7e7;
         color: #135693;
         padding: 8px 0px;
-        border-radius: 8px;
+        border-radius: 4px;
     }
     .pHover-select {
         background-color: #e7e7e7;
         color: #135693;
         padding: 8px 0px;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        border-radius: 8px;
+        border-radius: 4px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;
@@ -476,7 +476,7 @@
         line-height: 19px;
         color: #135693;
         font-size: 100%;
-        border-radius: 2px;
+        border-radius: 4px;
         border: 1px solid #ccc;
     }
     .custom-radio2:checked + label::before {

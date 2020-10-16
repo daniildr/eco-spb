@@ -27,6 +27,9 @@ $(document).ready(function() {
                     'display': 'none'
                 })
             }
+            $("#menuLogo").css({
+                'display': 'block'
+            })
             $(".navbar").css({
                 'margin-top': '0px',
                 'opacity': '1'
@@ -44,6 +47,9 @@ $(document).ready(function() {
                 'background-color': 'rgba(40, 40, 40, 0.9)'
             });
         } else {
+            $("#menuLogo").css({
+                'display': 'none'
+            })
             $(".navbar").css({
                 'margin-top': '-100px',
                 'opacity': '0'

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Preloader/>
     <router-view></router-view>
     <TheFooter/>
   </div>
@@ -7,6 +8,7 @@
 
 <script>
 import TheFooter from "@/components/TheFooter";
+import Preloader from "@/components/Preloader";
 
 export default {
   name: 'App',
@@ -20,8 +22,8 @@ export default {
     },
   },
   components: {
+    Preloader,
     TheFooter
-
   }
 }
 </script>

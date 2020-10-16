@@ -452,6 +452,7 @@ tuor:visited {
 .green-btn:active,
 .green-btn:focus,
 .green-btn:visited{
+    color: #2e6a98;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 18px;

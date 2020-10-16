@@ -79,7 +79,10 @@
         props: {
             phoneNumber: String,
             clientName: String,
-            userComment: String
+            userComment: {
+                type: String,
+                default: "Срочно перезвоните мне!"
+            }
         }
     }
 </script>
