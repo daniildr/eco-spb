@@ -8,10 +8,9 @@
             <tr>
                 <td><img src="../../images/work-time.png" alt="Рабочие часы"></td>
                 <td>
-                    <GreenButton
-                            custom-text="Оставить заявку"
-                            custom-style="width: 100%;padding-left: 35px;padding-right: 35px;"
-                    />
+                    <a href="/"
+                       style="width: auto; font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 18px; padding-left: 35px; padding-right: 35px; color: #333333"
+                       class="btn btn-default green-btn">На главную</a>
                 </td>
             </tr>
         </table>
@@ -23,26 +22,21 @@
             <div class="col-sm-12 mid-mar">
                 <img src="../../images/work-time.png" alt="Рабочие часы">
             </div>
-            <div class="col-sm-12 bot-mar">
-
-            </div>
         </div>
     </section>
 
 </template>
 
 <script>
-    import GreenButton from "@/components/Buttons/GreenButton";
     import json from '@/assets/price.json'
 
     export default {
-        name: "WorkInfo",
+        name: "CustomWorkInfo",
         components: {
-            GreenButton
+
         },
         data() {
             return {
-                needLoader: false,
                 config : json
             }
         }

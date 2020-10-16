@@ -1,5 +1,6 @@
 <template>
     <div>
+        <TheHeader/>
         <About/>
         <CarPark/>
         <Price/>
@@ -14,10 +15,12 @@
     import ContactUs from "@/components/ContactUs";
     import Price from "@/components/PriceTable";
     import Feedback from "@/components/modals/Feedback";
+    import TheHeader from "@/components/TheHeader";
 
     export default {
         name: "Home",
         components: {
+            TheHeader,
             Feedback,
             Price,
 

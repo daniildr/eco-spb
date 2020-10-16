@@ -1,10 +1,10 @@
 <template>
-    <section class="about page">
+    <section class="inner_about_area page">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 center-text">
-                    <div class="section_title">
-                        <h2>Ваше сообщение успешно отправленно!</h2>
+                    <div class="inner_about_title">
+                        <h2>Ваше сообщение успешно отправлено!</h2>
                         <p>
                             Благодарим Вас за проявленный интерес к нашей компании! <br>
                             Мы свяжемся с Вами в самое ближайшее время и ответим на все интересующие Вас вопросы.
@@ -17,7 +17,7 @@
                         <p><strong>Доверьте вывоз мусора ответственному партнеру!</strong></p>
 
                         <a href="/"
-                           style="height: 40px; width: 60%;"
+                           style="height: 50px; width: auto; padding-left: 20px; padding-right: 20px; padding-top: 10px;"
                            class="btn btn-default green-btn">Вернуться на главную страницу</a>
                     </div>
                 </div>

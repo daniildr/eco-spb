@@ -3,14 +3,7 @@
         <section class="copyright">
             <MainMenu/>
             <div class="container" >
-                <div class="col-md-12"  style="margin-bottom: 20px;">
-                    <div class="col-md-pull-6 pull-left">
-                        <a href="#"><img src="../images/header-logo.png" alt="Logo"></a>
-                    </div>
-                    <div class="col-md-pull-6 pull-right" >
-                        <WorkInfo/>
-                    </div>
-                </div>
+                <HeaderInfo/>
 
                 <div class="col-md-12">
                     <div class="col-md-6 left-text">
@@ -391,7 +384,6 @@
 
 
 <script>
-    import WorkInfo from "@/components/header/WorkInfo";
     import MainMenu from "@/components/header/MainMenu";
     import TopMenu from "@/components/header/TopMenu";
     import MapBackground from "@/components/map/MapBackground";
@@ -399,15 +391,17 @@
     import loJson from "@/assets/loRegions.json";
     import spbJson from "@/assets/spbRegions.json";
     import GreenButton from "@/components/Buttons/GreenButton";
+    import HeaderInfo from "@/components/header/HeaderInfo";
 
     export default {
         name: "TheHeader",
         components: {
+            HeaderInfo,
             GreenButton,
             MapBackground,
             TopMenu,
             MainMenu,
-            WorkInfo,
+
         },
         methods: {
             activeMapElement (element) {
