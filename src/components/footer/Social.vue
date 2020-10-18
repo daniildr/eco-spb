@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-4 left-text mobile-st">
-                <img class="contactFormLogo" style="height: 140px;" src="../../images/logos/color-mini.png">
+                <img class="contactFormLogo" style="height: 140px;" src="../../images/logos/whiteLogoFooter.png">
             </div>
             <div class="col-md-4 center-text center-block mobile-st"><p>Уважаемые посетители сайта, обращаем Ваше внимание на то, что информация, размещенная на сайте,
                 носит исключительно информационно-рекламный характер, и не является офертой или публичной офертой
