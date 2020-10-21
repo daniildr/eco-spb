@@ -8,9 +8,9 @@
             <tr>
                 <td><img src="../../images/work-time.png" alt="Рабочие часы"></td>
                 <td>
-                    <a href="/"
-                       style="width: auto; font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 18px; padding-left: 35px; padding-right: 35px; color: #333333"
-                       class="btn btn-default green-btn">На главную</a>
+                    <button @click="goToEvents()"
+                       style="width: auto; font-size: 18px; padding-left: 35px; padding-right: 35px;"
+                       class="btn btn-default green-btn">На главную</button>
                 </td>
             </tr>
         </table>
@@ -34,6 +34,11 @@
         name: "CustomWorkInfo",
         components: {
 
+        },
+        methods: {
+            goToEvents (){
+                location.href='/'
+            }
         },
         data() {
             return {

@@ -401,8 +401,7 @@
             GreenButton,
             MapBackground,
             TopMenu,
-            MainMenu,
-
+            MainMenu
         },
         methods: {
             activeMapElement (element) {
@@ -1154,7 +1153,7 @@
         color: #094071;
         padding: 5px 15px;
         border: 1px solid black;
-        border-radius: 4px;
+        border-radius: 14px;
         z-index: 989;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         transition: .55s opacity, .55s visibility;
@@ -1216,7 +1215,7 @@
         border-style: solid;
         border-width: 3px;
         border-color: rgb(6, 35, 62);
-        border-radius: 4px;
+        border-radius: 14px;
         background-color: rgb(8, 41, 72);
         box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.08);
         width: 100%;
@@ -1233,7 +1232,7 @@
         border-style: solid;
         border-width: 1px;
         border-color: rgb(6, 35, 62);
-        border-radius: 4px;
+        border-radius: 14px;
         background-color: rgb(232, 233, 234);
         box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.08);
         width: 300px;

@@ -10,7 +10,7 @@
                 <td>
                     <GreenButton
                             custom-text="Оставить заявку"
-                            custom-style="width: 100%;padding-left: 35px;padding-right: 35px;"
+                            custom-style=" width: 100%; padding-left: 35px;padding-right: 35px; padding-top:10px; padding-bottom:10px;"
                     />
                 </td>
             </tr>

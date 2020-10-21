@@ -10,15 +10,15 @@
                             Мы свяжемся с Вами в самое ближайшее время и ответим на все интересующие Вас вопросы.
                         </p>
                         <p>
-                            «Эко-СПБ» — это проверенная годами компания с большим опытом работы в сфере утилизации отходов,
+                            «Эко СПБ» — это проверенная годами компания с большим опытом работы в сфере утилизации отходов,
                             за 2019 мы вывезли 17000 тонн различного мусора с объектов наши клиентов.
                             Обеспечиваем вывоз мусора и экологически безопасную утилизацию строительных и твёрдых коммунальных отходов.
                         </p>
                         <p><strong>Доверьте вывоз мусора ответственному партнеру!</strong></p>
 
-                        <a href="/"
-                           style="height: 50px; width: auto; padding-left: 20px; padding-right: 20px; padding-top: 10px;"
-                           class="btn btn-default green-btn">Вернуться на главную страницу</a>
+                        <button @click="goToEvents()"
+                           style="height: 50px; width: auto; padding-left: 20px; padding-right: 20px;"
+                           class="btn btn-default green-btn">Вернуться на главную страницу</button>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,12 @@
 
 <script>
     export default {
-        name: "Success"
+        name: "Success",
+        methods: {
+            goToEvents (){
+                location.href='/'
+            }
+        }
     }
 </script>
 

@@ -17,9 +17,30 @@
             <div class="container">
                 <div class="col-md-12 col-md-offset-0">
                     <div class="col-md-4 center-block center-text">
-                        <img class="contactFormLogo" src="../../images/logos/color-mini.png">
+                        <br/>
+                        <a style="font-size: 19px; font-weight: 500" v-bind:href="'callto:' + config.RuNumber">
+                            <i class="fa fa-phone"></i><strong>&nbsp;{{ config.RuNumber }}</strong>
+                        </a>
+                        <br/>
+                        <a style="font-size: 19px; font-weight: 500" v-bind:href="'mailto:' + config.RuNumber">
+                            <i class="fa fa-at"></i><strong>&nbsp;info@eco.spb.ru</strong>
+                        </a>
+                        <hr/>
+                        <p>ООО "Эко СПБ"</p>
+                        <p>198066, Санкт-Петербург</p>
+                        <p>ул. Ленина 1, офис.296 БЦ "БЦ-Name"</p>
+                        <p>ОГРН 1234567890</p>
+                        <p>ИНН 123456789</p>
+                        <p></p>
                     </div>
-                    <div class="col-md-8 contactFormLogo">
+                    <div class="col-md-8" style="height: auto;">
+                        <div class="inner_about_title" style="margin-bottom: 0px; padding-bottom: 0px;">
+                            <p style="font-weight: 500; margin-top: 10px;">
+                                Спасибо за Ваш интерес!<br>
+                                Пожалуйста, заполните форму ниже.<br>
+                                <strong>Мы ответим Вам в ближайшее время.</strong>
+                            </p>
+                        </div>
                         <form action="contact.php" method="post">
                             <br/>
                             <div class="form-group">
@@ -69,6 +90,7 @@
     import 'vue-phone-number-input/dist/vue-phone-number-input.css';
     import VueInputUi from 'vue-input-ui';
     import 'vue-input-ui/dist/vue-input-ui.css';
+    import json from "@/assets/price.json";
 
     export default {
         name: "CustomContactUs",
@@ -82,6 +104,11 @@
             userComment: {
                 type: String,
                 default: "Срочно перезвоните мне!"
+            }
+        },
+        data() {
+            return {
+                config: json,
             }
         }
     }

@@ -9,7 +9,7 @@ export default new Router({
             path: "/",
             component: () => import("@/views/Home"),
             meta: {
-                title: 'Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
+                title: 'Эко СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
                 metaTags: [
                     {
                         name: 'description',
@@ -22,7 +22,7 @@ export default new Router({
             path: "/success",
             component: () => import("@/views/SuccessPage"),
             meta: {
-                title: 'Ваше сообщение успешно отправлено - Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
+                title: 'Ваше сообщение успешно отправлено - Эко СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
                 metaTags: [
                     {
                         name: 'description',
@@ -35,7 +35,7 @@ export default new Router({
             path: "*",
             component: () => import("@/views/NoFoundPage"),
             meta: {
-                title: 'Страница не найдена - Эко-СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
+                title: 'Страница не найдена - Эко СПБ - Вывоз мусора в СПБ И ЛО. Вывоз строительного бытового мусора',
                 metaTags: [
                     {
                         name: 'description',

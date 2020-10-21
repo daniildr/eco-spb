@@ -29,6 +29,16 @@
       "label": "Луга",
       "sysLabel": "luga",
       "region": 4
+    },
+    {
+      "label": "Луга123",
+      "sysLabel": "luga123",
+      "region": 4
+    },
+    {
+      "label": "Луга123-123123",
+      "sysLabel": "luga123",
+      "region": 4
     }
   ]
 }
