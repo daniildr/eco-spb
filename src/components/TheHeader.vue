@@ -263,23 +263,23 @@
                                 <div class="mapLabel fil-hidden" id="kurort-label" style="left: 270px; top: 40px;"><p>Курортный район</p></div>
                                 <div class="mapLabel fil-hidden" id="prima-label" style="left: 340px; top: 90px;"><p>Приморский район</p></div>
                                 <div class="mapLabel fil-hidden" id="viborg-label" style="left: 350px; top: 70px;"><p>Выборгский район</p></div>
-                                <div class="mapLabel fil-hidden" id="kron-label" style="left: -45px; top: 130px;"><p>Кронштадтский район</p></div>
+                                <div class="mapLabel fil-hidden" id="kron-label"><p>Кронштадтский район</p></div>
                                 <div class="mapLabel fil-hidden" id="petr-label" style="left: 350px; top: 130px;"><p>Петроградский район</p></div>
                                 <div class="mapLabel fil-hidden" id="vaska-label" style="left: 380px; top: 150px;"><p>Василеостровский район</p></div>
-                                <div class="mapLabel fil-hidden" id="center-label" style="left: 390px; top: 160px;"><p>Центральный район</p></div>
+                                <div class="mapLabel fil-hidden" id="center-label"><p>Центральный район</p></div>
                                 <div class="mapLabel fil-hidden" id="krasnogvar-label" style="left: 380px; top: 100px;"><p>Красногвардейский район</p></div>
                                 <div class="mapLabel fil-hidden" id="kalin-label" style="left: 370px; top: 95px;"><p>Калининский район</p></div>
                                 <div class="mapLabel fil-hidden" id="admiral-label" style="left: 360px; top: 140px;"><p>Адмиралтейский район</p></div>
-                                <div class="mapLabel fil-hidden" id="nevskii-label" style="left: 410px; top: 180px;"><p>Невский район</p></div>
-                                <div class="mapLabel fil-hidden" id="frunzen-label" style="left: 420px; top: 210px;"><p>Фрунзенский район</p></div>
-                                <div class="mapLabel fil-hidden" id="moscow-label" style="left: 410px; top: 230px;"><p>Московский район</p></div>
-                                <div class="mapLabel fil-hidden" id="kirovskii-label" style="left: 400px; top: 240px;"><p>Кировский район</p></div>
-                                <div class="mapLabel fil-hidden" id="krasnosel-label" style="left: 390px; top: 260px;"><p>Красносельский район</p></div>
+                                <div class="mapLabel fil-hidden" id="nevskii-label"><p>Невский район</p></div>
+                                <div class="mapLabel fil-hidden" id="frunzen-label"><p>Фрунзенский район</p></div>
+                                <div class="mapLabel fil-hidden" id="moscow-label"><p>Московский район</p></div>
+                                <div class="mapLabel fil-hidden" id="kirovskii-label"><p>Кировский район</p></div>
+                                <div class="mapLabel fil-hidden" id="krasnosel-label"><p>Красносельский район</p></div>
                                 <div class="mapLabel fil-hidden" id="petrodvor-label" style="left: -10px; top: 340px;"><p>Петродворцовый район</p></div>
                                 <div class="mapLabel fil-hidden" id="lomonosov-label" style="left: -20px; top: 320px;"><p>Ломоносовский район</p></div>
-                                <div class="mapLabel fil-hidden" id="pushkin-label" style="left: 410px; top: 280px;"><p>Пушкинский район</p></div>
-                                <div class="mapLabel fil-hidden" id="pavel-label" style="left: 420px; top: 290px;"><p>Павловский район</p></div>
-                                <div class="mapLabel fil-hidden" id="kolpinskii-label" style="left: 430px; top: 270px;"><p>Колпинский район</p></div>
+                                <div class="mapLabel fil-hidden" id="pushkin-label"><p>Пушкинский район</p></div>
+                                <div class="mapLabel fil-hidden" id="pavel-label"><p>Павловский район</p></div>
+                                <div class="mapLabel fil-hidden" id="kolpinskii-label"><p>Колпинский район</p></div>
 
                             </div>
                         </div>
@@ -356,10 +356,9 @@
                         <div class="col-md-6 inner_about_title">
                             <input class="custom-checkbox" type="checkbox" id="need-loader" v-model="needLoaders">
                             <label class="label-custom" for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
-                            <GreenButton
+                            <BlueButton
                                     custom-text="Оставить заявку"
                                     custom-style="width: 250px; height: 55px;"
-                                    user-message="12-3-456"
                             />
                         </div>
                         <div class="col-md-6 inner_about_title">
@@ -391,14 +390,14 @@
     import json from "@/assets/price.json";
     import loJson from "@/assets/loRegions.json";
     import spbJson from "@/assets/spbRegions.json";
-    import GreenButton from "@/components/Buttons/GreenButton";
     import HeaderInfo from "@/components/header/HeaderInfo";
+    import BlueButton from "@/components/Buttons/BlueButton";
 
     export default {
         name: "TheHeader",
         components: {
+            BlueButton,
             HeaderInfo,
-            GreenButton,
             MapBackground,
             TopMenu,
             MainMenu
@@ -967,6 +966,65 @@
             height: 425px;
         }
     }
+
+    #pushkin-label{
+        left: 410px;
+        top: 280px;
+    }
+    #kolpinskii-label{
+        left: 430px;
+        top: 270px;
+    }
+    #pavel-label{
+        left: 420px;
+        top: 290px;
+    }
+    #nevskii-label{
+        left: 410px;
+        top: 180px;
+    }
+    #center-label{
+        left: 390px;
+        top: 160px;
+    }
+    #frunzen-label{
+        left: 420px;
+        top: 210px;
+    }
+    #moscow-label{
+        left: 410px;
+        top: 230px;
+    }
+    #kirovskii-label{
+        left: 400px;
+        top: 240px;
+    }
+    #krasnosel-label{
+        left: 390px;
+        top: 260px;
+    }
+    #kron-label{
+        left: -45px;
+        top: 120px;
+    }
+    @media (max-width: 1025px){
+        #kolpinskii-label,
+        #pushkin-label,
+        #pavel-label,
+        #nevskii-label,
+        #center-label,
+        #frunzen-label,
+        #moscow-label,
+        #kirovskii-label,
+        #krasnosel-label{
+            left: 325px;
+            top: 190px;
+        }
+        #kron-label{
+            left: -20px; top: 320px;
+        }
+    }
+
     @media (max-width: 1099px){
         .resize{
             padding-top: 100px;

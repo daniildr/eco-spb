@@ -447,14 +447,14 @@
         background-color: #e7e7e7;
         color: #135693;
         padding: 8px 0px;
-        border-radius: 4px;
+        border-radius: 14px;
     }
     .pHover-select {
-        background-color: #e7e7e7;
-        color: #135693;
+        background-color: #FFFFFF;
+        color: #84c225;
         padding: 8px 0px;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        border-radius: 4px;
+        border-radius: 14px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;

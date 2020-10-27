@@ -3,7 +3,7 @@
         <div class="container">
             <social/>
             <br/>
-            <br/>
+            <FooterContactUs/>
             <hr/>
             <copyright/>
             <a id="fabUp" href="#HOME">
@@ -16,10 +16,12 @@
 <script>
     import Copyright from "@/components/footer/Copyright";
     import Social from "@/components/footer/Social";
+    import FooterContactUs from "@/components/footer/FooterContactUs";
 
     export default {
         name: "TheFooter",
         components: {
+            FooterContactUs,
             Social,
             Copyright
         }
@@ -27,6 +29,9 @@
 </script>
 
 <style scoped>
+    .copyright{
+        background-image: url("../images/head-bg.png");
+    }
     #fabUp {
         color: #FFFFFF;
         position: fixed;

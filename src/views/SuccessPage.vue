@@ -15,18 +15,16 @@
             </div>
         </section>
         <hr/>
-        <CustomContactUs/>
     </section>
 </template>
 
 <script>
     import Success from "@/components/success/Success";
-    import CustomContactUs from "@/components/success/CustomContactUs";
     import CustomHeaderInfo from "@/components/success/CustomHeaderInfo";
 
     export default {
         name: "SuccessPage",
-        components: {CustomHeaderInfo, CustomContactUs, Success}
+        components: {CustomHeaderInfo, Success}
     }
 </script>
 

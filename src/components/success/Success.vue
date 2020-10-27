@@ -18,7 +18,7 @@
 
                         <button @click="goToEvents()"
                            style="height: 50px; width: auto; padding-left: 20px; padding-right: 20px;"
-                           class="btn btn-default green-btn">Вернуться на главную страницу</button>
+                           class="btn btn-default submit-btn">Вернуться на главную страницу</button>
                     </div>
                 </div>
             </div>

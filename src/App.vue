@@ -3,12 +3,14 @@
     <Preloader/>
     <router-view></router-view>
     <TheFooter/>
+    <Feedback/>
   </div>
 </template>
 
 <script>
 import TheFooter from "@/components/TheFooter";
 import Preloader from "@/components/Preloader";
+import Feedback from "@/components/modals/Feedback";
 
 export default {
   name: 'App',
@@ -22,6 +24,7 @@ export default {
     },
   },
   components: {
+    Feedback,
     Preloader,
     TheFooter
   }
