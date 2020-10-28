@@ -2,7 +2,7 @@
   "RuNumber": "8 (800) 555-55-49",
   "SpbFirstNumber": "8 (812) 007-07-05",
   "SpbSecondNumber": "8 (812) 007-08-05",
-  "MaxSliderSize": 50,
+  "MaxSliderSize": 15,
   "cars": {
     "gazel": {
       "price1": "2000",
@@ -21,8 +21,8 @@
       "name": "BAW Fenix"
     },
     "docker20": {
-      "price1": "30000",
-      "price2": "33000",
+      "price1": "3000",
+      "price2": "3300",
       "price3": "4000",
       "price4": "4500",
       "loaderPrice": 3500,

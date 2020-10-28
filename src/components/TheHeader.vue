@@ -365,7 +365,12 @@
                             <h2>Количество мусора</h2>
                             <h3 style="margin-bottom: 25px;">{{getLabelForSlider()}}: <green-p>{{ itemCount }}</green-p></h3>
                             <br/>
-                            <input type="range" min="1" :max="config.MaxSliderSize" step="1" v-model="itemCount">
+                            <div class="__range __range-step">
+                                <input id="inp1" type="range" min="1" :max="config.MaxSliderSize" step="1" v-model="itemCount" list="ticks1">
+                                <datalist id="ticks1">
+                                    <option v-for="index in config.MaxSliderSize" :key="index" :value="index">{{index}}</option>
+                                </datalist>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-12 center-text">
@@ -655,6 +660,46 @@
                 }
             }
         },
+        mounted(){
+            document.querySelectorAll(".__range-step").forEach(function(ctrl) {
+                let el = ctrl.querySelector('input');
+                let output = ctrl.querySelector('output');
+                // eslint-disable-next-line no-unused-vars
+                let newPoint, newPlace, offset;
+                el.oninput =function(){
+                    // colorize step options
+                    ctrl.querySelectorAll("option").forEach(function(opt) {
+                        if(opt.value<=el.valueAsNumber)
+                            opt.style.color = '#84c225';
+                        else
+                            opt.style.color = '#3071a9';
+                    });
+                    // colorize before and after
+                    let valPercent = (el.valueAsNumber  - parseInt(el.min)) / (parseInt(el.max) - parseInt(el.min));
+                    el.style =
+                        'background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop('
+                        + valPercent +', #84c225), color-stop('
+                        + valPercent +', #3071a9)); height: 8px;';
+
+                    // Popup
+                    if((' ' + ctrl.className + ' ').indexOf(' ' + '__range-step-popup' + ' ') > -1)
+                    {
+                        let selectedOpt=ctrl.querySelector('option[value="'+el.value+'"]');
+                        output.innerText= selectedOpt.text;
+                        output.style.left = "50%";
+                        output.style.left = ((selectedOpt.offsetLeft + selectedOpt.offsetWidth/2) - output.offsetWidth/2) + 'px';
+                    }
+                };
+                el.oninput();
+            });
+
+            window.onresize = function(){
+                document.querySelectorAll(".__range").forEach(function(ctrl) {
+                    var el = ctrl.querySelector('input');
+                    el.oninput();
+                });
+            };
+        },
         data() {
             return {
                 config: json,
@@ -689,6 +734,48 @@
 </script>
 
 <style scoped>
+    .__range-step{
+        position: relative;
+        bottom: 10px;
+    }
+
+    .__range-max{
+        float: right;
+    }
+    .__range-step datalist {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        /* disable text selection */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        /* disable click events */
+        pointer-events:none;
+    }
+    .__range-step datalist option {
+        width: 15px;
+        height: 15px;
+        min-height: 10px;
+        border-radius: 14px;
+
+        white-space: nowrap;
+        line-height: 40px;
+        z-index: -1;
+    }
+
+    .__range-step-popup datalist{
+        overflow:hidden;
+    }
+    .__range-step{
+        margin:0 40px;
+    }
+    .__range-step-popup{
+        margin:40px 40px;
+    }
+
     input[type=range] {
         -webkit-appearance: none;
         margin: 18px 0;
@@ -702,15 +789,14 @@
         height: 8.4px;
         cursor: pointer;
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-        background: #3071a9;
         border-radius: 1.3px;
         border: 0.2px solid #010101;
     }
     input[type=range]::-webkit-slider-thumb {
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
         border: 1px solid #000000;
-        height: 36px;
-        width: 16px;
+        height: 26px;
+        width: 10px;
         border-radius: 3px;
         background: #ffffff;
         cursor: pointer;
@@ -725,15 +811,14 @@
         height: 8.4px;
         cursor: pointer;
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-        background: #3071a9;
         border-radius: 1.3px;
         border: 0.2px solid #010101;
     }
     input[type=range]::-moz-range-thumb {
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
         border: 1px solid #000000;
-        height: 36px;
-        width: 16px;
+        height: 26px;
+        width: 10px;
         border-radius: 3px;
         background: #ffffff;
         cursor: pointer;
@@ -762,8 +847,8 @@
     input[type=range]::-ms-thumb {
         box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
         border: 1px solid #000000;
-        height: 36px;
-        width: 16px;
+        height: 26px;
+        width: 10px;
         border-radius: 3px;
         background: #ffffff;
         cursor: pointer;
@@ -1008,6 +1093,13 @@
         top: 120px;
     }
     @media (max-width: 1025px){
+
+        .label-custom{
+            margin-top: 55px;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+
         #kolpinskii-label,
         #pushkin-label,
         #pavel-label,

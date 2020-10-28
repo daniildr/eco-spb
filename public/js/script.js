@@ -17,7 +17,7 @@ $(document).ready(function() {
         "use strict";
         
         if ($(window).scrollTop() > 80) {
-            if ($(document).scrollTop() < $(document).height() - 1100){
+            if ($(document).scrollTop() < $(document).height() - 1500){
                 $("#fabUp").css({
                     'display': 'block'
                 })
