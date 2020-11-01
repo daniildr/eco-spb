@@ -28,7 +28,7 @@
 </template>
 
 <script>
-    import json from '@/assets/price.json'
+    import json from '@/assets/contacts.json'
 
     export default {
         name: "CustomWorkInfo",

@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-md-12 center-block center-blok center-text">
                         <div class="col-md-10 col-lg-offset-1">
-                            <form>
+                            <form style="color: #094071">
                                 <br/>
                                 <div class="form-group">
                                     <VuePhoneNumberInput
@@ -35,7 +35,7 @@
                             </form>
                             <div class="center-block center-text">
                                 <p class="smallText center-text">*Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</p>
-                                <button class="btn btn-default submit-btn form_submit" style="width: 60%" v-on:click="show()">Заказать звонок</button>
+                                <button class="btn btn-default green-btn" style="width: 60%" v-on:click="show()">Заказать звонок</button>
                             </div>
                         </div>
                     </div>

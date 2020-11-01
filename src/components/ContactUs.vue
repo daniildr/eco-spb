@@ -4,84 +4,58 @@
             <div class="container">
                 <div class="col-md-12">
                     <div class="inner_about_title">
-                        <h2>Свяжитесь с нами</h2>
+                        <h2>Контакты</h2>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <div class="col-md-12 col-md-offset-0">
-                    <div class="col-md-4 center-block center-text">
-                        <br/>
-                        <a style="font-size: 19px; font-weight: 500" v-bind:href="'callto:' + config.RuNumber">
-                            <i class="fa fa-phone"></i><strong>&nbsp;{{ config.RuNumber }}</strong>
-                        </a>
-                        <br/>
-                        <a style="font-size: 19px; font-weight: 500" v-bind:href="'mailto:' + config.RuNumber">
-                            <i class="fa fa-at"></i><strong>&nbsp;info@eco.spb.ru</strong>
-                        </a>
-                        <hr/>
-                        <p>ООО "Эко СПБ"</p>
-                        <p>198066, Санкт-Петербург</p>
-                        <p>ул. Ленина 1, офис.296 БЦ "БЦ-Name"</p>
-                        <p>ОГРН 1234567890</p>
-                        <p>ИНН 123456789</p>
-                        <p></p>
-                    </div>
-                    <div class="col-md-8" style="height: auto;">
-                        <div class="inner_about_title" style="margin-bottom: 0px; padding-bottom: 0px;">
-                            <p style="font-weight: 500; margin-top: 10px;">
-                                Спасибо за Ваш интерес!<br>
-                                Пожалуйста, заполните форму ниже.<br>
-                                <strong>Мы ответим Вам в ближайшее время.</strong>
+                <div class="col-md-12" >
+                    <div class="col-md-4">
+                        <div class="inner_about_title">
+                            <p style="margin-top: 10px; margin-bottom: 10px;">
+                                <a style="font-size: 19px; font-weight: 500" v-bind:href="'callto:' + config.SpbFirstNumber">
+                                    <i class="fa fa-phone-square" style="font-size: 110%; margin-right: 12px;"></i><strong>{{ config.SpbFirstNumber }}</strong>
+                                </a>
                             </p>
+                            <p style="margin-top: 10px; margin-bottom: 10px;">
+                                <a style="font-size: 19px; font-weight: 500" v-bind:href="'callto:' + config.SpbSecondNumber">
+                                    <i class="fa fa-phone-square" style="font-size: 110%; margin-right: 12px;"></i><strong>{{ config.SpbSecondNumber }}</strong>
+                                </a>
+                            </p>
+                            <p style="margin-top: 10px; margin-bottom: 10px;">
+                                <a style="font-size: 19px; font-weight: 500" v-bind:href="'mailto:' + config.contactEmail">
+                                    <i class="fa fa-envelope" style="font-size: 110%; margin-right: 12px;"></i><strong>{{ config.contactEmail }}</strong>
+                                </a>
+                            </p>
+                            <hr/>
+                            <h4>Наш Адрес:</h4>
+                            <p>{{config.CompanyName}}</p>
+                            <p>{{config.CityAndIndex}}</p>
+                            <p>{{config.Address}}</p>
                         </div>
-                        <form>
-                            <br/>
-                            <div class="form-group">
-                                <VuePhoneNumberInput
-                                        v-model="phoneNumber"
-                                        :id="phoneNumber"
-                                        :default-country-code="'RU'"
-                                        :only-countries="['RU','AZ','AM','BY','GE','KZ','KG','LV','LT','UA']"
-                                        :translations="{countrySelectorLabel: 'Код страны',phoneNumberLabel: 'Ваш номер телефона',example: 'Пример:'}"
-                                        :valid-color="'#62bc00'"
-                                        :color="'#094071'"
-                                        :countries-height="20"
-                                        :clearable="true"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <VueInputUi v-model="clientName"
-                                            name="name"
-                                            :color="'#094071'"
-                                            :clearable="true"
-                                            label="Ваше имя"
-                                />
-                            </div>
-                        </form>
-                        <div class="center-block center-text">
-                            <p class="smallText center-text">*Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.</p>
-                            <button class="btn btn-default submit-btn form_submit" style="width: 60%" v-on:click="show()">Заказать звонок</button>
+                    </div>
+                    <div class="col-md-8">
+                        <div id="yaMap">
+
                         </div>
                     </div>
                 </div>
+
             </div>
+
+
+
+
         </div>
     </section>
 </template>
 
 <script>
-    import VuePhoneNumberInput from 'vue-phone-number-input';
-    import 'vue-phone-number-input/dist/vue-phone-number-input.css';
-    import VueInputUi from 'vue-input-ui';
-    import 'vue-input-ui/dist/vue-input-ui.css';
-    import json from "@/assets/price.json";
+    import json from "@/assets/contacts.json";
 
     export default {
         name: "ContactUs",
         components: {
-            VuePhoneNumberInput,
-            VueInputUi
         },
         props: {
             phoneNumber: String,
@@ -94,6 +68,13 @@
                 this.$store.commit('cleanForLastForm');
                 this.$modal.show("feedbackModal");
             }
+        },
+        mounted() {
+            let script = document.createElement('script')
+            script.setAttribute('type', 'text/javascript')
+            script.setAttribute('charset', 'utf-8')
+            script.setAttribute('src', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abea1bb5bb529c77749f7ba29ba06dd076d22963b638dcc1449f39f29590faadb&amp;width=100%25&amp;height=365&amp;lang=ru_RU&amp;scroll=true')
+            document.getElementById('yaMap').appendChild(script)
         },
         data() {
             return {

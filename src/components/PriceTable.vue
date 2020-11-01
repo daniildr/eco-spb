@@ -132,7 +132,7 @@
                 <div class="container">
                     <div class="row col-md-12">
                         <div class="col-md-9 left-text left-blok">
-                            <p class="linka">Сделать заказ можно по телефону: <a v-bind:href="'callto:' + config.SpbFirstNumber">{{ config.SpbFirstNumber }}</a></p>
+                            <p class="linka">Сделать заказ можно по телефону: <a v-bind:href="'callto:' + contacts.SpbFirstNumber">{{ contacts.SpbFirstNumber }}</a></p>
                             <p class="linka" style="font-size: 18px; font-weight: normal; margin-top: 0px;">Наши менеджеры рассчитают график и стоимость, ответят на все возникшие вопросы.</p>
                         </div>
                         <div class="col-md-3">
@@ -141,7 +141,7 @@
                                     v-on:click="show()"
                                     type="button"
                                     style="width: 260px; height: 50px;"
-                                    class="btn btn-default green-btn"
+                                    class="btn btn-default submit-btn"
                             >
                                 Оставить заявку
                             </button>
@@ -158,6 +158,7 @@
 
 <script>
     import json from '@/assets/price.json'
+    import contJson from '@/assets/contacts.json'
     import PriceBg from "@/components/priceBg";
     import ContactUs from "@/components/ContactUs";
 
@@ -168,7 +169,8 @@
             return {
                 needLoader: false,
                 selectedItem: "",
-                config : json
+                config : json,
+                contacts: contJson,
             }
         },
         methods: {

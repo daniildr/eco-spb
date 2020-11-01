@@ -33,7 +33,7 @@
 
 <script>
     import GreenButton from "@/components/Buttons/GreenButton";
-    import json from '@/assets/price.json'
+    import json from '@/assets/contacts.json'
 
     export default {
         name: "WorkInfo",
