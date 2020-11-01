@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import json from "@/assets/price.json";
+    import json from "@/assets/contacts.json";
 
     export default {
         name: "MainMenu",
@@ -44,12 +44,29 @@
         display: none;
     }
 
-@media (max-width: 1199px){
+@media (max-width: 767px){
     .mobile-hidden{
         height: 50px;
     }
     .navbar-fixed-top, .navbar-fixed-bottom{
         z-index: 999;
+    }
+    a {
+        font-weight: 600;
+        font-size: 120%;
+    }
+    .navbar-default .navbar-nav > li > a{
+        color: #5297c8;
+    }
+    .navbar-default .navbar-nav > li > a:before,
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:active{
+        color: #84c225;
+    }
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus{
+        color: #84c225;
     }
 }
 </style>

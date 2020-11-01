@@ -18,7 +18,7 @@
 
         <div class="hidden-md hidden-lg pull-center">
             <div class="col-sm-12 top-mar">
-                <a v-bind:href="'callto:' + config.SpbFirstNumber"><img src="../../images/header-phone.png" alt="Logo">&nbsp;{{ config.SpbFirstNumber }}</a>
+                <a style="z-index: 800; position: inherit;" v-bind:href="'callto:' + config.SpbFirstNumber"><img src="../../images/header-phone.png" alt="Logo">&nbsp;{{ config.SpbFirstNumber }}1</a>
             </div>
             <div class="col-sm-12 mid-mar">
                 <img src="../../images/work-time.png" alt="Рабочие часы">
