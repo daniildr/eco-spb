@@ -567,41 +567,47 @@
                     this.selectedCarPrice = "0";
                 }
                 else {
-                    if (this.needLoaders){
-                        let carPrise;
-                        switch (this.selectedZone) {
-                            case 1:
+                    let carPrise;
+                    switch (this.selectedZone) {
+                        case 1: {
+                            if (this.selectedTrashType == "household"){
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].household.price1, 10);
+                            } else {
                                 carPrise = parseInt(this.config.cars[this.selectedCarType].price1, 10);
-                                break;
-                            case 2:
-                                carPrise = parseInt(this.config.cars[this.selectedCarType].price2, 10);
-                                break;
-                            case 3:
-                                carPrise = parseInt(this.config.cars[this.selectedCarType].price3, 10);
-                                break;
-                            case 4:
-                                carPrise = parseInt(this.config.cars[this.selectedCarType].price4, 10);
-                                break;
+                            }
                         }
+                            break;
+                        case 2: {
+                            if (this.selectedTrashType == "household"){
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].household.price2, 10);
+                            } else {
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price2, 10);
+                            }
+                        }
+                            break;
+                        case 3: {
+                            if (this.selectedTrashType == "household"){
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].household.price3, 10);
+                            } else {
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price3, 10);
+                            }
+                        }
+                            break;
+                        case 4: {
+                            if (this.selectedTrashType == "household"){
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].household.price4, 10);
+                            } else {
+                                carPrise = parseInt(this.config.cars[this.selectedCarType].price4, 10);
+                            }
+                        }
+                            break;
+                    }
 
+                    if (this.needLoaders){
                         let loaderPrise = parseInt(this.config.cars[this.selectedCarType].loaderPrice, 10);
                         this.selectedCarPrice = carPrise + loaderPrise;
-                    }
-                    else{
-                        switch (this.selectedZone) {
-                            case 1:
-                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price1
-                                break;
-                            case 2:
-                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price2
-                                break;
-                            case 3:
-                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price3
-                                break;
-                            case 4:
-                                this.selectedCarPrice = this.config.cars[this.selectedCarType].price4
-                                break;
-                        }
+                    } else {
+                        this.selectedCarPrice = carPrise;
                     }
                 }
                 return this.selectedCarPrice;

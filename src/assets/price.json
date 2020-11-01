@@ -6,6 +6,12 @@
       "price2": "2500",
       "price3": "3000",
       "price4": "3500",
+      "household": {
+        "price1": "2001",
+        "price2": "2502",
+        "price3": "3003",
+        "price4": "3504"
+      },
       "loaderPrice": 2500,
       "name": "ГАЗ «ГАЗель»"
     },
@@ -14,6 +20,12 @@
       "price2": "3000",
       "price3": "3500",
       "price4": "4000",
+      "household": {
+        "price1": "2501",
+        "price2": "3002",
+        "price3": "3503",
+        "price4": "4004"
+      },
       "loaderPrice": 3000,
       "name": "BAW Fenix"
     },
@@ -22,6 +34,12 @@
       "price2": "3300",
       "price3": "4000",
       "price4": "4500",
+      "household": {
+        "price1": "3001",
+        "price2": "3302",
+        "price3": "4003",
+        "price4": "4504"
+      },
       "loaderPrice": 3500,
       "name": "Контейнер 20 кубометров"
     },
@@ -30,6 +48,12 @@
       "price2": "4000",
       "price3": "4500",
       "price4": "5000",
+      "household": {
+        "price1": "3501",
+        "price2": "4002",
+        "price3": "4503",
+        "price4": "5004"
+      },
       "loaderPrice": 4000,
       "name": "Контейнер 27 кубометров"
     }
