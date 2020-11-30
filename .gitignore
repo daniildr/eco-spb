@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 /dist
-
+/public/.htaccess
+/public/php.ini
+/public/robots.txt
 
 # local env files
 .env.local
