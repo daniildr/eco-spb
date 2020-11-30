@@ -5,7 +5,7 @@
 
 
 //E-mail address. Enter your email
-define("__TO__", "dfg_hjkl@mail.ru");
+define("__TO__", "info@eco.spb.ru");
 
 //Success message
 define('__SUCCESS_MESSAGE__', "Ваше сообщение было отправлено. Мы ответим в ближайшее время. Спасибо!");
@@ -32,7 +32,7 @@ if(isset($_POST['name']) and isset($_POST['phone']) and isset($_POST['message'])
 	$phone = $_POST['phone'];
 	$subjectForm = 'Письмо с сайта eco-spb. От ';
 	$messageForm = $_POST['message'];
-	$mail = 'dfg_hjkl@mail.ru';
+	$mail = 'no-reply@eco.spb.ru';
 
     if($name == '') {
         echo json_encode(array('info' => 'error', 'msg' => "Пожалуйста, введите Ваше имя."));
