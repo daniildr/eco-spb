@@ -1,8 +1,0 @@
-User-agent: *
-Disallow: /*Contact.php/
-
-
-User-agent: Yandex
-Disallow: /*Contact.php/
-
-Host: https://eco.spb.ru
