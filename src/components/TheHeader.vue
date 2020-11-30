@@ -301,7 +301,7 @@
                             <select @change="setTypeOfGarbage()" v-model="selectedTrashType" class="Shape_3">
                                 <option value="Select">Выберите тип:</option>
                                 <option value="construction">Строительный</option>
-                                <option value="household">Бытовой</option>
+                                <option v-if="(this.selectedCarType != 'gazel' && this.selectedCarType != 'baw')" value="household">Бытовой</option>
                                 <option value="bulky">Крупногабаритный</option>
                             </select>
                         </div>
@@ -408,6 +408,9 @@
             MainMenu
         },
         methods: {
+
+
+
             activeMapElement (element) {
                 element.classList.remove(this.fillClassName);
                 element.classList.add(this.hiddenFillClassName);
@@ -557,6 +560,16 @@
 
                 let carTypeString = this.getHumanNameForCar();
                 this.$store.commit('setCarType', carTypeString);
+
+                if(this.selectedCarType == 'gazel' && this.selectedTrashType == 'household'){
+                    this.selectedTrashType = 'Select';
+                    this.setTypeOfGarbage();
+                }
+                else if(this.selectedCarType == 'baw' && this.selectedTrashType == 'household'){
+                    this.selectedTrashType = 'Select'
+                    this.setTypeOfGarbage();
+                }
+
             },
             getSelectedNumberOfItems() {
                 this.$store.commit('setNumberOfItems', this.itemCount);

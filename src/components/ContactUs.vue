@@ -17,7 +17,7 @@
                                     <i class="fa fa-phone-square" style="font-size: 110%; margin-right: 12px;"></i><strong>{{ config.SpbFirstNumber }}</strong>
                                 </a>
                             </p>
-                            <p v-if="config.SpbFirstNumber != config.SpbSecondNumber" style="margin-top: 10px; margin-bottom: 10px;">
+                            <p v-if="config.SpbFirstNumber !== config.SpbSecondNumber" style="margin-top: 10px; margin-bottom: 10px;">
                                 <a style="font-size: 19px; font-weight: 500" v-bind:href="'callto:' + config.SpbSecondNumber">
                                     <i class="fa fa-phone-square" style="font-size: 110%; margin-right: 12px;"></i><strong>{{ config.SpbSecondNumber }}</strong>
                                 </a>
