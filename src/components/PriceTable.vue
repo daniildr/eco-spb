@@ -94,29 +94,6 @@
                                 </p>
                             </td>
                         </tr>
-                        <tr>
-                            <td><p>Ленинградская Область<br>(В пределах 90км от КАД)</p></td>
-                            <td>
-                                <p class="pHover" v-on:click="selectItem('gazel.price4')" id="gazel.price4">
-                                    от {{ needLoader ? parseInt(config.cars.gazel.price4) + parseInt(config.cars.gazel.loaderPrice) : config.cars.gazel.price4 }} рублей
-                                </p>
-                            </td>
-                            <td>
-                                <p class="pHover" v-on:click="selectItem('baw.price4')" id="baw.price4">
-                                    от {{ needLoader ? parseInt(config.cars.baw.price4) + parseInt(config.cars.baw.loaderPrice) : config.cars.baw.price4 }} рублей
-                                </p>
-                            </td>
-                            <td>
-                                <p class="pHover"  v-on:click="selectItem('docker20.price4')" id="docker20.price4">
-                                    от {{ needLoader ? parseInt(config.cars.docker20.price4) + parseInt(config.cars.docker20.loaderPrice) : config.cars.docker20.price4 }} рублей
-                                </p>
-                            </td>
-                            <td>
-                                <p class="pHover" v-on:click="selectItem('docker27.price4')" id="docker27.price4">
-                                    от {{ needLoader ? parseInt(config.cars.docker27.price4) + parseInt(config.cars.docker27.loaderPrice) : config.cars.docker27.price4 }} рублей
-                                </p>
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>

@@ -6,9 +6,9 @@
         <div class="container_z_index">
             <img class="position2" src="../images/bg_color_blue_mini.png">
         </div>
-        <div class="container_z_index">
+        <!--<div class="container_z_index">
             <img class="position3" src="../images/bg_color_blue_mini.png">
-        </div>
+        </div>-->
     </section>
 </template>
 
@@ -21,14 +21,14 @@
 <style scoped>
     @media (min-width: 1199px){
         .position1{
-            bottom: 323px;
+            bottom: 256px;
             height: 55px;
             width: 2560px;
             position: inherit;
         }
         .position2{
-            bottom: 188px;
-            height: 66px;
+            bottom: 121px;
+            height: 65px;
             width: 2560px;
             position: inherit;
         }
