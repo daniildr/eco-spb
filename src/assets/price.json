@@ -2,23 +2,23 @@
   "MaxSliderSize": 15,
   "cars": {
     "gazel": {
-      "price1": "2000",
-      "price2": "2500",
-      "price3": "3000",
-      "price4": "3500",
+      "price1": "5000",
+      "price2": "6500",
+      "price3": "8000",
+      "price4": "0",
       "household": {
         "price1": "2001",
         "price2": "2502",
         "price3": "3003",
         "price4": "3504"
       },
-      "loaderPrice": 2500,
+      "loaderPrice": 2000,
       "name": "ГАЗ «ГАЗель»"
     },
     "baw": {
-      "price1": "2500",
-      "price2": "3000",
-      "price3": "3500",
+      "price1": "7000",
+      "price2": "8500",
+      "price3": "10000",
       "price4": "4000",
       "household": {
         "price1": "2501",
@@ -30,28 +30,28 @@
       "name": "BAW Fenix"
     },
     "docker20": {
-      "price1": "3000",
-      "price2": "3300",
-      "price3": "4000",
+      "price1": "13500",
+      "price2": "15500",
+      "price3": "17500",
       "price4": "4500",
       "household": {
-        "price1": "3001",
-        "price2": "3302",
-        "price3": "4003",
+        "price1": "20000",
+        "price2": "22000",
+        "price3": "24000",
         "price4": "4504"
       },
-      "loaderPrice": 3500,
+      "loaderPrice": 4000,
       "name": "Контейнер 20 кубометров"
     },
     "docker27": {
-      "price1": "3500",
-      "price2": "4000",
-      "price3": "4500",
+      "price1": "13500",
+      "price2": "15500",
+      "price3": "17500",
       "price4": "5000",
       "household": {
-        "price1": "3501",
-        "price2": "4002",
-        "price3": "4503",
+        "price1": "20000",
+        "price2": "22000",
+        "price3": "24000",
         "price4": "5004"
       },
       "loaderPrice": 4000,

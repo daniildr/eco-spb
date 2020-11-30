@@ -19,7 +19,7 @@ define('__MESSAGE_EMPTY_FIELDS__', "Пожалуйста, заполните в�
 //Send mail
 function send_mail($to, $subject, $message, $headers){
     if(@mail($to,$subject,$message,$headers)){
-        $url = 'http://daniildr.beget.tech/#/success';
+        $url = 'http://eco.spb.ru/#/success';
         header( "Location: $url" );
     } else {
         echo json_encode(array('info' => 'success', 'msg' => __SUCCESS_MESSAGE__));

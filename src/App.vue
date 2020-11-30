@@ -19,7 +19,6 @@ export default {
       immediate: true,
       handler(to) {
         document.title = to.meta.title || 'Эко-СПБ - Вывоз мусора в СПБ И ЛО';
-        document.meta
       }
     },
   },

@@ -88,12 +88,12 @@
     {
       "label": "Ломоносовский район",
       "mapId": "lomonosov",
-      "region": 2
+      "region": 3
     },
     {
       "label": "Пушкинский район",
       "mapId": "pushkin",
-      "region": 1
+      "region": 2
     },
     {
       "label": "Павловский район",
@@ -103,7 +103,7 @@
     {
       "label": "Колпинский район",
       "mapId": "kolpinskii",
-      "region": 1
+      "region": 2
     }
   ]
 }

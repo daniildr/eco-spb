@@ -8,37 +8,207 @@
     {
       "label": "Тосно",
       "sysLabel": "tosno",
-      "region": 1
+      "region": 2
     },
     {
       "label": "Любань",
       "sysLabel": "luban",
-      "region": 2
+      "region": 3
     },
     {
-      "label": "Лодейное Поле",
-      "sysLabel": "lodeinoePole",
-      "region": 3
+      "label": "Всеволожск",
+      "sysLabel": "Vsevolozhsk",
+      "region": 2
     },
     {
       "label": "Гатчина",
       "sysLabel": "gatchina",
+      "region": 2
+    },
+    {
+      "label": "Сертолово",
+      "sysLabel": "Sertolovo",
+      "region": 2
+    },
+    {
+      "label": "Щеглово",
+      "sysLabel": "sheglovo",
+      "region": 2
+    },
+    {
+      "label": "Кузьмоловский",
+      "sysLabel": "Kuzmolovsky",
+      "region": 2
+    },
+    {
+      "label": "Красносельское",
+      "sysLabel": "Krasnoselsky",
+      "region": 3
+    },
+    {
+      "label": "Поляны",
+      "sysLabel": "polany",
+      "region": 3
+    },
+    {
+      "label": "Семиозерье",
+      "sysLabel": "Semiozerie",
+      "region": 3
+    },
+    {
+      "label": "Романовка",
+      "sysLabel": "Romanovka",
+      "region": 2
+    },
+    {
+      "label": "Васкелово",
+      "sysLabel": "Vaskelovo",
+      "region": 3
+    },
+    {
+      "label": "Токсово",
+      "sysLabel": "Toksovo",
+      "region": 2
+    },
+    {
+      "label": "Стеклянный",
+      "sysLabel": "Steklyannyy",
+      "region": 3
+    },
+    {
+      "label": "Осельки",
+      "sysLabel": "Oselʹky",
+      "region": 3
+    },
+    {
+      "label": "Лупполово",
+      "sysLabel": "Luppolovo",
+      "region": 2
+    },
+    {
+      "label": "Мурино",
+      "sysLabel": "Murino",
       "region": 1
     },
     {
-      "label": "Луга",
-      "sysLabel": "luga",
-      "region": 4
+      "label": "Первомайское",
+      "sysLabel": "Pervomayskoe",
+      "region": 3
     },
     {
-      "label": "Луга123",
-      "sysLabel": "luga123",
-      "region": 4
+      "label": "Агалатово",
+      "sysLabel": "Agalatovo",
+      "region": 2
     },
     {
-      "label": "Луга123-123123",
-      "sysLabel": "luga123",
-      "region": 4
+      "label": "Бугры",
+      "sysLabel": "Buhry",
+      "region": 1
+    },
+    {
+      "label": "Стрельна",
+      "sysLabel": "Strel'na",
+      "region": 1
+    },
+    {
+      "label": "Пушкин",
+      "sysLabel": "Pushkin",
+      "region": 1
+    },
+    {
+      "label": "Красное село",
+      "sysLabel": "Krasnoye selo",
+      "region": 2
+    },
+    {
+      "label": "Ломоносов",
+      "sysLabel": "Lomonosov",
+      "region": 3
+    },
+    {
+      "label": "Петергоф",
+      "sysLabel": "Petergof",
+      "region": 2
+    },
+    {
+      "label": "Кипень",
+      "sysLabel": "Kypenʹ",
+      "region": 2
+    },
+    {
+      "label": "Большая Ижора",
+      "sysLabel": "Bol'shaya Izhora",
+      "region": 3
+    },
+    {
+      "label": "Гостилицы",
+      "sysLabel": "Gostilitsy",
+      "region": 3
+    },
+    {
+      "label": "Дятлицы",
+      "sysLabel": "Dyatlitsy",
+      "region": 2
+    },
+    {
+      "label": "Ропша",
+      "sysLabel": "Ropsha",
+      "region": 2
+    },
+    {
+      "label": "Горелово",
+      "sysLabel": "Gorelovo",
+      "region": 1
+    },
+    {
+      "label": "Тайцы",
+      "sysLabel": "Tajcy",
+      "region": 2
+    },
+    {
+      "label": "Вырица",
+      "sysLabel": "Vyritsa",
+      "region": 2
+    },
+    {
+      "label": "Коммунар",
+      "sysLabel": "Kommunar",
+      "region": 2
+    },
+    {
+      "label": "Павловск",
+      "sysLabel": "Pavlovsk",
+      "region": 2
+    },
+    {
+      "label": "Ям-Ижора",
+      "sysLabel": "Yam-Izhora",
+      "region": 2
+    },
+    {
+      "label": "Федоровское",
+      "sysLabel": "Fedorovskoe",
+      "region": 2
+    },
+    {
+      "label": "Металлострой",
+      "sysLabel": "Metallostroy",
+      "region": 2
+    },
+    {
+      "label": "Разметелево",
+      "sysLabel": "Razmetelevo",
+      "region": 2
+    },
+    {
+      "label": "Колтуши",
+      "sysLabel": "Koltushi",
+      "region": 2
+    },
+    {
+      "label": "Токсово",
+      "sysLabel": "Toksovo",
+      "region": 2
     }
   ]
 }
