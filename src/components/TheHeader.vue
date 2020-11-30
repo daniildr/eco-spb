@@ -355,7 +355,7 @@
                     <div class="col-md-12">
                         <div class="col-md-6 inner_about_title">
                             <input class="custom-checkbox" type="checkbox" id="need-loader" v-model="needLoaders">
-                            <label class="label-custom" for="need-loader"> Ручная погрузка контейнера (2 чел.) от 2500 руб.</label>
+                            <label class="label-custom" for="need-loader"> Ручная погрузка контейнера (2 чел.) от {{config.cars.gazel.loaderPrice}} руб.</label>
                             <BlueButton
                                     custom-text="Оставить заявку"
                                     custom-style="width: 250px; height: 55px;"
